@@ -1,0 +1,326 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<Layout>
+  <section class="page-intro journal-intro">
+    <div class="container">
+      <p class="eyebrow">THE CIVOLYN JOURNAL</p>
+      <h1>
+        Notes on a more
+        <br />
+        <em>thoughtful way to work.</em>
+      </h1>
+      <p class="intro-copy">
+        Three original essays on the decisions behind the interface. Less about
+        what technology promises. More about what makes it useful.
+      </p>
+      <div class="intro-rule">
+        <span>Editorial perspectives from a fictional product concept.</span>
+        <span>THREE NOTES / ONE SHARED QUESTION</span>
+      </div>
+    </div>
+  </section>
+  <nav class="container journal-index" aria-label="Journal essays">
+    <a class="journal-card" href="#responsible-automation">
+      <span class="journal-number" aria-hidden="true">
+        01
+      </span>
+      <h2>Before you automate, draw the pause.</h2>
+      <p>WORKFLOW & RESPONSIBILITY · 4 MIN READ</p>
+      <span>Read the essay ↗</span>
+    </a>
+    <a class="journal-card" href="#human-judgment">
+      <span class="journal-number" aria-hidden="true">
+        02
+      </span>
+      <h2>Design for the person who disagrees.</h2>
+      <p>DESIGN & HUMAN JUDGMENT · 4 MIN READ</p>
+      <span>Read the essay ↗</span>
+    </a>
+    <a class="journal-card" href="#useful-information">
+      <span class="journal-number" aria-hidden="true">
+        03
+      </span>
+      <h2>A number is the start of a question.</h2>
+      <p>OPERATIONS & PERSPECTIVE · 4 MIN READ</p>
+      <span>Read the essay ↗</span>
+    </a>
+  </nav>
+  <div class="section container">
+    <article class="journal-article" id="responsible-automation">
+      <aside>
+        <span class="article-number" aria-hidden="true">
+          01
+        </span>
+        <p class="eyebrow">WORKFLOW & RESPONSIBILITY</p>
+        <p>
+          AN ORIGINAL CIVOLYN ESSAY
+          <br />
+          ABOUT 4 MINUTES
+        </p>
+      </aside>
+      <div class="article-body">
+        <h2>
+          Before you automate,
+          <br />
+          <em>draw the pause.</em>
+        </h2>
+        <p>
+          When a recurring process becomes frustrating, automation is an
+          appealing first answer. A request arrives, a draft is prepared, a
+          message goes out. The diagram looks cleaner when the arrows keep
+          moving. But movement is not always progress.
+        </p>
+        <p>
+          Consider a small team onboarding a new client. A brief arrives with a
+          suggested deadline. It is easy to imagine a system turning that brief
+          into a project, assigning tasks and sending a welcome note. It is
+          harder to see the assumption hidden in that sequence: that the team
+          has agreed to the work as described.
+        </p>
+        <h3>Find the moment that changes a commitment.</h3>
+        <p>
+          The most useful place to begin is often the step where something
+          becomes consequential. A price is shared. A deadline is promised. A
+          file leaves the team. Those moments deserve different treatment from
+          formatting a summary or sorting an intake queue.
+        </p>
+        <p>
+          Draw the review point before drawing the automatic path. Decide what a
+          reviewer needs to see: the original request, the proposed next step,
+          the unresolved questions and the person who will own the handover. If
+          that context is missing, a button labelled “Approve” is only a faster
+          way to guess.
+        </p>
+        <blockquote>
+          A review checkpoint is useful when it improves a decision, not when it
+          merely interrupts a process.
+        </blockquote>
+        <h3>Make waiting a legible state.</h3>
+        <p>
+          A process waiting for a decision is doing something different from a
+          process that has failed. The interface should say so. “Awaiting
+          project owner review” tells a team more than an amber dot. It explains
+          what is missing and where the work can move next.
+        </p>
+        <p>
+          The same care applies after approval. A history should distinguish a
+          proposed summary from an accepted handover. If the plan changes, the
+          team needs to know which decision changed with it. A sequence of green
+          ticks is not a substitute for that explanation.
+        </p>
+        <h3>Automate the preparation, preserve the choice.</h3>
+        <p>
+          This does not mean putting a person in front of every action. It means
+          choosing the boundary deliberately. Repetitive preparation can become
+          easier while commitments remain explicit. A short, understandable
+          process with one well-designed pause may be more useful than an
+          impressive diagram nobody can safely change.
+        </p>
+        <p>
+          In the Flow preview, the human review step is intentionally visible.
+          Nothing moves beyond it until you choose to approve the example. It is
+          a small interaction, but it expresses a bigger product principle: a
+          tool should make responsibility clearer as the work becomes easier.
+        </p>
+        <div class="article-takeaway">
+          <b>A useful question for your next process review</b>
+          <p>
+            Which step changes a commitment, and what would someone need to
+            understand before approving it?
+          </p>
+        </div>
+        <a class="arrow-link" href="/products/flow/#preview">
+          Try the Flow example <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </article>
+    <article class="journal-article" id="human-judgment">
+      <aside>
+        <span class="article-number" aria-hidden="true">
+          02
+        </span>
+        <p class="eyebrow">DESIGN & HUMAN JUDGMENT</p>
+        <p>
+          AN ORIGINAL CIVOLYN ESSAY
+          <br />
+          ABOUT 4 MINUTES
+        </p>
+      </aside>
+      <div class="article-body">
+        <h2>
+          Design for the person
+          <br />
+          <em>who disagrees.</em>
+        </h2>
+        <p>
+          Many interfaces are designed around the moment a person accepts the
+          suggestion. The primary button is prominent. The explanation is short.
+          The next step is ready. It can feel efficient, especially in a
+          demonstration where the answer is already known.
+        </p>
+        <p>
+          Real work includes another kind of moment: the reader who notices a
+          missing detail, the project lead who knows a deadline has changed, the
+          new colleague who does not understand why a recommendation applies.
+          Those people are not edge cases. They are part of how a team avoids
+          mistakes.
+        </p>
+        <h3>Give the reader something to question.</h3>
+        <p>
+          An assisted answer needs more than fluent language. It needs a visible
+          relationship to its sources. A reference should help the reader
+          understand what kind of material supports the statement: a policy, a
+          project note or an informal practice. Those sources carry different
+          authority.
+        </p>
+        <p>
+          Imagine a summary that says a new client is ready for onboarding. A
+          person may need to check whether the brief was approved, whether the
+          requested work fits the team’s scope and whether a proposed date has
+          become a promise. An interface that hides those questions behind a
+          polished paragraph makes disagreement harder than it needs to be.
+        </p>
+        <blockquote>
+          Good assistance leaves the reader better able to judge the answer, not
+          merely more likely to accept it.
+        </blockquote>
+        <h3>Keep correction close to the claim.</h3>
+        <p>
+          It should be possible to inspect the supporting context without losing
+          the task. Open a reference alongside the answer. Distinguish quoted
+          information from an interpretation. Make a missing source visible
+          instead of quietly filling the gap with confident wording.
+        </p>
+        <p>
+          The visual hierarchy matters here. If the conclusion is large and the
+          uncertainty is tucked into tiny, low-contrast text, the interface has
+          already made an argument. A readable caveat is part of the output, not
+          decorative legal furniture.
+        </p>
+        <h3>Design a way back.</h3>
+        <p>
+          People also need to change their minds. A reset, a clear cancellation
+          path or a reviewable draft can turn a tentative choice into a safe
+          exploration. A system that punishes uncertainty encourages people to
+          avoid the feature or approve too quickly.
+        </p>
+        <p>
+          In the Knowledge preview, a result reveals its original sample text
+          and a source reference. It does not pretend to generate a complete
+          answer from private documents. The point is modest: keep enough
+          context near the result for a person to decide whether it helps.
+        </p>
+        <p>
+          Designing for disagreement does not make an interface indecisive. It
+          makes confidence more meaningful. When a person can understand and
+          challenge a suggestion, accepting it becomes a considered action
+          rather than the path of least resistance.
+        </p>
+        <div class="article-takeaway">
+          <b>A useful question for your next interface review</b>
+          <p>
+            If this suggestion were wrong, what on this screen would help
+            someone notice, inspect and correct it?
+          </p>
+        </div>
+        <a class="arrow-link" href="/products/knowledge/#preview">
+          Explore the example library <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </article>
+    <article class="journal-article" id="useful-information">
+      <aside>
+        <span class="article-number" aria-hidden="true">
+          03
+        </span>
+        <p class="eyebrow">OPERATIONS & PERSPECTIVE</p>
+        <p>
+          AN ORIGINAL CIVOLYN ESSAY
+          <br />
+          ABOUT 4 MINUTES
+        </p>
+      </aside>
+      <div class="article-body">
+        <h2>
+          A number is the start
+          <br />
+          <em>of a question.</em>
+        </h2>
+        <p>
+          A dashboard can be busy and still leave a team unsure what to do. A
+          completion count rises, a line tilts upwards, a percentage turns
+          green. The screen looks informative. The decision remains unclear.
+        </p>
+        <p>
+          The problem is often not a shortage of data. It is a missing
+          relationship between a measure and the question the team is trying to
+          answer. Before adding another chart, it helps to ask what someone
+          would do differently after reading it.
+        </p>
+        <h3>Name the measure precisely.</h3>
+        <p>
+          “Completed workflows” is more useful than “performance.” It describes
+          an event that could, in a real system, have a defined counting rule.
+          It still leaves questions: completed during which period, counted by
+          what status and compared with what baseline?
+        </p>
+        <p>
+          Those details are not secondary. A daily count and a monthly count
+          cannot be interpreted in the same way. If the period changes, the
+          chart, total and explanation should change together. A familiar
+          interface pattern should not disguise a different meaning.
+        </p>
+        <blockquote>
+          The chart can show a pattern. Understanding why it exists usually
+          takes more context.
+        </blockquote>
+        <h3>Resist the easy causal story.</h3>
+        <p>
+          Suppose the example completion volume rises for four weeks. It might
+          reflect more demand, smaller tasks, different staffing or a change in
+          how work is counted. The chart alone does not establish which
+          explanation is right.
+        </p>
+        <p>
+          A helpful annotation can point to the pattern without presenting a
+          cause as fact. “The final week has the highest volume” describes the
+          data. “The team is more productive” adds an interpretation the data
+          may not support. That distinction matters when a report influences
+          people’s workload.
+        </p>
+        <h3>Keep the underlying values available.</h3>
+        <p>
+          A data table gives people another way to understand the figure. It
+          supports exact comparisons and readers who do not use the visual
+          chart. It also makes the presentation easier to inspect. A good chart
+          should not require trust in a shape that cannot be checked.
+        </p>
+        <p>
+          Signal’s preview includes three prepared time windows and a matching
+          table. The values are illustrative, and the explanatory note keeps
+          that boundary visible. There is no real company performance behind the
+          display.
+        </p>
+        <p>
+          The most useful dashboard is not always the one that answers every
+          question. Sometimes it is the one that helps a team ask the right next
+          question, then return to the people and processes that can answer it.
+        </p>
+        <div class="article-takeaway">
+          <b>A useful question for your next reporting review</b>
+          <p>
+            What does this measure describe, what does it leave out, and which
+            decision is it meant to support?
+          </p>
+        </div>
+        <a class="arrow-link" href="/products/signal/#preview">
+          Explore Signal’s example data <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </article>
+  </div>
+  <CTA title="Put the ideas into a little practice." />
+</Layout>

@@ -1,0 +1,116 @@
+<div class="demo-shell signal-demo" data-signal>
+  <h2 class="sr-only">Illustrative operational dashboard</h2>
+  <div class="demo-toolbar">
+    <div>
+      <span class="app-icon lavender">▥</span>
+      <div>
+        <b>The rhythm of your operations.</b>
+        <small>CIVOLYN Signal · Illustrative data</small>
+      </div>
+    </div>
+    <div class="period-select">
+      <label for="signal-period">Period</label>
+      <select id="signal-period" data-signal-period>
+        <option value="week">This week</option>
+        <option value="month">This month</option>
+        <option value="quarter">This quarter</option>
+      </select>
+    </div>
+  </div>
+  <div class="signal-body">
+    <div class="signal-metrics">
+      <div>
+        <span>Completed workflows</span>
+        <strong data-signal-total>126</strong>
+        <small data-signal-change>18 more than the previous week</small>
+      </div>
+      <div>
+        <span>Awaiting review</span>
+        <strong data-signal-review>12</strong>
+        <small>A person makes the next decision</small>
+      </div>
+      <div>
+        <span>Typical completion</span>
+        <strong data-signal-time>2.4 days</strong>
+        <small>Example median, end to end</small>
+      </div>
+    </div>
+    <div class="signal-chart-header">
+      <div>
+        <h3>Work completed, in perspective.</h3>
+        <p data-signal-summary>
+          Example daily workflow completions for one week.
+        </p>
+      </div>
+      <span class="chart-key">
+        <i></i> Completed workflows
+      </span>
+    </div>
+    <div
+      class="signal-chart"
+      role="img"
+      aria-label="Example weekly completions: Monday 14, Tuesday 22, Wednesday 18, Thursday 26, Friday 30, Saturday 9, Sunday 7. Full data in the table below."
+      data-signal-chart
+    >
+      <div class="chart-grid" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="signal-bars" aria-hidden="true" data-signal-bars>
+        {[
+          ['Mon', 14],
+          ['Tue', 22],
+          ['Wed', 18],
+          ['Thu', 26],
+          ['Fri', 30],
+          ['Sat', 9],
+          ['Sun', 7],
+        ].map(([day, value]) => (
+          <div>
+            <b>{value}</b>
+            <span style={`height:${Number(value) * 5}px`}></span>
+            <small>{day}</small>
+          </div>
+        ))}
+      </div>
+    </div>
+    <p class="signal-insight" role="status" data-signal-insight>
+      Friday has the highest example volume. A higher count alone does not
+      explain quality or team workload.
+    </p>
+    <details class="data-disclosure">
+      <summary>Read the underlying example data</summary>
+      <div class="table-wrap">
+        <table>
+          <caption>
+            Illustrative workflow completions —
+            <span data-signal-caption>this week</span>
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Period</th>
+              <th scope="col">Completed workflows</th>
+            </tr>
+          </thead>
+          <tbody data-signal-table>
+            {[
+              ['Monday', 14],
+              ['Tuesday', 22],
+              ['Wednesday', 18],
+              ['Thursday', 26],
+              ['Friday', 30],
+              ['Saturday', 9],
+              ['Sunday', 7],
+            ].map(([d, v]) => (
+              <tr>
+                <th scope="row">{d}</th>
+                <td>{v}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+</div>

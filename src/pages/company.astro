@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
+import { portfolio } from '../data/site';
+---
+
+<Layout>
+  <section class="container company-hero">
+    <p class="eyebrow">OUR STORY / AN IMAGINED COMPANY, A CONSIDERED IDEA</p>
+    <h1>
+      A little less friction.
+      <br />
+      <em>A lot more possibility.</em>
+    </h1>
+    <p class="intro-copy">
+      CIVOLYN began as a question: what would business software feel like if it
+      made more room for the people using it?
+    </p>
+  </section>
+  <figure class="container">
+    <div class="company-landscape">
+      <img
+        src="/images/clarity-architecture-1440.webp"
+        srcset="/images/clarity-architecture-640.webp 640w, /images/clarity-architecture-960.webp 960w, /images/clarity-architecture-1440.webp 1440w"
+        sizes="(max-width: 1440px) 92vw, 1320px"
+        width="1440"
+        height="960"
+        alt="An open cobalt arch in warm limestone architecture, an original visual study of space and clarity."
+        fetchpriority="high"
+      />
+      <figcaption class="image-caption">
+        Make room. An original architectural study for CIVOLYN.
+      </figcaption>
+    </div>
+  </figure>
+  <section class="section">
+    <div class="container story-section">
+      <div>
+        <p class="eyebrow">WHY THIS IDEA EXISTS</p>
+        <h2>
+          More tools.
+          <br />
+          <em>Less clarity?</em>
+        </h2>
+      </div>
+      <div class="editorial-copy">
+        <p>
+          A team can be well equipped and still spend its day looking for the
+          next piece of context.
+        </p>
+        <p>
+          The brief is in a document. The approval is in a message. The project
+          status is in a spreadsheet someone updated yesterday. Each tool makes
+          sense on its own. The work between them is where the friction lives.
+        </p>
+        <p>
+          CIVOLYN is an imagined response to that familiar problem. It brings
+          automation, shared knowledge and operational insight into a single
+          product story. The aim is not to make every task automatic. It is to
+          help people understand the work well enough to choose what happens
+          next.
+        </p>
+        <p>
+          There is no invented founding date, office or customer list behind
+          this story. CIVOLYN is a fictional concept created for the ISMAIL
+          portfolio, where the quality of the actual website is the work on
+          show.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section feature-demo-section">
+    <div class="container story-section">
+      <div>
+        <p class="eyebrow">WHAT THE CONCEPT STANDS FOR</p>
+        <h2>
+          Good principles.
+          <br />
+          <em>Visible in the details.</em>
+        </h2>
+      </div>
+      <ol class="values-list">
+        <li>
+          <span class="number">01</span>
+          <div>
+            <h3>Clarity is a feature.</h3>
+            <p>
+              A useful tool helps people understand what they are looking at.
+              Clear labels, explicit states and readable explanations belong in
+              the product from the start.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="number">02</span>
+          <div>
+            <h3>People bring the judgment.</h3>
+            <p>
+              Context is rarely complete. Make room for questions, correction
+              and a considered decision before work moves beyond the team.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="number">03</span>
+          <div>
+            <h3>Connection should reduce effort.</h3>
+            <p>
+              Bringing tools together only matters if it makes the work easier
+              to follow. A shared foundation should remove repetition, rather
+              than create another layer to manage.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="number">04</span>
+          <div>
+            <h3>Details earn trust.</h3>
+            <p>
+              Say what is illustrative. Show where information comes from. Keep
+              promises proportionate to what the interface actually does.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container split-section">
+      <div>
+        <p class="eyebrow">THE REAL WORK BEHIND THE FICTION</p>
+        <h2>
+          A product imagined.
+          <br />
+          <em>A website made real.</em>
+        </h2>
+      </div>
+      <div>
+        <p>
+          CIVOLYN demonstrates how visual identity, careful writing, responsive
+          interfaces and considered interactions can work together to explain a
+          complex offering.
+        </p>
+        <p>
+          It is an original ISMAIL portfolio project, made for visitors who care
+          how a business presents itself online. If that is the kind of
+          attention your own website needs, the real conversation starts at
+          ISMAIL.
+        </p>
+        <a class="arrow-link" href={portfolio}>
+          Explore ISMAIL <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <CTA title="A more thoughtful way to explore what’s possible." />
+</Layout>

@@ -1,0 +1,126 @@
+---
+import '../styles/fonts.css';
+import manropeFont from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { pages } from '../data/site';
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+const page = pages.find((p) => p.path === Astro.url.pathname);
+const {
+  title = page?.title || 'Page not found',
+  description = page?.description ||
+    'Explore the CIVOLYN fictional concept by ISMAIL.',
+  noindex = false,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const indexable = !noindex && !__PREVIEW__;
+const fullTitle = `${title} · CIVOLYN`;
+const structured = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: fullTitle,
+  description,
+  url: canonical.href,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'CIVOLYN — fictional concept by ISMAIL',
+    url: Astro.site?.href,
+  },
+  inLanguage: 'en',
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F7F6F2" />
+    <meta name="color-scheme" content="light" />
+    <link
+      rel="preload"
+      href={manropeFont}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={indexable ? 'index, follow' : 'noindex, follow'}
+    />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_MY" />
+    <meta property="og:site_name" content="CIVOLYN · Fictional concept" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta
+      property="og:image"
+      content={new URL('/social-preview.png', Astro.site)}
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="CIVOLYN. Make room for better work. Fictional concept, an ISMAIL portfolio project."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta
+      name="twitter:image"
+      content={new URL('/social-preview.png', Astro.site)}
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(structured)} />
+  </head>
+  <body>
+    <noscript>
+      <style>
+        .menu-toggle {
+          display: none !important;
+        }
+        @media (max-width: 999px) {
+          .site-header {
+            position: static;
+          }
+          .header-inner {
+            flex-wrap: wrap;
+          }
+          .site-header nav {
+            display: flex;
+            position: static;
+            flex-direction: column;
+            align-items: stretch;
+            width: 100%;
+            max-height: none;
+            padding: 0 0 20px;
+            box-shadow: none;
+          }
+        }
+      </style>
+    </noscript>
+    <a href="#main" class="skip-link">
+      Skip to content
+    </a>
+    <Header />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import '../scripts/site';
+    </script>
+  </body>
+</html>

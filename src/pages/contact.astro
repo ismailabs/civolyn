@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { portfolio, whatsapp } from '../data/site';
+---
+
+<Layout>
+  <section class="page-intro">
+    <div class="container">
+      <p class="eyebrow">EXPLORE THE IDEA. START A REAL CONVERSATION.</p>
+      <h1>
+        See what better work
+        <br />
+        <em>could look like.</em>
+      </h1>
+      <p class="intro-copy">
+        Take a local product preview for a spin. Or, if you’re here for the
+        website itself, talk to ISMAIL about a real project.
+      </p>
+    </div>
+  </section>
+  <section class="container contact-grid">
+    <div class="contact-demo-panel" data-preview-picker>
+      <p class="eyebrow">01 / THE FICTIONAL PRODUCT EXPERIENCE</p>
+      <h2>
+        A demo, without
+        <br />
+        <em>the diary invitation.</em>
+      </h2>
+      <p>
+        CIVOLYN is a fictional concept · An ISMAIL portfolio project. There is
+        no sales team, booking service or live AI. Choose a preview and explore
+        prepared example data in your browser.
+      </p>
+      <label for="contact-product">What would you like to explore?</label>
+      <select id="contact-product">
+        <option value="flow">Flow</option>
+        <option value="knowledge">Knowledge</option>
+        <option value="signal">Signal</option>
+      </select>
+      <a
+        class="button button-blue"
+        href="/products/flow/#preview"
+        data-preview-link
+      >
+        Open Flow preview ↗
+      </a>
+      <div class="preview-facts">
+        <span>✓ No signup</span>
+        <span>✓ No personal details</span>
+        <span>✓ No form submission</span>
+      </div>
+    </div>
+    <div class="real-enquiry">
+      <p class="eyebrow">02 / A REAL WEBSITE CONVERSATION</p>
+      <h2>
+        Want a website
+        <br />
+        <em>like this?</em>
+      </h2>
+      <p>
+        The product is imagined. The care behind this website is real. Explore
+        ISMAIL’s work or start a conversation about a considered website for
+        your business.
+      </p>
+      <div class="button-row">
+        <a href={portfolio} class="button button-dark">
+          Explore ISMAIL <span aria-hidden="true">↗</span>
+        </a>
+        <a href={whatsapp} class="arrow-link">
+          Discuss your website on WhatsApp <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <p class="disclosure">
+        <span class="status-dot"></span> Genuine ISMAIL enquiry paths · No
+        message is sent automatically
+      </p>
+    </div>
+  </section>
+  <section class="section feature-demo-section">
+    <div class="container contact-notes">
+      <div>
+        <p class="eyebrow">WHAT HAPPENS IN A PREVIEW?</p>
+        <h3>Just the idea. In your hands.</h3>
+        <p>
+          Flow walks through a four-step example. Knowledge searches a tiny
+          sample library. Signal changes the perspective on prepared operational
+          data. Nothing is connected to a real company.
+        </p>
+        <a class="arrow-link" href="/compare/">
+          Compare the previews <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div>
+        <p class="eyebrow">A NOTE ABOUT YOUR INFORMATION</p>
+        <h3>No details needed.</h3>
+        <p>
+          This site does not collect a name, email address or business brief.
+          Search terms and control selections stay in browser memory. External
+          ISMAIL and WhatsApp pages have their own privacy practices.
+        </p>
+        <a class="arrow-link" href="/support/#privacy">
+          Read the privacy boundaries <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

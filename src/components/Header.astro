@@ -1,0 +1,68 @@
+---
+import Logo from './Logo.astro';
+const path = Astro.url.pathname;
+const active = (href: string) => (path === href ? 'page' : undefined);
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <Logo />
+    <button
+      class="menu-toggle"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+    >
+      <span>Menu</span>
+      <span class="menu-lines" aria-hidden="true"></span>
+    </button>
+    <nav id="primary-nav" aria-label="Main navigation">
+      <a href="/platform/" aria-current={active('/platform/')}>
+        Platform
+      </a>
+      <details class="nav-group">
+        <summary>
+          Products <span aria-hidden="true">⌄</span>
+        </summary>
+        <div class="nav-dropdown">
+          <a href="/products/flow/" aria-current={active('/products/flow/')}>
+            <b>↗ &nbsp; Flow</b>
+            <span>Let work move</span>
+          </a>
+          <a
+            href="/products/knowledge/"
+            aria-current={active('/products/knowledge/')}
+          >
+            <b>⌕ &nbsp; Knowledge</b>
+            <span>Find your context</span>
+          </a>
+          <a
+            href="/products/signal/"
+            aria-current={active('/products/signal/')}
+          >
+            <b>▥ &nbsp; Signal</b>
+            <span>See what matters</span>
+          </a>
+          <a href="/compare/">
+            Compare the products <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </details>
+      <a href="/technology/" aria-current={active('/technology/')}>
+        Technology
+      </a>
+      <a href="/journal/" aria-current={active('/journal/')}>
+        Journal
+      </a>
+      <a href="/company/" aria-current={active('/company/')}>
+        Company
+      </a>
+      <a
+        class="button button-dark nav-cta"
+        href="/contact/"
+        aria-current={active('/contact/')}
+      >
+        Explore a demo <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>

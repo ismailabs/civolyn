@@ -1,0 +1,23 @@
+---
+interface Props {
+  title?: string;
+  text?: string;
+}
+const {
+  title = 'Better work starts with a little clarity.',
+  text = 'Explore the ideas. Try the previews. Make room for what comes next.',
+} = Astro.props;
+---
+
+<section class="cta-section section">
+  <div class="container cta-inner">
+    <div>
+      <p class="eyebrow">A CLEARER WAY FORWARD</p>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <a class="button button-blue" href="/contact/">
+      Explore the demos <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>

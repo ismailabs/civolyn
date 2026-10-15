@@ -1,0 +1,184 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<Layout>
+  <section class="page-intro">
+    <div class="container">
+      <p class="eyebrow">TECHNOLOGY, WITH PERSPECTIVE</p>
+      <div class="intro-split">
+        <h1>
+          Intelligence with
+          <br />
+          <em>a visible process.</em>
+        </h1>
+        <p class="intro-copy">
+          A useful system should make its reasoning easier to inspect. CIVOLYN’s
+          conceptual architecture begins with context, keeps decisions visible
+          and leaves room for people to disagree.
+        </p>
+      </div>
+      <div class="intro-rule">
+        <span>
+          A proposed product architecture, not production infrastructure.
+        </span>
+        <span>CONCEPTUAL SYSTEM / 02</span>
+      </div>
+    </div>
+  </section>
+  <section class="container" aria-label="Conceptual architecture">
+    <h2 class="sr-only">Conceptual architecture</h2>
+    <div class="architecture-diagram">
+      <div class="arch-node">
+        <small>01 / CONTEXT</small>
+        <h3>Information sources</h3>
+        <p>Approved briefs, team playbooks and relevant operational records.</p>
+      </div>
+      <span aria-hidden="true">→</span>
+      <div class="arch-node primary">
+        <small>02 / ORCHESTRATION</small>
+        <h3>A visible working process</h3>
+        <p>
+          Scoped retrieval, suggested steps, readable state and a place to
+          pause.
+        </p>
+      </div>
+      <span aria-hidden="true">→</span>
+      <div class="arch-node">
+        <small>03 / PRESENTATION</small>
+        <h3>Results with context</h3>
+        <p>
+          Source references, clear status and information people can question.
+        </p>
+      </div>
+      <div class="architecture-review">
+        <span aria-hidden="true">↕</span>
+        <b>Human oversight</b>
+        <br />
+        Review · correct · approve · stop
+      </div>
+    </div>
+    <p class="section-caption">
+      <span>From context, through orchestration, to presentation.</span>
+      <span>Human oversight applies throughout.</span>
+    </p>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE PRINCIPLES BEHIND THE IDEA</p>
+          <h2>
+            Capability matters.
+            <br />
+            <em>So do its boundaries.</em>
+          </h2>
+        </div>
+        <p>
+          These are design intentions for an imagined platform. They are not
+          claims about implemented security controls, model performance or
+          certified infrastructure.
+        </p>
+      </div>
+      <div class="principles-grid">
+        <article>
+          <span class="number">01 / SCOPED INFORMATION</span>
+          <h3>The right context, for the task.</h3>
+          <p>
+            A future system would need explicit permissions for each information
+            source. Access to one workspace should not imply access to
+            everything a team knows.
+          </p>
+        </article>
+        <article>
+          <span class="number">02 / TRACEABLE OUTPUT</span>
+          <h3>A reference you can inspect.</h3>
+          <p>
+            An assisted summary should identify the material it draws from and
+            make uncertainty visible. When sources conflict, the interface
+            should help a reader see the disagreement.
+          </p>
+        </article>
+        <article>
+          <span class="number">03 / EXPLICIT CONTROL</span>
+          <h3>A person owns the decision.</h3>
+          <p>
+            Proposals and actions deserve different treatment. A draft may be
+            useful without being approved. Consequential steps should have a
+            clear owner, a review point and a way to stop.
+          </p>
+        </article>
+        <article>
+          <span class="number">04 / LEGIBLE STATE</span>
+          <h3>Know what has happened.</h3>
+          <p>
+            Waiting, suggested, approved and complete mean different things. The
+            interface should preserve those distinctions rather than make
+            activity look like certainty.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section class="section dark-section">
+    <div class="container split-section">
+      <div>
+        <p class="eyebrow">AI AS AN ASSISTANT TO JUDGMENT</p>
+        <h2>
+          Make a suggestion useful.
+          <br />
+          <em>Make its limits visible.</em>
+        </h2>
+      </div>
+      <div>
+        <p>
+          Language models can produce fluent text that is incomplete or wrong.
+          Retrieval can supply irrelevant context. A confident interface can
+          make both harder to notice.
+        </p>
+        <p>
+          The CIVOLYN concept puts references, review and clear state close to
+          the output. It imagines assistance with preparation and discovery,
+          while leaving decisions with an informed person.
+        </p>
+        <a class="arrow-link" href="/journal/#human-judgment">
+          Read the essay on human judgment <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container tech-two-col">
+      <div>
+        <p class="eyebrow">WHAT THIS WEBSITE ACTUALLY RUNS</p>
+        <h3>A small, static frontend.</h3>
+        <p>
+          Astro generates the pages as HTML. A little TypeScript handles
+          navigation and local previews. Fonts, artwork and styling are served
+          from the same site.
+        </p>
+        <ul>
+          <li>Flow updates a four-step example in browser memory.</li>
+          <li>Knowledge searches prepared sample text on the page.</li>
+          <li>Signal selects between three fixed example datasets.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">WHAT A REAL PRODUCT WOULD STILL NEED</p>
+        <h3>The difficult work behind the screen.</h3>
+        <p>
+          A production platform would require a separately designed and
+          evaluated backend, permission model, data lifecycle, audit trail and
+          operational support.
+        </p>
+        <ul>
+          <li>Real identity and source-level authorisation.</li>
+          <li>Model evaluation, error handling and safety controls.</li>
+          <li>Verified infrastructure, privacy practices and reliability.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <CTA title="Explore the thinking through the experience." />
+</Layout>

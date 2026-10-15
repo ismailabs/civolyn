@@ -1,0 +1,55 @@
+---
+import Logo from './Logo.astro';
+import { portfolio } from '../data/site';
+---
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div>
+      <Logo />
+      <p>
+        Less friction.
+        <br />
+        More clarity. Better progress.
+      </p>
+      <p class="disclosure">
+        <span class="status-dot"></span> Fictional concept · An ISMAIL portfolio
+        project
+      </p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h2>Explore</h2>
+        <a href="/platform/">Platform</a>
+        <a href="/products/flow/">Flow</a>
+        <a href="/products/knowledge/">Knowledge</a>
+        <a href="/products/signal/">Signal</a>
+        <a href="/compare/">Compare products</a>
+      </div>
+      <div>
+        <h2>Perspective</h2>
+        <a href="/technology/">Technology</a>
+        <a href="/design/">Design & experience</a>
+        <a href="/company/">Our story</a>
+        <a href="/journal/">Journal</a>
+      </div>
+      <div>
+        <h2>A little help</h2>
+        <a href="/support/">Support & FAQs</a>
+        <a href="/contact/">Explore a demo</a>
+        <a href={portfolio}>
+          Explore ISMAIL <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>
+      © {new Date().getFullYear()} CIVOLYN concept. Designed with intention.
+    </span>
+    <a href={portfolio}>
+      An original project by ISMAIL <span aria-hidden="true">↗</span>
+    </a>
+    <a href="/support/#privacy">About these previews</a>
+  </div>
+</footer>

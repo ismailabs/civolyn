@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FlowDemo from '../../components/FlowDemo.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Layout>
+  <section class="product-hero flow-hero">
+    <div class="container product-hero-grid">
+      <div>
+        <p class="product-label">
+          <span class="app-icon blue" aria-hidden="true">
+            ↗
+          </span>{' '}
+          CIVOLYN Flow
+        </p>
+        <h1>
+          Let the busywork
+          <br />
+          <em class="text-blue">move itself.</em>
+        </h1>
+        <p class="intro-copy">
+          Some work needs your best thinking. Some work just needs a clear next
+          step. Flow imagines a better way to tell the difference.
+        </p>
+        <div class="button-row">
+          <a class="button button-blue" href="#preview">
+            Try the local preview <span aria-hidden="true">↓</span>
+          </a>
+          <a class="text-button" href="/compare/">
+            Compare products ↗
+          </a>
+        </div>
+        <p class="disclosure">
+          <span class="status-dot"></span> Fictional product · No real
+          automation or integrations
+        </p>
+      </div>
+      <div class="product-preview-art" id="preview">
+        <FlowDemo />
+      </div>
+    </div>
+  </section>
+  <div class="note-strip">
+    <div class="container">
+      <span>
+        Every action in this preview happens locally. No brief is received and
+        no project is created.
+      </span>
+      <a href="/support/#privacy">About the examples ↗</a>
+    </div>
+  </div>
+  <section class="section">
+    <div class="container product-benefits">
+      <div class="reveal">
+        <p class="eyebrow">STRUCTURE WHERE IT HELPS</p>
+        <h2>
+          Make the routine clear.
+          <br />
+          <em>Keep judgment human.</em>
+        </h2>
+      </div>
+      <ol class="numbered-list">
+        <li>
+          <span class="number">01</span>
+          <div>
+            <h3>Start with a visible trigger.</h3>
+            <p>
+              A client brief, an internal request or a reporting date could
+              begin a process. Define the starting point so people know why the
+              work is happening.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="number">02</span>
+          <div>
+            <h3>Give each step a purpose.</h3>
+            <p>
+              Collect the relevant context, route a task and identify the next
+              owner. The conceptual builder favours understandable steps over a
+              tangle of hidden rules.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="number">03</span>
+          <div>
+            <h3>Pause for a person.</h3>
+            <p>
+              Before a proposal leaves the team, let someone read it. The
+              preview stops at a review checkpoint and only continues when you
+              approve the example.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="number">04</span>
+          <div>
+            <h3>Leave a readable trail.</h3>
+            <p>
+              Status changes show what is ready, waiting or complete. A useful
+              workflow history would explain the handover, rather than merely
+              record a timestamp.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="section feature-demo-section">
+    <div class="container">
+      <p class="eyebrow">FAMILIAR WORK. A MORE CONSIDERED PATH.</p>
+      <h2>
+        Think of the tasks
+        <br />
+        <em>that keep coming back.</em>
+      </h2>
+      <div class="use-case-row">
+        <article>
+          <h3>A warmer onboarding.</h3>
+          <p>
+            Move from an approved brief to a first milestone with less chasing.
+            Make the handover clear before the team begins.
+          </p>
+        </article>
+        <article>
+          <h3>A calmer approval queue.</h3>
+          <p>
+            Know what needs a decision, which context to read and who is
+            responsible for the next move.
+          </p>
+        </article>
+        <article>
+          <h3>A useful weekly report.</h3>
+          <p>
+            Bring prepared updates together, ask for a review and make the final
+            summary easier to understand.
+          </p>
+        </article>
+      </div>
+      <div class="boundary-note">
+        <p>
+          <b>A product idea, not a connected service.</b> Flow’s preview is a
+          deterministic four-step example. There is no workflow editor,
+          background execution, message delivery or external connection. Refresh
+          to return to the beginning.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container split-section">
+      <div>
+        <p class="eyebrow">BETTER WITH CONTEXT</p>
+        <h2>
+          A process is only as useful
+          <br />
+          <em>as what it understands.</em>
+        </h2>
+        <p>
+          Knowledge keeps the example playbook close. Signal makes the pattern
+          of work easier to explore. Together, the three concepts tell a more
+          complete story.
+        </p>
+        <a class="arrow-link" href="/platform/">
+          See how the platform connects <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div class="design-demo">
+        <p class="eyebrow">A QUESTION BEFORE AUTOMATION</p>
+        <h3>Which decision should stay with a person?</h3>
+        <p>
+          Start there. Then work backwards to the information, ownership and
+          steps that make that decision easier.
+        </p>
+        <div class="preview-description">
+          In this example: a person approves the proposed project handover
+          before it becomes ready for the team.
+        </div>
+        <a class="arrow-link" href="/journal/#responsible-automation">
+          Read about responsible automation <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <CTA />
+  <div class="container product-nav">
+    <a href="/platform/">← Back to the platform</a>
+    <a href="/products/knowledge/">Next: Knowledge ↗</a>
+  </div>
+</Layout>

@@ -1,0 +1,117 @@
+---
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+---
+
+<div
+  class:list={['workspace', { compact }]}
+  role="region"
+  aria-label="Illustrative CIVOLYN workspace"
+>
+  <h2 class="sr-only">Illustrative CIVOLYN workspace</h2>
+  <aside class="workspace-sidebar" aria-hidden="true">
+    <div class="app-mark">C</div>
+    <span class="selected">⌂</span>
+    <span>↗</span>
+    <span>⌕</span>
+    <span>▥</span>
+    <div class="sidebar-bottom">CV</div>
+  </aside>
+  <div class="workspace-main">
+    <div class="workspace-top">
+      <span>
+        Workspace <span class="slash">/</span> Overview
+      </span>
+      <span class="sample-pill">Illustrative workspace</span>
+    </div>
+    <div class="workspace-greeting">
+      <div>
+        <p class="mini-label">YOUR DAY, WITH A LITTLE MORE CLARITY</p>
+        <h3>Good things are in motion.</h3>
+        <p>Here’s where your team’s work comes together.</p>
+      </div>
+      <span class="avatar" aria-hidden="true">
+        A
+      </span>
+    </div>
+    <div class="workspace-search">
+      <span aria-hidden="true">⌕</span>
+      <span>A clearer view of your work starts here.</span>
+      <span class="search-arrow" aria-hidden="true">
+        ↗
+      </span>
+    </div>
+    <div class="workspace-products">
+      <a href="/products/flow/">
+        <span class="app-icon blue">↗</span>
+        <b>Move work forward</b>
+        <small>
+          Explore Flow <span aria-hidden="true">↗</span>
+        </small>
+      </a>
+      <a href="/products/knowledge/">
+        <span class="app-icon green">⌕</span>
+        <b>Find your context</b>
+        <small>
+          Explore Knowledge <span aria-hidden="true">↗</span>
+        </small>
+      </a>
+      <a href="/products/signal/">
+        <span class="app-icon lavender">▥</span>
+        <b>See what matters</b>
+        <small>
+          Explore Signal <span aria-hidden="true">↗</span>
+        </small>
+      </a>
+    </div>
+    <div class="workspace-bottom">
+      <div class="activity">
+        <div class="panel-heading">
+          <b>Work in motion</b>
+          <span>Example activity</span>
+        </div>
+        <div class="activity-row">
+          <span class="activity-dot blue"></span>
+          <div>
+            <b>Client onboarding</b>
+            <small>Ready for a human review</small>
+          </div>
+          <span class="tiny-tag">Flow</span>
+        </div>
+        <div class="activity-row">
+          <span class="activity-dot green"></span>
+          <div>
+            <b>Project playbook</b>
+            <small>A source for your next question</small>
+          </div>
+          <span class="tiny-tag">Knowledge</span>
+        </div>
+        <div class="activity-row">
+          <span class="activity-dot lavender"></span>
+          <div>
+            <b>Weekly operations</b>
+            <small>A new perspective on progress</small>
+          </div>
+          <span class="tiny-tag">Signal</span>
+        </div>
+      </div>
+      <div class="mini-chart">
+        <div class="panel-heading">
+          <b>A week in view</b>
+          <span>Example data</span>
+        </div>
+        <div class="chart-bars" aria-hidden="true">
+          {[35, 58, 46, 76, 63, 91, 72].map((h, i) => (
+            <div>
+              <span style={`height:${h}%`}></span>
+              <small>{['M', 'T', 'W', 'T', 'F', 'S', 'S'][i]}</small>
+            </div>
+          ))}
+        </div>
+        <p>24 example workflows completed</p>
+      </div>
+    </div>
+  </div>
+</div>

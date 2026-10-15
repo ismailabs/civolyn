@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
+const rows = [
+  [
+    'The main question',
+    'What needs to happen next?',
+    'What do we already know?',
+    'What does the activity tell us?',
+  ],
+  [
+    'A useful starting point',
+    'A recurring process with unclear handovers.',
+    'Information spread across team resources.',
+    'Operational figures that need context.',
+  ],
+  [
+    'Conceptual capabilities',
+    'Visual steps, triggers, routing, approval checkpoints and status history.',
+    'Connected discovery, source references, summaries and organised collections.',
+    'Labelled dashboards, time filters, trend exploration and readable reporting.',
+  ],
+  [
+    'Example use cases',
+    'Client onboarding, intake, approvals and recurring reports.',
+    'Playbooks, project briefs, internal policies and research notes.',
+    'Completion volume, review queues and operational reporting.',
+  ],
+  [
+    'What the local preview does',
+    'Advance four sample steps, explicitly approve a review and reset.',
+    'Search six example documents, filter by type and read prepared snippets.',
+    'Select a week, month or quarter and inspect matching chart and table values.',
+  ],
+  [
+    'Where human judgment belongs',
+    'Approving a consequential handover.',
+    'Checking a source and whether it applies.',
+    'Interpreting a pattern before choosing an action.',
+  ],
+  [
+    'What is not connected here',
+    'No live triggers, messages or external workflows.',
+    'No private documents, AI model or uploaded files.',
+    'No live analytics, forecasts or business records.',
+  ],
+];
+---
+
+<Layout>
+  <section class="page-intro">
+    <div class="container">
+      <p class="eyebrow">COMPARE THE PRODUCTS</p>
+      <h1>
+        Start with the work
+        <br />
+        <em>in front of you.</em>
+      </h1>
+      <p class="intro-copy">
+        Three products, three different jobs. Choose the point where work feels
+        unclear, then explore how the other perspectives might help.
+      </p>
+    </div>
+  </section>
+  <section class="container" aria-label="Product starting point finder">
+    <div class="compare-selector" data-compare>
+      <fieldset>
+        <legend>What would you like to make clearer?</legend>
+        <label class="compare-choice">
+          <input type="radio" name="starting-point" value="process" checked /> A
+          process that needs a better path.
+        </label>
+        <label class="compare-choice">
+          <input type="radio" name="starting-point" value="context" />{' '}
+          Information that is hard to find.
+        </label>
+        <label class="compare-choice">
+          <input type="radio" name="starting-point" value="insight" /> Numbers
+          that need a useful perspective.
+        </label>
+      </fieldset>
+      <div class="compare-result" aria-live="polite">
+        <p class="eyebrow">YOUR CONCEPTUAL STARTING POINT</p>
+        <h2 data-compare-title>Start with Flow.</h2>
+        <p data-compare-body>
+          When the same request keeps crossing the same desks, make its steps
+          explicit. Flow explores triggers, visible handovers and a human review
+          before the work moves on.
+        </p>
+        <a class="arrow-link" href="/products/flow/" data-compare-link>
+          Try the Flow preview ↗
+        </a>
+      </div>
+    </div>
+    <p class="section-caption">
+      <span>
+        A simple guide to fictional products. No assessment or recommendation
+        service.
+      </span>
+    </p>
+  </section>
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">THE DETAILS, SIDE BY SIDE</p>
+      <h2>
+        Different capabilities.
+        <br />
+        <em>A connected way of thinking.</em>
+      </h2>
+      <div
+        class="table-wrap comparison-table"
+        tabindex="0"
+        role="region"
+        aria-label="Scrollable product comparison"
+      >
+        <table>
+          <caption>
+            Compare CIVOLYN’s fictional product concepts and implemented local
+            previews. On a narrow screen, scroll the table horizontally.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">A closer look</th>
+              <th scope="col">
+                <a class="table-product" href="/products/flow/">
+                  ↗ &nbsp; Flow
+                </a>
+              </th>
+              <th scope="col">
+                <a class="table-product" href="/products/knowledge/">
+                  ⌕ &nbsp; Knowledge
+                </a>
+              </th>
+              <th scope="col">
+                <a class="table-product" href="/products/signal/">
+                  ▥ &nbsp; Signal
+                </a>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr>
+                <th scope="row">{row[0]}</th>
+                {row.slice(1).map((value) => (
+                  <td>{value}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  <section class="section dark-section">
+    <div class="container split-section">
+      <div>
+        <p class="eyebrow">A BETTER TOGETHER STORY</p>
+        <h2>
+          The work doesn’t end
+          <br />
+          <em>at the edge of a tool.</em>
+        </h2>
+      </div>
+      <div>
+        <p>
+          A process often needs a reference. A report often raises a question
+          about a process. A useful reference often points to a decision someone
+          still needs to make.
+        </p>
+        <p>
+          Flow, Knowledge and Signal are imagined as parts of one experience.
+          You can explore them separately here, with no signup and no connection
+          to real business information.
+        </p>
+        <a class="arrow-link" href="/platform/">
+          See the connected platform concept <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <CTA title="Choose a starting point. Follow your curiosity." />
+</Layout>

@@ -1,0 +1,174 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import KnowledgeDemo from '../../components/KnowledgeDemo.astro';
+import CTA from '../../components/CTA.astro';
+---
+
+<Layout>
+  <section class="product-hero-wide">
+    <div class="container">
+      <p class="product-label">
+        <span class="app-icon green" aria-hidden="true">
+          ⌕
+        </span>{' '}
+        CIVOLYN Knowledge
+      </p>
+      <div class="headline-row">
+        <h1>
+          Find clarity in everything
+          <br />
+          <em>your team knows.</em>
+        </h1>
+        <p class="intro-copy">
+          The answer may already exist. In a playbook, a project note, a policy.
+          Give the good thinking a place to be found.
+        </p>
+      </div>
+      <div class="button-row">
+        <a href="#preview" class="button button-dark">
+          Search the example library <span aria-hidden="true">↓</span>
+        </a>
+        <span class="disclosure">
+          <span class="status-dot"></span> Fictional concept · No connected
+          sources or live AI
+        </span>
+      </div>
+    </div>
+  </section>
+  <section
+    class="container"
+    id="preview"
+    aria-label="Knowledge interactive preview"
+  >
+    <div class="full-demo-stage">
+      <KnowledgeDemo />
+    </div>
+    <p class="section-caption">
+      <span>
+        Six original sample documents. Search, filter and open a source.
+      </span>
+      <span>Local preview / Knowledge</span>
+    </p>
+  </section>
+  <section class="section">
+    <div class="container product-benefits">
+      <div class="reveal">
+        <p class="eyebrow">FROM SCATTERED TO SHARED</p>
+        <h2>
+          A good answer should
+          <br />
+          <em>show where it came from.</em>
+        </h2>
+      </div>
+      <ol class="numbered-list">
+        <li>
+          <span class="number">01</span>
+          <div>
+            <h3>Search for the thing you need.</h3>
+            <p>
+              Try a topic like onboarding or review. The example library matches
+              words in titles and document text, then narrows results by
+              category.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="number">02</span>
+          <div>
+            <h3>Keep the source in sight.</h3>
+            <p>
+              Open a result to read its prepared snippet and source reference. A
+              confident-sounding answer should never replace the opportunity to
+              inspect the original context.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="number">03</span>
+          <div>
+            <h3>Organise by how people work.</h3>
+            <p>
+              Guides explain a practice. Projects record a decision. Policies
+              set a boundary. Those distinctions help a reader know what kind of
+              information they have found.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="section dark-section">
+    <div class="container split-section">
+      <div>
+        <p class="eyebrow">A LITTLE CONTEXT GOES A LONG WAY</p>
+        <h2>
+          Not just an answer.
+          <br />
+          <em>A better starting point.</em>
+        </h2>
+      </div>
+      <div>
+        <p>
+          A project lead looking for an onboarding checklist needs more than a
+          paragraph. They need to know which practice it describes, when it
+          applies and who should make the next decision.
+        </p>
+        <p>
+          In the imagined platform, summaries would help people orient
+          themselves while references preserve the path back to the source. In
+          this website, all snippets are original prepared examples. No
+          generated answer is presented as a fact.
+        </p>
+        <a class="arrow-link" href="/technology/">
+          Read the conceptual AI principles <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">KNOWLEDGE THAT HAS SOMEWHERE TO GO</p>
+      <h2>
+        Useful at the moment
+        <br />
+        <em>it becomes relevant.</em>
+      </h2>
+      <div class="use-case-row">
+        <article>
+          <h3>Before a new project.</h3>
+          <p>
+            Find the intake playbook and turn an unclear request into a brief
+            the team can actually use.
+          </p>
+        </article>
+        <article>
+          <h3>During an approval.</h3>
+          <p>
+            Bring the review policy into view. Separate what has been proposed
+            from what has been agreed.
+          </p>
+        </article>
+        <article>
+          <h3>At the weekly review.</h3>
+          <p>
+            Read the team practice, revisit the reasoning and record the next
+            action with its owner.
+          </p>
+        </article>
+      </div>
+      <div class="boundary-note">
+        <p>
+          <b>Search without a connection.</b> The six samples are bundled into
+          the page. Queries stay in this browser. There is no semantic search
+          model, document upload, real source permission system or persistent
+          library.
+        </p>
+      </div>
+    </div>
+  </section>
+  <CTA title="Bring a little more context to the work." />
+  <div class="container product-nav">
+    <a href="/products/flow/">← Previous: Flow</a>
+    <a href="/products/signal/">Next: Signal ↗</a>
+  </div>
+</Layout>

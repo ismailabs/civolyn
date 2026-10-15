@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Workspace from '../components/Workspace.astro';
+import ProductShelf from '../components/ProductShelf.astro';
+import FlowDemo from '../components/FlowDemo.astro';
+import CTA from '../components/CTA.astro';
+import { portfolio } from '../data/site';
+---
+
+<Layout>
+  <section class="home-hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">A LITTLE LESS FRICTION. A LOT MORE POSSIBILITY.</p>
+        <h1>
+          Make room
+          <br />
+          for <span class="text-blue">better work.</span>
+        </h1>
+        <p>
+          Work that moves. Knowledge that connects. Insights that make sense.
+          Meet a more considered way to bring your team’s world together.
+        </p>
+        <div class="button-row">
+          <a class="button button-blue" href="/platform/">
+            Explore the platform <span aria-hidden="true">↗</span>
+          </a>
+          <a class="text-button" href="#in-motion">
+            See it in motion <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+        <p class="disclosure">
+          <span class="status-dot"></span> Fictional concept · An ISMAIL
+          portfolio project
+        </p>
+      </div>
+      <div class="hero-stage">
+        <div class="hero-architecture" aria-hidden="true">
+          <img
+            src="/images/clarity-architecture-960.webp"
+            srcset="/images/clarity-architecture-640.webp 640w, /images/clarity-architecture-960.webp 960w, /images/clarity-architecture-1440.webp 1440w"
+            sizes="(max-width: 999px) 95vw, 60vw"
+            width="1440"
+            height="960"
+            fetchpriority="high"
+            alt=""
+          />
+        </div>
+        <Workspace compact />
+        <div class="hero-stage-caption">
+          <span>ONE WORKSPACE. THREE CONNECTED PERSPECTIVES.</span>
+          <span>DESIGNED AROUND PEOPLE.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="home-bridge">
+    <div class="container">
+      <p>
+        From the first request to the next good decision.
+        <br />
+        <b>A clearer line between the things that matter.</b>
+      </p>
+      <div class="bridge-products">
+        <a href="/products/flow/">
+          <span aria-hidden="true">↗</span> Flow
+        </a>
+        <a href="/products/knowledge/">
+          <span aria-hidden="true">⌕</span> Knowledge
+        </a>
+        <a href="/products/signal/">
+          <span aria-hidden="true">▥</span> Signal
+        </a>
+      </div>
+    </div>
+  </div>
+  <section class="section home-products">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">THREE PRODUCTS. ONE SHARED PURPOSE.</p>
+          <h2>
+            Less time finding your way.
+            <br />
+            <em>More time moving forward.</em>
+          </h2>
+        </div>
+        <p>
+          Your work doesn’t happen in separate boxes. Your tools shouldn’t think
+          that way either. Each CIVOLYN product brings a different kind of
+          clarity.
+        </p>
+      </div>
+      <ProductShelf />
+      <p class="section-caption">
+        <span>Original product concepts · Illustrative interfaces</span>
+        <a href="/compare/">Find your starting point ↗</a>
+      </p>
+    </div>
+  </section>
+  <section class="section feature-demo-section" id="in-motion">
+    <div class="container demo-editorial">
+      <div class="reveal">
+        <p class="eyebrow">A SMALL PREVIEW OF A BIGGER IDEA</p>
+        <h2>
+          Good work needs a path.
+          <br />
+          <em>And a human touch.</em>
+        </h2>
+        <p>
+          Walk through a sample client onboarding with Flow. Watch each step
+          become clearer, then decide when the work is ready to move on. A
+          little structure. Room for judgment.
+        </p>
+        <a class="arrow-link" href="/products/flow/">
+          Get to know Flow <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <FlowDemo />
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">THOUGHTFUL, FROM THE INSIDE OUT</p>
+          <h2>
+            Intelligence is useful.
+            <br />
+            <em>Understanding is essential.</em>
+          </h2>
+        </div>
+        <p>
+          We imagine software that explains itself, respects attention and keeps
+          people close to the decisions.
+        </p>
+      </div>
+      <div class="editorial-duo">
+        <article class="editorial-tile tile-technology">
+          <div>
+            <p class="eyebrow">01 / THE THINKING BEHIND THE SYSTEM</p>
+            <h3>
+              A visible process.
+              <br />A more informed decision.
+            </h3>
+            <div class="editorial-visual" aria-hidden="true">
+              <div class="architecture-lines">
+                <span>Context</span>
+                <i>→</i>
+                <span>Review</span>
+                <i>→</i>
+                <span>Direction</span>
+              </div>
+            </div>
+          </div>
+          <a href="/technology/" class="arrow-link">
+            Explore the technology concept <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+        <article class="editorial-tile tile-design">
+          <div>
+            <p class="eyebrow">02 / THE FEELING OF A BETTER TOOL</p>
+            <h3>
+              Less to figure out.
+              <br />
+              More room to think.
+            </h3>
+            <div class="editorial-visual" aria-hidden="true">
+              <span class="type-specimen">
+                Aa<em>↗</em>
+              </span>
+            </div>
+          </div>
+          <a href="/design/" class="arrow-link">
+            Discover our design perspective <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+  <CTA />
+  <aside class="portfolio-band">
+    <div class="container">
+      <p>
+        <b>A fictional platform. A real attention to detail.</b>
+        <br />
+        CIVOLYN is an original website concept, designed and built for the
+        ISMAIL portfolio.
+      </p>
+      <a class="arrow-link" href={portfolio}>
+        Want a website like this? <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </aside>
+</Layout>

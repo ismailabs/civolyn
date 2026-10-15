@@ -1,0 +1,93 @@
+---
+import { documents } from '../data/site';
+---
+
+<div class="demo-shell knowledge-demo" data-knowledge>
+  <div class="demo-toolbar">
+    <div>
+      <span class="app-icon green">⌕</span>
+      <div>
+        <b>A good place to find an answer.</b>
+        <small>CIVOLYN Knowledge · Local preview</small>
+      </div>
+    </div>
+    <span class="sample-pill">Illustrative documents</span>
+  </div>
+  <div class="knowledge-body">
+    <label class="input-label" for="knowledge-search">
+      Search the example library
+    </label>
+    <div class="search-field">
+      <span aria-hidden="true">⌕</span>
+      <input
+        id="knowledge-search"
+        type="search"
+        placeholder="Try “onboarding” or “review”…"
+        autocomplete="off"
+        data-knowledge-search
+      />
+      <kbd aria-hidden="true">↵</kbd>
+    </div>
+    <fieldset class="filter-chips">
+      <legend class="sr-only">Filter by document type</legend>
+      {['All', 'Guides', 'Projects', 'Policies'].map((label) => (
+        <label>
+          <input
+            type="radio"
+            name="document-type"
+            value={label}
+            checked={label === 'All'}
+          />
+          <span>{label}</span>
+        </label>
+      ))}
+    </fieldset>
+    <p class="results-count" role="status" data-knowledge-count>
+      {documents.length} example documents
+    </p>
+    <div class="document-list">
+      {documents.map((doc, i) => (
+        <details
+          data-document
+          data-type={doc.type}
+          data-search={`${doc.title} ${doc.text} ${doc.type}`.toLowerCase()}
+        >
+          <summary>
+            <span class="document-icon" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <span>
+              <b>{doc.title}</b>
+              <small>
+                {doc.source} · {doc.type}
+              </small>
+            </span>
+            <span class="document-open" aria-hidden="true">
+              +
+            </span>
+          </summary>
+          <div class="document-content">
+            <p>{doc.text}</p>
+            <p class="source-ref">
+              Illustrative source: {doc.source}. Prepared sample text, not an
+              AI-generated answer.
+            </p>
+          </div>
+        </details>
+      ))}
+    </div>
+    <div class="empty-state" data-knowledge-empty hidden>
+      <b>No example documents found.</b>
+      <p>
+        Try a broader term, or choose All. This library only contains the six
+        supplied samples.
+      </p>
+      <button class="text-button" data-knowledge-reset>
+        Clear search and filters
+      </button>
+    </div>
+    <p class="demo-note">
+      A small, local library. No private sources, connected accounts or live AI.
+    </p>
+  </div>
+</div>
