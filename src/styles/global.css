@@ -319,12 +319,9 @@
     white-space: nowrap;
   }
   .will-reveal {
-    transition:
-      opacity 0.65s,
-      transform 0.65s;
+    transition: transform 0.65s;
   }
   .will-reveal:not(.is-visible) {
-    opacity: 0;
     transform: translateY(14px);
   }
   .site-header {

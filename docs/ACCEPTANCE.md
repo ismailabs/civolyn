@@ -24,7 +24,7 @@ Environment: Windows, Node 24.19.0, npm 11.17.0, Astro 7.4.0, TypeScript 6.0.3, 
 | `npm run check`                                     | 37 files checked; 0 errors, 0 warnings, 0 hints                                                                                 |
 | `npm run build`                                     | Static output completed; 12 primary pages plus 404, robots and sitemap utilities                                                |
 | `npm run test:static`                               | 12 unique titles and descriptions; 313 internal link references and 86 asset references checked; sitemap has exactly 12 entries |
-| Client output budgets                               | 7,578 bytes of JavaScript; 64,956 bytes of CSS before transport compression                                                     |
+| Client output budgets                               | 7,578 bytes of JavaScript; 64,933 bytes of CSS before transport compression                                                     |
 | `npm run verify` after clean install                | Passed, including all 57 browser tests                                                                                          |
 | `npm run test:preview`                              | Separate preview build emitted noindex metadata while retaining the intended production canonical                               |
 | Gitleaks v8.30.1 staged scan                        | No leaks found; scanner downloaded from its official release and checksum verified                                              |
@@ -48,9 +48,11 @@ Early checks caught font/CSP mismatches, contrast and labelling problems, missin
 
 Concurrent browser runs also hit timeouts in multi-page batches. Their traces were retained under ignored local artifacts. The final configuration uses one local browser worker, two in CI, zero retries and the normal 30-second test timeout. Screenshot tests are separate per page and viewport. The unchanged functional assertions passed in the final run.
 
+The first GitHub Actions Linux run identified a contrast edge case during opacity-based scroll entrances. The entrance effect now moves text while retaining full opacity, preserving readable contrast throughout the transition. The accessibility assertions remain unchanged.
+
 ## Performance measurements
 
-Lighthouse 13.5.0 was run against the built site on the local QA server using its mobile lab configuration. Three final samples were captured for each representative route. These are local simulated-throttling results on Windows, served over local HTTP without production CDN transport compression.
+Lighthouse 13.5.0 was run against the built site on the local QA server using its mobile lab configuration. Three post-tuning samples were captured for each representative route. These are local simulated-throttling results on Windows, served over local HTTP without production CDN transport compression. This benchmark was captured after headline tuning and before the final scroll-opacity accessibility correction.
 
 | Route   | Median performance score (range) | Median LCP | Highest CLS | Median TBT |
 | ------- | -------------------------------- | ---------- | ----------- | ---------- |
@@ -58,13 +60,13 @@ Lighthouse 13.5.0 was run against the built site on the local QA server using it
 | Signal  | 98 (96–99)                       | 1.548 s    | 0.0003      | 147 ms     |
 | Journal | 99 (94–99)                       | 1.818 s    | 0.0413      | 0 ms       |
 
-Accessibility, SEO and best-practices scores were 100 in every final sample. All nine final LCP measurements were below 2.5 seconds; the highest was 2.459 seconds. No Lighthouse runtime errors were reported.
+Accessibility, SEO and best-practices scores were 100 in every benchmark sample. All nine benchmark LCP measurements were below 2.5 seconds; the highest was 2.459 seconds. No Lighthouse runtime errors were reported.
 
-There was meaningful local performance variation. Earlier samples ranged from 61 to 99 for Home and 74 to 97 for Signal. The homepage's explicitly authored headline now uses normal wrapping, avoiding unnecessary text balancing. The final homepage samples were 79, 98 and 99; the first still recorded 822 ms of total blocking time. This is retained as a limitation of the measured experience, not presented as a uniformly perfect score. The results do not establish a causal explanation for every slow sample.
+There was meaningful local performance variation. Earlier samples ranged from 61 to 99 for Home and 74 to 97 for Signal. The homepage's explicitly authored headline now uses normal wrapping, avoiding unnecessary text balancing. The post-tuning homepage samples were 79, 98 and 99; the first still recorded 822 ms of total blocking time. This is retained as a limitation of the measured experience, not presented as a uniformly perfect score. The results do not establish a causal explanation for every slow sample.
 
 The original Windows Chrome launcher failed to start. The performance script now launches an owned Playwright Chromium instance and lets Lighthouse attach through a temporary local debugging port. This produced actual Lighthouse reports; no performance score was inferred from bundle size or browser smoke tests.
 
-The complete raw final reports are in `artifacts/lighthouse-final-1/`, `artifacts/lighthouse-final-2/` and `artifacts/lighthouse-final-3/`. Earlier reports are retained separately. Repeat measurements on the eventual hosted site and real devices before making a field performance claim. TBT is a lab metric and does not establish real-user INP.
+The complete raw benchmark reports are in `artifacts/lighthouse-final-1/`, `artifacts/lighthouse-final-2/` and `artifacts/lighthouse-final-3/`. Earlier reports are retained separately. Repeat measurements on the eventual hosted site and real devices before making a field performance claim. TBT is a lab metric and does not establish real-user INP.
 
 ## Evidence boundaries
 
