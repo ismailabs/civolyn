@@ -298,6 +298,7 @@ test('skip link, reduced motion, true 404 and production SEO', async ({
 });
 test('no analytics requests or private search transmission', async ({
   page,
+  baseURL,
 }) => {
   const requests: string[] = [];
   page.on('request', (r) => requests.push(r.url()));
@@ -306,7 +307,7 @@ test('no analytics requests or private search transmission', async ({
   await page.getByLabel('Guides', { exact: true }).check();
   expect(requests.some((u) => u.includes('PRIVATE_SENTINEL'))).toBeFalsy();
   expect(
-    requests.every((u) => new URL(u).origin === 'http://127.0.0.1:4321'),
+    requests.every((u) => new URL(u).origin === new URL(baseURL!).origin),
   ).toBeTruthy();
 });
 test('journal has three actual original article routes', async ({ page }) => {
@@ -320,14 +321,16 @@ test('journal has three actual original article routes', async ({ page }) => {
 });
 test('without JavaScript all core content and sample data remain usable', async ({
   browser,
+  baseURL,
 }) => {
   const context = await browser.newContext({
+      baseURL,
       javaScriptEnabled: false,
       viewport: { width: 390, height: 900 },
     }),
     page = await context.newPage();
   for (const route of routes) {
-    await page.goto('http://127.0.0.1:4321' + route);
+    await page.goto(route);
     await expect(page.locator('h1')).toBeVisible();
     await expect(
       page.getByRole('navigation', { name: 'Main navigation' }),
@@ -338,7 +341,7 @@ test('without JavaScript all core content and sample data remain usable', async 
       ),
     ).toBeTruthy();
   }
-  await page.goto('http://127.0.0.1:4321/products/knowledge/');
+  await page.goto('/products/knowledge/');
   await expect(page.locator('[data-document]')).toHaveCount(6);
   await page
     .locator('[data-knowledge]')
@@ -348,7 +351,7 @@ test('without JavaScript all core content and sample data remain usable', async 
   await expect(
     page.getByRole('button', { name: 'Menu', exact: true }),
   ).toBeHidden();
-  await page.goto('http://127.0.0.1:4321/products/insights/');
+  await page.goto('/products/insights/');
   await page
     .getByText('Read the underlying example data', { exact: true })
     .click();
