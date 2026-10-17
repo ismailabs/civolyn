@@ -1,9 +1,11 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "proworks",
+  "account_id": "44214a829e2337ca50cf40e4cd827cba",
   "compatibility_date": "2026-10-17",
   "workers_dev": false,
   "preview_urls": false,
+  "routes": [{ "pattern": "proworks.ismailstudio.my", "custom_domain": true }],
   "assets": {
     "directory": "./dist",
     "html_handling": "force-trailing-slash",

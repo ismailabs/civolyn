@@ -1,5 +1,7 @@
 # PROWORKS release report — 17 October 2026
 
+> Migration resumed after the user successfully authenticated Windows Wrangler. The record below is the pre-deployment report for `6d07a1f`; it is retained as historical evidence. Current deployment observations are recorded in `MIGRATION-2026-10-17.md` and will supersede this blocker state after hosted verification.
+
 **IMPLEMENTED — EXTERNAL BLOCKER. Production is not verified.**
 
 The existing Astro clone was rebranded in place. GitHub repository ID `1421054534` was retained when `ismailabs/civolyn` became `ismailabs/proworks`. Reviewed source is delivered on [codex/proworks-rebrand](https://github.com/ismailabs/proworks/tree/codex/proworks-rebrand). Remote main remains at `34b5027e9ac148964a6fe754fe7be89cbc91c9b1`, the prior CIVOLYN source. No force push occurred. The final delivery receipt under local `artifacts/qa/git-delivery.json` records the independently advertised branch SHA; production has no release revision yet.

@@ -367,7 +367,8 @@ for (const [label, width, height] of [
       await page.evaluate(() => document.fonts.ready);
       await page.screenshot({
         path:
-          'artifacts/screenshots/' +
+          (process.env.SCREENSHOT_DIR || 'artifacts/screenshots') +
+          '/' +
           c.label.toLowerCase() +
           '-' +
           label +
@@ -376,7 +377,8 @@ for (const [label, width, height] of [
       });
       await page.screenshot({
         path:
-          'artifacts/screenshots/' +
+          (process.env.SCREENSHOT_DIR || 'artifacts/screenshots') +
+          '/' +
           c.label.toLowerCase() +
           '-' +
           label +

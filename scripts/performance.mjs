@@ -4,6 +4,7 @@ import lighthouse from 'lighthouse';
 import net from 'node:net';
 import { once } from 'node:events';
 const output = process.env.PERF_OUTPUT || 'artifacts/lighthouse';
+const origin = process.env.PERF_ORIGIN || 'http://127.0.0.1:4321';
 await fs.mkdir(output, { recursive: true });
 const reservation = net.createServer().listen(0, '127.0.0.1');
 await once(reservation, 'listening');
@@ -23,7 +24,7 @@ for (const route of [
       args: ['--remote-debugging-port=' + port],
     });
     try {
-      const result = await lighthouse('http://127.0.0.1:4321' + route, {
+      const result = await lighthouse(origin + route, {
         port,
         output: 'json',
         onlyCategories: [

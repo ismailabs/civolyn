@@ -5,12 +5,17 @@ export default defineConfig({
   workers: process.env.CI ? 2 : 1,
   retries: 0,
   reporter: [['list'], ['html', { open: 'never' }]],
-  use: { baseURL: 'http://127.0.0.1:4321', trace: 'retain-on-failure' },
-  webServer: {
-    command: 'node scripts/serve.mjs',
-    url: 'http://127.0.0.1:4321',
-    reuseExistingServer: !process.env.CI,
+  use: {
+    baseURL: process.env.TEST_ORIGIN || 'http://127.0.0.1:4321',
+    trace: 'retain-on-failure',
   },
+  webServer: process.env.TEST_ORIGIN
+    ? undefined
+    : {
+        command: 'node scripts/serve.mjs',
+        url: 'http://127.0.0.1:4321',
+        reuseExistingServer: !process.env.CI,
+      },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
     ...(process.env.CROSS_BROWSER === '1'
