@@ -1,8 +1,9 @@
 ---
 import '../styles/fonts.css';
-import manropeFont from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url';
+import interFont from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+import editorialFont from '@fontsource/noto-serif-display/files/noto-serif-display-latin-400-normal.woff2?url';
 import '../styles/global.css';
-import '../styles/refinements.css';
+import '../styles/editorial.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { pages } from '../data/site';
@@ -55,11 +56,18 @@ const structured = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#F6F8FC" />
+    <meta name="theme-color" content="#F4F1EA" />
     <meta name="color-scheme" content="light" />
     <link
       rel="preload"
-      href={manropeFont}
+      href={interFont}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={editorialFont}
       as="font"
       type="font/woff2"
       crossorigin
@@ -104,6 +112,10 @@ const structured = {
     />
   </head>
   <body>
+    <div class="concept-note">
+      Fictional concept by ISMAIL <span aria-hidden="true">/</span> Local sample
+      data
+    </div>
     <noscript>
       <style>
         .menu-toggle,

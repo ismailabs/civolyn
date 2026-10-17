@@ -1,6 +1,5 @@
 ---
 import Frame from '../../components/PageFrame.astro';
-import SignalDemo from '../../components/SignalDemo.astro';
 const items = [
   {
     title: 'Coherent period filters',
@@ -18,7 +17,7 @@ const items = [
 ---
 
 <Frame label="Insights" items={items}>
-  <section class="container section demo-section" id="demo">
+  <section class="container section demo-section" id="demo-guide">
     <div class="section-heading">
       <p class="eyebrow">TRY IT / ILLUSTRATIVE OPERATIONS</p>
       <h2>A dashboard you can check.</h2>
@@ -28,13 +27,6 @@ const items = [
         reporting interactions.
       </p>
     </div>
-    <SignalDemo />
-    <noscript>
-      <p class="callout">
-        The initial weekly chart and data table remain available without
-        JavaScript. Period switching requires JavaScript.
-      </p>
-    </noscript>
   </section>
   <section class="container section split-section">
     <div>

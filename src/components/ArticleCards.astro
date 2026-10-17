@@ -3,12 +3,13 @@ import { articles } from '../data/articles';
 ---
 
 <div class="article-cards">
-  {articles.map((a) => (
+  {articles.map((a, i) => (
     <article class="article-card">
       <div class="article-art" aria-hidden="true">
-        {a.art.map((s) => (
-          <span>{s}</span>
-        ))}
+        <span>
+          0{i + 1} / {['PROCESSES', 'WEBSITES', 'SIGNALS'][i]}
+        </span>
+        <strong>0{i + 1}</strong>
       </div>
       <div class="article-card-body">
         <p class="eyebrow">{a.category.toUpperCase()}</p>

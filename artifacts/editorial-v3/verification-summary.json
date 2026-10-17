@@ -1,0 +1,170 @@
+{
+  "observedAt": "2026-10-17T12:03:20.220Z",
+  "sourceCommit": "54b5329fb3437a2d3bde8628802a49fe285a11a5",
+  "chromium": {
+    "startTime": "2026-10-17T11:55:14.972Z",
+    "duration": 133042.975,
+    "expected": 72,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "webkit": {
+    "startTime": "2026-10-17T11:59:06.980Z",
+    "duration": 36190.628,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "firefox": {
+    "local": "Browser launch fails with spawn UNKNOWN; Linux CI required"
+  },
+  "static": {
+    "date": "2026-10-17T11:58:31.897Z",
+    "pages": 15,
+    "corePages": 12,
+    "articles": 3,
+    "indexable": true,
+    "uniqueTitles": 15,
+    "uniqueDescriptions": 15,
+    "checkedInternalLinks": 397,
+    "checkedAssetReferences": 126,
+    "clientJavaScriptBytes": 10009,
+    "cssBytes": 44438
+  },
+  "performance": [
+    {
+      "route": "/",
+      "performance": [
+        77,
+        100,
+        100
+      ],
+      "median": 100,
+      "LCP": [
+        1729,
+        1664,
+        1666
+      ],
+      "TBT": [
+        1062,
+        0,
+        0
+      ],
+      "CLS": [
+        0,
+        0,
+        0
+      ],
+      "otherCategories": [
+        {
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        },
+        {
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        },
+        {
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        }
+      ]
+    },
+    {
+      "route": "/products/insights/",
+      "performance": [
+        100,
+        83,
+        70
+      ],
+      "median": 83,
+      "LCP": [
+        1739,
+        1844,
+        1751
+      ],
+      "TBT": [
+        20,
+        667,
+        3261
+      ],
+      "CLS": [
+        0,
+        0,
+        0
+      ],
+      "otherCategories": [
+        {
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        },
+        {
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        },
+        {
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        }
+      ]
+    },
+    {
+      "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+      "performance": [
+        100,
+        97,
+        100
+      ],
+      "median": 100,
+      "LCP": [
+        1668,
+        1686,
+        1669
+      ],
+      "TBT": [
+        20,
+        179,
+        0
+      ],
+      "CLS": [
+        0,
+        0,
+        0
+      ],
+      "otherCategories": [
+        {
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        },
+        {
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        },
+        {
+          "accessibility": 100,
+          "bestPractices": 100,
+          "seo": 100
+        }
+      ]
+    }
+  ],
+  "previewChecks": [
+    "explicit noindex passed",
+    "non-main worker branch noindex passed"
+  ],
+  "limits": [
+    "CSS text enlargement is not native browser UI zoom",
+    "Accessibility-tree and automated rules are not a physical screen-reader user session",
+    "No physical-device or production deployment verification claimed"
+  ]
+}

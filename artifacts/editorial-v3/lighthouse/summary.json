@@ -1,0 +1,227 @@
+[
+  {
+    "route": "/",
+    "iteration": 1,
+    "fetchTime": "2026-10-17T11:51:54.102Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 93,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 1692.156,
+    "CLS": 0,
+    "TBT": 316.922,
+    "error": null
+  },
+  {
+    "route": "/",
+    "iteration": 2,
+    "fetchTime": "2026-10-17T11:52:16.066Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 83,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 1988.3110000000001,
+    "CLS": 0,
+    "TBT": 616.1259999999997,
+    "error": null
+  },
+  {
+    "route": "/",
+    "iteration": 3,
+    "fetchTime": "2026-10-17T11:52:38.477Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 1670.357,
+    "CLS": 0,
+    "TBT": 0,
+    "error": null
+  },
+  {
+    "route": "/products/insights/",
+    "iteration": 1,
+    "fetchTime": "2026-10-17T11:52:47.452Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 1743.699,
+    "CLS": 0.002443406810076249,
+    "TBT": 0,
+    "error": null
+  },
+  {
+    "route": "/products/insights/",
+    "iteration": 2,
+    "fetchTime": "2026-10-17T11:52:56.401Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 1814.625,
+    "CLS": 0,
+    "TBT": 0,
+    "error": null
+  },
+  {
+    "route": "/products/insights/",
+    "iteration": 3,
+    "fetchTime": "2026-10-17T11:53:05.975Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 1736.4340000000002,
+    "CLS": 0,
+    "TBT": 0,
+    "error": null
+  },
+  {
+    "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+    "iteration": 1,
+    "fetchTime": "2026-10-17T11:53:14.961Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 1664.592,
+    "CLS": 0,
+    "TBT": 0,
+    "error": null
+  },
+  {
+    "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+    "iteration": 2,
+    "fetchTime": "2026-10-17T11:53:23.228Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 1667.07,
+    "CLS": 0,
+    "TBT": 0,
+    "error": null
+  },
+  {
+    "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+    "iteration": 3,
+    "fetchTime": "2026-10-17T11:53:31.716Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 99,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 1821.546,
+    "CLS": 0,
+    "TBT": 0,
+    "error": null
+  }
+]

@@ -1,5 +1,7 @@
 # PROWORKS
 
+This branch contains the **Editorial Product Experience V3 review candidate**. Start with [the review and discrepancy register](docs/EDITORIAL-V3-REVIEW.md), then open `artifacts/editorial-v3/index.html` for the actual browser/reference gallery. V2 Draft PR #1 is retained. V3 is not approved, merged or deployed.
+
 A fictional SaaS portfolio concept by [ISMAIL](https://www.ismailstudio.my/), implemented in the existing CIVOLYN Astro repository. The product business is fictional; the website and three local demos are working frontend implementations. No subscriptions, customer accounts, live AI, uploads or external automations are offered.
 
 Release status and current evidence: [release report](docs/RELEASE-REPORT.md). Repository history is preserved. PROWORKS has not been trademark-cleared; the acknowledged naming/confusion risk is documented in [decisions](docs/DECISIONS.md).

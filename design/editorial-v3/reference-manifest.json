@@ -1,0 +1,386 @@
+[
+  {
+    "route": "/",
+    "viewport": "desktop",
+    "file": "desktop/home-1440x1040.png",
+    "sha256": "73899d5767e79eb03fff4ffbcebd6a6232ecd1df4c7454d6225ac59be4510f55",
+    "bytes": 320924,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/",
+    "viewport": "desktop",
+    "file": "desktop/home-full.png",
+    "sha256": "b0b6a35814d62d696e33b178e743133db6e9e419a17f82ac96047e99dac7619e",
+    "bytes": 353295,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/platform/",
+    "viewport": "desktop",
+    "file": "desktop/platform-1440x1040.png",
+    "sha256": "437a730bd168cd90c7773d9a77f240025f6f0b6c565e6d6b474cd5294a43e8fe",
+    "bytes": 183565,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/platform/",
+    "viewport": "desktop",
+    "file": "desktop/platform-full.png",
+    "sha256": "90fafe9051164c47070ff70bdac22091b5ff42802410ad9b62ae67403b6d87db",
+    "bytes": 226359,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/workflows/",
+    "viewport": "desktop",
+    "file": "desktop/workflows-1440x1040.png",
+    "sha256": "fdfdc299349c2d8ff7346a9eaad9c757c9da6f58f6973be5f8c623d49a00d11c",
+    "bytes": 92404,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/workflows/",
+    "viewport": "desktop",
+    "file": "desktop/workflows-full.png",
+    "sha256": "2306ab751d7f5ec6b7f092c8864990dcdb9c50a7304214799eac6eba7ea9227d",
+    "bytes": 133848,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/knowledge/",
+    "viewport": "desktop",
+    "file": "desktop/knowledge-1440x1040.png",
+    "sha256": "2dabbbfcc7bfc4e4ff1856fe3fa3a7259acfdca7bcfcd432721f20ae74fbec9b",
+    "bytes": 101497,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/knowledge/",
+    "viewport": "desktop",
+    "file": "desktop/knowledge-full.png",
+    "sha256": "30b324c7e08f39b05b2f2d0d77c6fd0f24b2b82df10702a06c719079874c287c",
+    "bytes": 111601,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/insights/",
+    "viewport": "desktop",
+    "file": "desktop/insights-1440x1040.png",
+    "sha256": "8a7398f3b5c03adb3c4923b8a24d12ba7c34cfa94dbe978e8462097d9617cc28",
+    "bytes": 91369,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/insights/",
+    "viewport": "desktop",
+    "file": "desktop/insights-full.png",
+    "sha256": "80dc53283321a071569162246f2b59c4d91f389e7e42e5d7d215b79ad1ed0ece",
+    "bytes": 111845,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/technology/",
+    "viewport": "desktop",
+    "file": "desktop/technology-1440x1040.png",
+    "sha256": "5bc2bb689ceb9d76b46f2896488e66870ca362d1d0e8883a6ae368c065ad26de",
+    "bytes": 85633,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/technology/",
+    "viewport": "desktop",
+    "file": "desktop/technology-full.png",
+    "sha256": "399663c69cd6cf3bf04ed60555303318923ef79e62e97db5587e0d080bed8674",
+    "bytes": 95933,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/experience/",
+    "viewport": "desktop",
+    "file": "desktop/experience-1440x1040.png",
+    "sha256": "20bb5857ce919e5e905bb0a92f2046e360ce37bf53245d57a84db6d86e6f1be8",
+    "bytes": 185697,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/experience/",
+    "viewport": "desktop",
+    "file": "desktop/experience-full.png",
+    "sha256": "5fc9fc738a38edb83ff52205fbb6503076777774a0919e43439e098e281354c9",
+    "bytes": 196532,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/compare/",
+    "viewport": "desktop",
+    "file": "desktop/compare-1440x1040.png",
+    "sha256": "f2ce29e611f52e1a3db9ff61bba2daba153d29c5cf329e1f03e175689863dfc4",
+    "bytes": 91767,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/compare/",
+    "viewport": "desktop",
+    "file": "desktop/compare-full.png",
+    "sha256": "3cd5b0ddfd732e6aa9fa0500690493de575bc7b7c5e0646b73ce88e53baa6711",
+    "bytes": 115492,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/about/",
+    "viewport": "desktop",
+    "file": "desktop/about-1440x1040.png",
+    "sha256": "aab1f65921d51020d4924b189284b76e6ad5f629a49a81de25b24f52b6fa87c1",
+    "bytes": 212404,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/about/",
+    "viewport": "desktop",
+    "file": "desktop/about-full.png",
+    "sha256": "3bd619d0addb4ca465cb88c8517e4626c8f9055a2ef49c3e4b1f7946dea58121",
+    "bytes": 222644,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/journal/",
+    "viewport": "desktop",
+    "file": "desktop/journal-1440x1040.png",
+    "sha256": "d44fbbe3cabd86b068eddb1379edc04bb6a395ab80d1e7b1347a41df1629dbee",
+    "bytes": 80017,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/journal/",
+    "viewport": "desktop",
+    "file": "desktop/journal-full.png",
+    "sha256": "f5b18ba3ba9f1c582d25c2330e1c10ec67d322637b6d95310f8591cf5518e0c0",
+    "bytes": 115048,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/guides/",
+    "viewport": "desktop",
+    "file": "desktop/guides-1440x1040.png",
+    "sha256": "ca6e83322d74ac154560f22215016b47ac172a00cab996f157d244ea1bbfa9f3",
+    "bytes": 80157,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/guides/",
+    "viewport": "desktop",
+    "file": "desktop/guides-full.png",
+    "sha256": "6886bf499f0594c44f2e2be53cf6179fbbeb2882d97cfd688d41554b25833d82",
+    "bytes": 106980,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/contact/",
+    "viewport": "desktop",
+    "file": "desktop/contact-1440x1040.png",
+    "sha256": "40f2e56c1ac81d8bd1dd3c7de75a216583c290c8bbb058b79b57e0a553f9d93f",
+    "bytes": 92126,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/contact/",
+    "viewport": "desktop",
+    "file": "desktop/contact-full.png",
+    "sha256": "b99b10258ce0b92287e8ce5ed683fa6388b27872e3970da3e7ef91f283c6ebcc",
+    "bytes": 101850,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/",
+    "viewport": "mobile",
+    "file": "mobile/home-390x900.png",
+    "sha256": "a739be466c76577d7d7af02877e40b019053efb84062eaff7ffbf97748d028cb",
+    "bytes": 67666,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/",
+    "viewport": "mobile",
+    "file": "mobile/home-full.png",
+    "sha256": "334eb0436080fc272d4d651001653a1522ed0d6bfb5f5ff9eb15c941b653afb4",
+    "bytes": 134250,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/platform/",
+    "viewport": "mobile",
+    "file": "mobile/platform-390x900.png",
+    "sha256": "45093c5397221a8b9ad77693ffe5ea876bbf8ac11cbb377fd05bc361b487ef11",
+    "bytes": 79806,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/platform/",
+    "viewport": "mobile",
+    "file": "mobile/platform-full.png",
+    "sha256": "919ce93969d6b84bb498ffd5339a59892ade267e37f40852900de0a9adf37c70",
+    "bytes": 113046,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/workflows/",
+    "viewport": "mobile",
+    "file": "mobile/workflows-390x900.png",
+    "sha256": "84d9d2c8fb44a7b4afd7bb0e924561f7515e2c14b84e6589c93b6e28a26f1911",
+    "bytes": 48494,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/workflows/",
+    "viewport": "mobile",
+    "file": "mobile/workflows-full.png",
+    "sha256": "984efa128b37deb65324982361b55f169c0b567539d5d08ad17d27f2e6f8680e",
+    "bytes": 81922,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/knowledge/",
+    "viewport": "mobile",
+    "file": "mobile/knowledge-390x900.png",
+    "sha256": "39c9dc46da3f6314674eb25b7870cc521d9186259b7410f66e7ab05cc2dc3849",
+    "bytes": 45095,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/knowledge/",
+    "viewport": "mobile",
+    "file": "mobile/knowledge-full.png",
+    "sha256": "c627d2e778697101a153d1c5c437ae87347ecf208f19942ec414595dddce6c17",
+    "bytes": 72366,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/insights/",
+    "viewport": "mobile",
+    "file": "mobile/insights-390x900.png",
+    "sha256": "fb64420ab30013f023315f8f0f59b1e31560b03931cae76248722b5cb1304cfb",
+    "bytes": 48705,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/products/insights/",
+    "viewport": "mobile",
+    "file": "mobile/insights-full.png",
+    "sha256": "fda573c841c1adf7a2c8137326764c6de1d302e897f0d01aecb9f5bf9a3c816b",
+    "bytes": 64880,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/technology/",
+    "viewport": "mobile",
+    "file": "mobile/technology-390x900.png",
+    "sha256": "2392b914e935b444e67c4916685ebcc67ff192670f7c1e7695c0a4d1e3de7fe5",
+    "bytes": 44940,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/technology/",
+    "viewport": "mobile",
+    "file": "mobile/technology-full.png",
+    "sha256": "469d17c951407417db1b25bcf11e565262297f1ae3e0bda0434c631fdab5afaa",
+    "bytes": 62771,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/experience/",
+    "viewport": "mobile",
+    "file": "mobile/experience-390x900.png",
+    "sha256": "0177c44e55fd4fc42f23bf3f449d75ebab1be9d82d972609a30eb1d332cd74a5",
+    "bytes": 59476,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/experience/",
+    "viewport": "mobile",
+    "file": "mobile/experience-full.png",
+    "sha256": "945d83954705c5e016533dcf707f218207cca9cd5d58588a8dcafd40afdcc4ec",
+    "bytes": 93353,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/compare/",
+    "viewport": "mobile",
+    "file": "mobile/compare-390x900.png",
+    "sha256": "b308f02bd36786598904f2e3707f27ffa113f600959d70b46f5671c7a679ef85",
+    "bytes": 46881,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/compare/",
+    "viewport": "mobile",
+    "file": "mobile/compare-full.png",
+    "sha256": "75283d6c2b238ce887d8c8648eec43da8e9f5393f9b87ac41f345c50818506b7",
+    "bytes": 82166,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/about/",
+    "viewport": "mobile",
+    "file": "mobile/about-390x900.png",
+    "sha256": "c4238c68ad5b76854451179b9213fe66e850798804f4bb39101573a10c8f468a",
+    "bytes": 75504,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/about/",
+    "viewport": "mobile",
+    "file": "mobile/about-full.png",
+    "sha256": "838b5fb0a5ae0e7126999bcb4b51bafaef71a8fc57dd1dd622ed509aae29d940",
+    "bytes": 93088,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/journal/",
+    "viewport": "mobile",
+    "file": "mobile/journal-390x900.png",
+    "sha256": "1b55b73bdafcce8a9392e4920c56d9909aa300229337c56b987c8d314b843511",
+    "bytes": 45157,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/journal/",
+    "viewport": "mobile",
+    "file": "mobile/journal-full.png",
+    "sha256": "114135de1635256e3d92c0d83567413b0f40e94832adbfe9ce6f4d7e71880408",
+    "bytes": 89693,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/guides/",
+    "viewport": "mobile",
+    "file": "mobile/guides-390x900.png",
+    "sha256": "f5993ed1e6d8cef99b6be2d680a1cceb81386f673b0d5c96f52d98d7fbfc3e18",
+    "bytes": 49608,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/guides/",
+    "viewport": "mobile",
+    "file": "mobile/guides-full.png",
+    "sha256": "53f820c9434de0c070bef5d70cfb3bc43a46163fd54849977634c1aa00444f7d",
+    "bytes": 63777,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/contact/",
+    "viewport": "mobile",
+    "file": "mobile/contact-390x900.png",
+    "sha256": "4475ced9047c4bb5b82aa08ea221f9c2c89fb7262f52f9ac48e4b3f7c3154a74",
+    "bytes": 49817,
+    "openedAtOriginalResolution": true
+  },
+  {
+    "route": "/contact/",
+    "viewport": "mobile",
+    "file": "mobile/contact-full.png",
+    "sha256": "11d464c6793ff40ec2cb25c84a96e70878ac569b64efdd3890e100cf92c8703c",
+    "bytes": 67045,
+    "openedAtOriginalResolution": true
+  }
+]

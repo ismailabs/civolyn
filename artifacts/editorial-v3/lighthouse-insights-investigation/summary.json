@@ -1,0 +1,77 @@
+[
+  {
+    "route": "/products/insights/",
+    "iteration": 1,
+    "fetchTime": "2026-10-17T12:04:33.706Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 83,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 1874.7179999999998,
+    "CLS": 0,
+    "TBT": 639.1410000000001,
+    "error": null
+  },
+  {
+    "route": "/products/insights/",
+    "iteration": 2,
+    "fetchTime": "2026-10-17T12:05:42.906Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 77,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 2086.0860000000002,
+    "CLS": 0,
+    "TBT": 920.2760000000001,
+    "error": null
+  },
+  {
+    "route": "/products/insights/",
+    "iteration": 3,
+    "fetchTime": "2026-10-17T12:05:55.887Z",
+    "lighthouseVersion": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "score": {
+      "performance": 89,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "LCP": 1823.4830000000002,
+    "CLS": 0,
+    "TBT": 441.25850000000014,
+    "error": null
+  }
+]

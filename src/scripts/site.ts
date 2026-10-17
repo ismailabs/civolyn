@@ -305,3 +305,78 @@ document
   });
 // Event attributes document the intended taxonomy. No analytics provider is configured,
 // no events are emitted, and demo input is never transmitted or persisted.
+
+// Optional editorial motion never hides or delays readable content.
+const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+if (!motionPreference.matches && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-seen');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.06 },
+  );
+  document
+    .querySelectorAll(
+      '.section, .editorial-statement, .experience-principles, .feature-section',
+    )
+    .forEach((element) => {
+      element.classList.add('motion-ready');
+      observer.observe(element);
+    });
+  motionPreference.addEventListener('change', () => {
+    if (motionPreference.matches) {
+      observer.disconnect();
+      document
+        .querySelectorAll('.motion-ready')
+        .forEach((el) => el.classList.add('is-seen'));
+    }
+  });
+}
+
+const guideSearch = document.querySelector<HTMLInputElement>(
+  '[data-guide-search]',
+);
+if (guideSearch) {
+  const guides = [
+    ...document.querySelectorAll<HTMLDetailsElement>('[data-guide]'),
+  ];
+  const count = document.querySelector<HTMLElement>('[data-guide-count]')!;
+  const empty = document.querySelector<HTMLElement>('[data-guide-empty]')!;
+  const updateGuides = () => {
+    const term = guideSearch.value.trim().toLowerCase();
+    guides.forEach((guide) => {
+      guide.hidden = !(guide.textContent || '').toLowerCase().includes(term);
+      if (guide.hidden) guide.open = false;
+    });
+    const matches = guides.filter((guide) => !guide.hidden).length;
+    count.textContent = `${matches} helpful answer${matches === 1 ? '' : 's'}`;
+    empty.hidden = matches !== 0;
+  };
+  guideSearch.addEventListener('input', updateGuides);
+  window.addEventListener('hashchange', () => {
+    let target: HTMLElement | null;
+    try {
+      target = document.getElementById(
+        decodeURIComponent(location.hash.slice(1)),
+      );
+    } catch {
+      return;
+    }
+    if (target?.hasAttribute('data-guide')) {
+      guideSearch.value = '';
+      updateGuides();
+    }
+  });
+  document
+    .querySelector('[data-guide-reset]')
+    ?.addEventListener('click', () => {
+      guideSearch.value = '';
+      updateGuides();
+      guideSearch.focus();
+    });
+}

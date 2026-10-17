@@ -28,7 +28,9 @@ const path = Astro.url.pathname;
       </a>
       <details class="nav-group">
         <summary>
-          Products <span aria-hidden="true">⌄</span>
+          <span class="desktop-product-label">Workflows</span>
+          <span class="mobile-product-label">Products</span>{' '}
+          <span aria-hidden="true">⌄</span>
         </summary>
         <div class="product-menu">
           {products.map((p) => (
@@ -51,6 +53,27 @@ const path = Astro.url.pathname;
         </div>
       </details>
       <a
+        class="nav-product-shortcut"
+        href="/products/knowledge/"
+        aria-current={path === '/products/knowledge/' ? 'page' : undefined}
+      >
+        Knowledge
+      </a>
+      <a
+        class="nav-product-shortcut"
+        href="/products/insights/"
+        aria-current={path === '/products/insights/' ? 'page' : undefined}
+      >
+        Insights
+      </a>
+      <a
+        href="/journal/"
+        aria-current={path.startsWith('/journal/') ? 'page' : undefined}
+      >
+        Journal
+      </a>
+      <a
+        class="mobile-nav-guide"
         href="/guides/"
         aria-current={path === '/guides/' ? 'page' : undefined}
       >

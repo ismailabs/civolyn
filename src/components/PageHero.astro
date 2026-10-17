@@ -1,76 +1,574 @@
 ---
-import { pages, portfolio } from '../data/site';
-import Workspace from './Workspace.astro';
+import { portfolio, whatsapp, products, faqs, insightData } from '../data/site';
+import routes from '../../design/editorial-v3/routes.json';
+import FlowDemo from './FlowDemo.astro';
+import KnowledgeDemo from './KnowledgeDemo.astro';
+import SignalDemo from './SignalDemo.astro';
+import ArticleCards from './ArticleCards.astro';
+import ProductWindow from './ProductWindow.astro';
 const { label } = Astro.props;
-const p = pages.find((p) => p.label === label)!;
-const primary: Record<string, string> = {
-  Home: '/platform/',
-  Platform: '/products/workflows/',
-  Workflows: '#demo',
-  Knowledge: '#demo',
-  Insights: '#demo',
-  Technology: '#system',
-  Experience: '#principles',
-  Compare: '#finder',
-  About: '#concept',
-  Journal: '#articles',
-  Guides: '#faqs',
-  Contact: portfolio,
+const p = routes.find((r) => r.name === label)!;
+const weekly = insightData.week.completed.reduce((a, b) => a + b, 0);
+const heads: Record<string, string[]> = {
+  Home: ['A clearer way', 'to move work', 'forward.'],
+  Platform: ['The shape of', 'better work.'],
+  Workflows: ['Make progress', 'visible.'],
+  Knowledge: ['Find what', 'matters.'],
+  Insights: ['Make sense', 'of the signals.'],
+  Technology: ['Built with', 'clear boundaries.'],
+  Experience: ['Technology', 'should feel', 'human.'],
+  Compare: ['Start with', 'the real need.'],
+  About: ['A more', 'considered', 'way to build.'],
+  Journal: ['Ideas worth', 'putting into', 'practice.'],
+  Guides: ['Less friction.', 'More clarity.'],
+  Contact: ['Let’s make', 'something', 'worth using.'],
 };
-const secondary: Record<string, string> = {
-  Home: '/compare/',
-  Platform: '/compare/',
-  Workflows: '/compare/',
-  Knowledge: '/products/workflows/',
-  Insights: '/compare/',
-  Technology: '/compare/',
-  Experience: '/platform/',
-  Compare: '/platform/',
-  About: '/technology/',
-  Journal: '/compare/',
-  Guides: '/compare/',
-  Contact: '/compare/',
+const cover = ['Home', 'Experience', 'About'].includes(label);
+const coverArt: Record<string, [string, string, number, number]> = {
+  Home: [
+    'folded-architecture',
+    'Original abstract folded architectural sculpture',
+    1040,
+    1280,
+  ],
+  Experience: [
+    'kinetic-line',
+    'Original sculptural line study in warm neutral tones',
+    1200,
+    900,
+  ],
+  About: [
+    'malaysia-silhouette',
+    'Stylised Malaysian cityscape illustration; not a photograph of actual premises',
+    1400,
+    780,
+  ],
 };
 ---
 
-<section
-  class={`page-hero container hero-${p.label.toLowerCase()}`}
-  aria-labelledby="page-heading"
->
-  <div class="hero-copy">
-    <p class="eyebrow">{p.eyebrow}</p>
-    <h1 id="page-heading">
-      {p.head.map((line) => (
-        <span>{line}</span>
-      ))}
-    </h1>
-    <p class="hero-description">{p.intro}</p>
-    <div class="hero-actions">
-      <a
-        class="button"
-        href={primary[p.label]}
-        data-event={p.label === 'Contact' ? 'portfolio_cta_click' : undefined}
-        data-component="hero"
+{cover && (
+  <>
+    <section
+      class={`editorial-cover ${label.toLowerCase()}-cover`}
+      aria-labelledby="page-heading"
+    >
+      <div class="cover-copy">
+        <p class="eyebrow">{p.eyebrow}</p>
+        <h1 id="page-heading" class="display">
+          {heads[label].map((line) => (
+            <span>{line}</span>
+          ))}
+        </h1>
+        <p class="intro">{p.description}</p>
+        <div class="hero-actions">
+          <a
+            class="button"
+            href={
+              label === 'Home'
+                ? '/platform/'
+                : label === 'About'
+                  ? portfolio
+                  : '#principles'
+            }
+          >
+            {label === 'Home'
+              ? 'Explore the platform'
+              : label === 'About'
+                ? 'Visit the real creator'
+                : 'Explore the principles'}{' '}
+            <span aria-hidden="true">↗</span>
+          </a>
+          {label === 'Home' && (
+            <a class="button button-outline" href="/products/workflows/#demo">
+              See the working demos <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+        {label === 'Home' && (
+          <div class="cover-aside">
+            <span>Three perspectives / one clearer story</span>
+            <b>Work. Context. Understanding.</b>
+          </div>
+        )}
+      </div>
+      <figure class="cover-art">
+        <img
+          src={`/images/editorial-v3/${coverArt[label][0]}.svg`}
+          alt={coverArt[label][1]}
+          width={coverArt[label][2]}
+          height={coverArt[label][3]}
+          fetchpriority={label === 'Home' ? 'high' : 'auto'}
+        />
+        <figcaption>
+          {label === 'Home' ? (
+            <>
+              <span>Made for the real complexity of work</span>
+              <b>Clarity, by design.</b>
+            </>
+          ) : label === 'About' ? (
+            'Rooted in Malaysia. Built as a frontend portfolio concept.'
+          ) : (
+            'Form follows understanding / 2026'
+          )}
+        </figcaption>
+      </figure>
+    </section>
+    {label === 'Home' && (
+      <section class="editorial-statement">
+        <div class="micro-rail">
+          <span>The work / an idea</span>
+          {products.map((product, i) => (
+            <p>
+              0{i + 1} / {product.name}
+            </p>
+          ))}
+        </div>
+        <div>
+          <h2>
+            Good tools should make
+            <br />
+            <em>the next step obvious.</em>
+          </h2>
+          <div class="perspective-links">
+            {products.map((product, i) => (
+              <a href={product.link}>
+                <span>0{i + 1}</span>
+                <b>
+                  {
+                    [
+                      'Move work forward',
+                      'Find context quickly',
+                      'Understand the signals',
+                    ][i]
+                  }
+                </b>
+                <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+    {label === 'Experience' && (
+      <section class="experience-principles">
+        <h2>The experience is the product.</h2>
+        {[
+          [
+            'Readability',
+            'Simple hierarchy. Legible interfaces. Useful context.',
+          ],
+          ['Agency', 'Controls that explain their consequences.'],
+          ['Restraint', 'Motion as guidance, never a prerequisite.'],
+        ].map(([title, body], i) => (
+          <div>
+            <p class="eyebrow">
+              0{i + 1} / {title}
+            </p>
+            <p>{body}</p>
+          </div>
+        ))}
+      </section>
+    )}
+    {label === 'About' && (
+      <div class="about-principles">
+        <span>01 / People before process</span>
+        <span>02 / Clarity over density</span>
+        <span>03 / Honest limitations</span>
+      </div>
+    )}
+  </>
+)}
+
+{label === 'Platform' && (
+  <>
+    <section
+      class="platform-chapter dark-chapter"
+      aria-labelledby="page-heading"
+    >
+      <div class="chapter-kicker">
+        <p class="eyebrow">{p.eyebrow}</p>
+        <span>PROWORKS / An operations concept</span>
+      </div>
+      <div class="platform-head">
+        <h1 id="page-heading" class="display">
+          {heads[label].map((line) => (
+            <span>{line}</span>
+          ))}
+        </h1>
+        <p class="intro">{p.description}</p>
+      </div>
+      <div
+        class="orbit-panel"
+        aria-label="Three separate local demos, related in concept"
       >
-        {p.primary}
-        {p.label === 'Contact' && <span aria-hidden="true"> ↗</span>}
-      </a>
-      <a class="text-link secondary-action" href={secondary[p.label]}>
-        {p.secondary}
-        <span aria-hidden="true"> ↗</span>
-      </a>
+        <div class="orbit-ring orbit-one" aria-hidden="true"></div>
+        <div class="orbit-ring orbit-two" aria-hidden="true"></div>
+        <div class="orbit-core">
+          <span>Make work</span>
+          <b>Legible</b>
+        </div>
+        {products.map((product, i) => (
+          <a class={`orbit-label orbit-${i}`} href={product.link}>
+            <span>0{i + 1}</span>
+            {product.name}
+            <span class="sr-only"> local demo</span>
+          </a>
+        ))}
+      </div>
+    </section>
+    <section class="editorial-statement">
+      <p class="eyebrow">One idea / three modes</p>
+      <div>
+        <h2>
+          From a request to a decision—
+          <br />
+          <em>without losing the context.</em>
+        </h2>
+        <p class="demo-note">
+          Connected in concept. Three separate, browser-only demonstrations.
+        </p>
+        <div class="simple-links">
+          {products.map((product) => (
+            <a href={product.link}>{product.name} ↗</a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </>
+)}
+
+{label === 'Workflows' && (
+  <>
+    <section class="workflow-hero dark-chapter" aria-labelledby="page-heading">
+      <div>
+        <p class="eyebrow">{p.eyebrow}</p>
+        <h1 id="page-heading" class="display">
+          {heads[label].map((line) => (
+            <span>{line}</span>
+          ))}
+        </h1>
+        <p class="intro">{p.description}</p>
+        <div class="hero-actions">
+          <a class="button" href="#demo">
+            Try the workflow demo <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="workflow-vertical" aria-hidden="true">
+        <b>01—04</b>
+        <span>Clarity through every stage</span>
+      </div>
+    </section>
+    <section
+      class="workflow-window"
+      id="demo"
+      aria-label="Working four-stage local workflow"
+    >
+      <ProductWindow
+        title="Workflows"
+        note="Four-stage example / local human approval"
+      >
+        <FlowDemo />
+      </ProductWindow>
+      <noscript>
+        <p class="callout">
+          JavaScript is needed to progress the example. The stages, owners and
+          proposal remain readable. Nothing runs externally.
+        </p>
+      </noscript>
+    </section>
+    <div class="chapter-end">
+      <span>A reversible, local demonstration</span>
+      <p>Four stages. An intentional human decision.</p>
     </div>
-    <p class="hero-disclosure">
-      Fictional product concept. Real frontend craft by{' '}
-      <a
-        href={portfolio}
-        data-event="portfolio_cta_click"
-        data-component="hero-credit"
+  </>
+)}
+
+{label === 'Knowledge' && (
+  <>
+    <section class="knowledge-hero" aria-labelledby="page-heading">
+      <div class="knowledge-copy">
+        <p class="eyebrow">{p.eyebrow}</p>
+        <h1 id="page-heading" class="display">
+          {heads[label].map((line) => (
+            <span>{line}</span>
+          ))}
+        </h1>
+        <p class="intro">{p.description}</p>
+        <div class="hero-actions">
+          <a class="button" href="#demo">
+            Explore the library <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <p class="vertical-note">The right answer needs a source.</p>
+      </div>
+      <div class="knowledge-panel" id="demo">
+        <ProductWindow
+          title="Knowledge"
+          note="Source-aware sample library / no uploads"
+        >
+          <KnowledgeDemo />
+        </ProductWindow>
+        <noscript>
+          <p class="callout">
+            Search needs JavaScript. All six documents and their source
+            disclosures remain readable.
+          </p>
+        </noscript>
+      </div>
+    </section>
+    <div class="quote-strip">
+      <p>Better context makes better decisions.</p>
+      <span>Search / inspect / understand</span>
+    </div>
+  </>
+)}
+
+{label === 'Insights' && (
+  <>
+    <section class="insights-hero" aria-labelledby="page-heading">
+      <div>
+        <p class="eyebrow">{p.eyebrow}</p>
+        <h1 id="page-heading" class="display">
+          {heads[label].map((line) => (
+            <span>{line}</span>
+          ))}
+        </h1>
+        <p class="intro">{p.description}</p>
+      </div>
+      <div class="insights-signal">
+        <span>Reporting is only useful when the figures can be checked.</span>
+        <p class="big-figure">
+          {weekly}
+          <span> / sample weekly completions</span>
+        </p>
+      </div>
+    </section>
+    <section
+      class="insights-window"
+      id="demo"
+      aria-label="Working sample reporting interface"
+    >
+      <ProductWindow
+        title="Insights"
+        note="Transparent fixtures / accessible reporting"
       >
-        ISMAIL ↗
-      </a>
-      .
-    </p>
-  </div>
-  <Workspace kind={p.hero} />
-</section>
+        <SignalDemo />
+      </ProductWindow>
+      <noscript>
+        <p class="callout">
+          The weekly chart and table remain available without JavaScript. Period
+          switching needs JavaScript.
+        </p>
+      </noscript>
+    </section>
+    <div class="chapter-end metric-end">
+      <span>Period definitions are transparent</span>
+      <span>Fictional demonstration data</span>
+    </div>
+  </>
+)}
+
+{label === 'Technology' && (
+  <>
+    <section
+      class="technology-chapter dark-chapter"
+      aria-labelledby="page-heading"
+    >
+      <div>
+        <p class="eyebrow">{p.eyebrow}</p>
+        <h1 id="page-heading" class="display">
+          {heads[label].map((line) => (
+            <span>{line}</span>
+          ))}
+        </h1>
+        <p class="intro">{p.description}</p>
+      </div>
+      <div class="tech-diagram">
+        <span class="tech-watermark" aria-hidden="true">
+          01—04
+        </span>
+        {[
+          ['Accessible interface', 'Semantic HTML and keyboard paths'],
+          ['Local interactions', 'Deterministic frontend state'],
+          ['Sample data', 'Inspectable fixtures, no uploads'],
+          ['Static delivery', 'Astro + Cloudflare Worker'],
+        ].map(([title, body], i) => (
+          <div>
+            <span class="diagram-number">0{i + 1}</span>
+            <b>{title}</b>
+            <p>{body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+    <div class="chapter-end">
+      <span>Technology that honestly says what it does</span>
+      <p>Real engineering. Clear limitations.</p>
+    </div>
+  </>
+)}
+
+{label === 'Compare' && (
+  <>
+    <section class="compare-lead" aria-labelledby="page-heading">
+      <p class="eyebrow">{p.eyebrow}</p>
+      <h1 id="page-heading" class="display">
+        {heads[label].map((line) => (
+          <span>{line}</span>
+        ))}
+      </h1>
+      <p class="intro">{p.description}</p>
+    </section>
+    <section class="comparison-tiles" aria-label="Three perspectives">
+      {products.map((product, i) => (
+        <a href={product.link}>
+          <span class="eyebrow">
+            0{i + 1} / {['Movement', 'Context', 'Perspective'][i]}
+          </span>
+          <h2>{product.name}.</h2>
+          <p>{product.description}</p>
+          <b>
+            Explore the demo <span aria-hidden="true">↗</span>
+          </b>
+        </a>
+      ))}
+    </section>
+    <div class="chapter-end">
+      <span>Three local demos / no software purchase</span>
+      <p>Choose where to explore first.</p>
+    </div>
+  </>
+)}
+
+{label === 'Journal' && (
+  <>
+    <section class="journal-lead" aria-labelledby="page-heading">
+      <div>
+        <p class="eyebrow">{p.eyebrow}</p>
+        <h1 id="page-heading" class="display">
+          {heads[label].map((line) => (
+            <span>{line}</span>
+          ))}
+        </h1>
+      </div>
+      <p class="intro">{p.description}</p>
+    </section>
+    <section
+      class="journal-articles"
+      id="articles"
+      aria-labelledby="article-list-title"
+    >
+      <h2 class="sr-only" id="article-list-title">
+        Original field notes
+      </h2>
+      <ArticleCards />
+    </section>
+  </>
+)}
+
+{label === 'Guides' && (
+  <>
+    <section class="guides-lead" aria-labelledby="page-heading">
+      <p class="eyebrow">{p.eyebrow}</p>
+      <h1 id="page-heading" class="display">
+        {heads[label].map((line) => (
+          <span>{line}</span>
+        ))}
+      </h1>
+      <p class="intro">{p.description}</p>
+      <div class="guides-search js-only">
+        <label for="guide-search">Find a helpful answer</label>
+        <div>
+          <span aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            id="guide-search"
+            data-guide-search
+            placeholder="Search the guides…"
+            autocomplete="off"
+          />
+        </div>
+        <p data-guide-count role="status">
+          8 helpful answers
+        </p>
+      </div>
+    </section>
+    <section class="guide-answers" id="faqs" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="sr-only">
+        Questions worth answering clearly
+      </h2>
+      <div class="faq-list">
+        {faqs.map((f, i) => (
+          <details id={f.id} data-guide>
+            <summary>
+              <span aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <b>{f.q}</b>
+              <span aria-hidden="true">↗</span>
+            </summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+      <div class="callout" data-guide-empty hidden>
+        No matching answers. Clear the search to see every guide.
+      </div>
+      <button class="text-button js-only" data-guide-reset>
+        Clear guide search
+      </button>
+    </section>
+  </>
+)}
+
+{label === 'Contact' && (
+  <>
+    <section
+      class="contact-editorial dark-chapter"
+      aria-labelledby="page-heading"
+    >
+      <div>
+        <p class="eyebrow">{p.eyebrow}</p>
+        <h1 id="page-heading" class="display">
+          {heads[label].map((line) => (
+            <span>{line}</span>
+          ))}
+        </h1>
+        <p class="intro">{p.description}</p>
+        <div class="hero-actions">
+          <a
+            class="button"
+            href={portfolio}
+            data-event="portfolio_cta_click"
+            data-component="contact-cover"
+          >
+            Visit ISMAIL studio <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="button button-outline"
+            href={whatsapp}
+            data-event="whatsapp_outbound_click"
+            data-component="contact-cover"
+          >
+            WhatsApp the real creator <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+      <aside class="contact-side">
+        <span>One honest destination</span>
+        <div>
+          <b>ISMAIL</b>
+          <span>Web development studio · Malaysia</span>
+        </div>
+        <p>
+          PROWORKS does not operate a sales desk, collect form enquiries or
+          offer live SaaS subscriptions.
+        </p>
+      </aside>
+    </section>
+    <div class="contact-bottom">
+      <span>No fictional customer forms</span>
+      <span>No automated purchase flow</span>
+      <span>Local demonstrations only</span>
+    </div>
+  </>
+)}

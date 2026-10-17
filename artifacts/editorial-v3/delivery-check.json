@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-10-17T12:10:04.568Z",
+  "branch": "codex/proworks-editorial-product-v3",
+  "baseline": "04f3af27342bedb5f1aeffd75fc5a9452be43a43",
+  "protectedFiles": [
+    "src/data/demo-fixtures.json",
+    "public/_redirects",
+    "public/_headers",
+    "worker/index.ts",
+    "worker/legacy-redirect.ts",
+    "wrangler.jsonc",
+    "wrangler.legacy.jsonc",
+    "astro.config.mjs",
+    ".github/workflows/production-quality.yml",
+    "src/pages/journal/mapping-a-repeatable-business-process.md",
+    "src/pages/journal/website-redesign-checklist-for-malaysian-smes.md",
+    "src/pages/journal/choosing-useful-dashboard-metrics.md"
+  ],
+  "referencesVerified": 48,
+  "checkedTextFiles": 54,
+  "scanner": "Custom high-confidence credential-pattern check of changed/new publication text; not a Gitleaks audit",
+  "findings": []
+}
