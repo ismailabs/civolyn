@@ -3,6 +3,7 @@ import { chromium } from '@playwright/test';
 import lighthouse from 'lighthouse';
 import net from 'node:net';
 import { once } from 'node:events';
+import { publicDnsArgs } from './verification-dns.mjs';
 const output = process.env.PERF_OUTPUT || 'artifacts/lighthouse';
 const origin = process.env.PERF_ORIGIN || 'http://127.0.0.1:4321';
 await fs.mkdir(output, { recursive: true });
@@ -21,7 +22,7 @@ for (const route of [
   for (let iteration = 1; iteration <= 3; iteration++) {
     // A fresh browser makes each cold navigation independent of earlier routes.
     const browser = await chromium.launch({
-      args: ['--remote-debugging-port=' + port],
+      args: ['--remote-debugging-port=' + port, ...publicDnsArgs],
     });
     try {
       const result = await lighthouse(origin + route, {

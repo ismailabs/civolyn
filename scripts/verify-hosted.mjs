@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { chromium } from '@playwright/test';
+import { publicDnsArgs, publicDnsAnswers } from './verification-dns.mjs';
 const origin = 'https://proworks.ismailstudio.my';
 const expected = process.env.EXPECTED_SHA;
 assert.match(
@@ -32,6 +33,7 @@ const report = {
   assets: [],
   demos: [],
   redirects: [],
+  publicDnsAnswers,
 };
 const release = await fetch(origin + '/release.json').then((r) => r.json());
 assert.equal(release.sourceCommit, expected);
@@ -111,7 +113,7 @@ if (indexable) {
   assert.equal((sitemap.match(/<loc>/g) || []).length, 15);
   for (const route of routes) assert.ok(sitemap.includes(origin + route));
 }
-const browser = await chromium.launch();
+const browser = await chromium.launch({ args: publicDnsArgs });
 try {
   const page = await browser.newPage();
   const errors = [];

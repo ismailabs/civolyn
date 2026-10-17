@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import { publicDnsArgs } from './scripts/verification-dns.mjs';
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
@@ -8,6 +9,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.TEST_ORIGIN || 'http://127.0.0.1:4321',
     trace: 'retain-on-failure',
+    launchOptions: { args: publicDnsArgs },
   },
   webServer: process.env.TEST_ORIGIN
     ? undefined
