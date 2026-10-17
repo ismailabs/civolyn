@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "civolyn",
+  "main": "worker/legacy-redirect.ts",
+  "compatibility_date": "2026-10-17",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "civolyn.ismailstudio.my", "custom_domain": true }],
+}

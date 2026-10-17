@@ -3,47 +3,68 @@ import { chromium } from '@playwright/test';
 import lighthouse from 'lighthouse';
 import net from 'node:net';
 import { once } from 'node:events';
-await fs.mkdir('artifacts/lighthouse', { recursive: true });
+const output = process.env.PERF_OUTPUT || 'artifacts/lighthouse';
+await fs.mkdir(output, { recursive: true });
 const reservation = net.createServer().listen(0, '127.0.0.1');
 await once(reservation, 'listening');
 const port = reservation.address().port;
-await new Promise((resolve) => reservation.close(resolve));
-// Playwright provides a reliable Windows launcher; Lighthouse attaches to this owned browser.
-const browser = await chromium.launch({
-  args: [`--remote-debugging-port=${port}`],
-});
-try {
-  const summaries = [];
-  for (const route of ['/', '/products/signal/', '/journal/']) {
-    const name =
-      route === '/' ? 'home' : route.split('/').filter(Boolean).join('-');
-    const result = await lighthouse(`http://127.0.0.1:4321${route}`, {
-      port,
-      output: 'json',
-      onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'],
-      logLevel: 'error',
+await new Promise((r) => reservation.close(r));
+const summaries = [];
+for (const route of [
+  '/',
+  '/products/insights/',
+  '/journal/website-redesign-checklist-for-malaysian-smes/',
+]) {
+  const name =
+    route === '/' ? 'home' : route.split('/').filter(Boolean).join('-');
+  for (let iteration = 1; iteration <= 3; iteration++) {
+    // A fresh browser makes each cold navigation independent of earlier routes.
+    const browser = await chromium.launch({
+      args: ['--remote-debugging-port=' + port],
     });
-    await fs.writeFile(`artifacts/lighthouse/${name}.json`, result.report);
-    const lhr = result.lhr;
-    summaries.push({
-      route,
-      scores: Object.fromEntries(
-        Object.entries(lhr.categories).map(([key, value]) => [
-          key,
-          Math.round(value.score * 100),
-        ]),
-      ),
-      LCP: lhr.audits['largest-contentful-paint'].numericValue,
-      CLS: lhr.audits['cumulative-layout-shift'].numericValue,
-      TBT: lhr.audits['total-blocking-time'].numericValue,
-      errors: lhr.runtimeError || null,
-    });
+    try {
+      const result = await lighthouse('http://127.0.0.1:4321' + route, {
+        port,
+        output: 'json',
+        onlyCategories: [
+          'performance',
+          'accessibility',
+          'best-practices',
+          'seo',
+        ],
+        logLevel: 'error',
+      });
+      await fs.writeFile(
+        output + '/' + name + '-' + iteration + '.json',
+        result.report,
+      );
+      const l = result.lhr;
+      const summary = {
+        route,
+        iteration,
+        fetchTime: l.fetchTime,
+        lighthouseVersion: l.lighthouseVersion,
+        formFactor: l.configSettings.formFactor,
+        throttling: l.configSettings.throttling,
+        score: Object.fromEntries(
+          Object.entries(l.categories).map(([k, v]) => [
+            k,
+            Math.round(v.score * 100),
+          ]),
+        ),
+        LCP: l.audits['largest-contentful-paint'].numericValue,
+        CLS: l.audits['cumulative-layout-shift'].numericValue,
+        TBT: l.audits['total-blocking-time'].numericValue,
+        error: l.runtimeError || null,
+      };
+      summaries.push(summary);
+      console.log(JSON.stringify(summary));
+    } finally {
+      await browser.close();
+    }
   }
-  await fs.writeFile(
-    'artifacts/lighthouse/summary.json',
-    JSON.stringify(summaries, null, 2),
-  );
-  console.log(JSON.stringify(summaries, null, 2));
-} finally {
-  await browser.close();
 }
+await fs.writeFile(
+  output + '/summary.json',
+  JSON.stringify(summaries, null, 2),
+);

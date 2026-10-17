@@ -1,12 +1,14 @@
+---
+import { insightData } from '../data/site';
+const d = insightData.week,
+  total = d.completed.reduce((a, b) => a + b, 0);
+---
+
 <div class="demo-shell signal-demo" data-signal>
-  <h2 class="sr-only">Illustrative operational dashboard</h2>
   <div class="demo-toolbar">
     <div>
-      <span class="app-icon lavender">▥</span>
-      <div>
-        <b>The rhythm of your operations.</b>
-        <small>CIVOLYN Signal · Illustrative data</small>
-      </div>
+      <b>The rhythm of your operations.</b>
+      <small>PROWORKS Insights · Local demo / fictional product</small>
     </div>
     <div class="period-select">
       <label for="signal-period">Period</label>
@@ -18,66 +20,52 @@
     </div>
   </div>
   <div class="signal-body">
+    <p class="mini-label">ILLUSTRATIVE DATA — NOT REAL BUSINESS RESULTS</p>
     <div class="signal-metrics">
       <div>
         <span>Completed workflows</span>
-        <strong data-signal-total>126</strong>
-        <small data-signal-change>18 more than the previous week</small>
+        <strong data-signal-total>{total}</strong>
+        <small>Sum of the selected series</small>
       </div>
       <div>
         <span>Awaiting review</span>
-        <strong data-signal-review>12</strong>
-        <small>A person makes the next decision</small>
+        <strong data-signal-review>{d.pending_review}</strong>
+        <small>Separate illustrative snapshot</small>
       </div>
       <div>
-        <span>Typical completion</span>
-        <strong data-signal-time>2.4 days</strong>
-        <small>Example median, end to end</small>
+        <span>Median duration</span>
+        <strong data-signal-time>{d.median_days} days</strong>
+        <small>Prepared sample, not derived from counts</small>
       </div>
     </div>
     <div class="signal-chart-header">
       <div>
         <h3>Work completed, in perspective.</h3>
-        <p data-signal-summary>
-          Example daily workflow completions for one week.
-        </p>
+        <p data-signal-summary>Illustrative daily completions for this week.</p>
       </div>
-      <span class="chart-key">
-        <i></i> Completed workflows
-      </span>
+      <span class="chart-key">Completed workflows</span>
     </div>
     <div
       class="signal-chart"
       role="img"
-      aria-label="Example weekly completions: Monday 14, Tuesday 22, Wednesday 18, Thursday 26, Friday 30, Saturday 9, Sunday 7. Full data in the table below."
+      aria-label={`Illustrative week completions: ${d.labels.map((l, i) => `${l} ${d.completed[i]}`).join(', ')}. Total ${total}. Full data in the table below.`}
       data-signal-chart
     >
-      <div class="chart-grid" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
       <div class="signal-bars" aria-hidden="true" data-signal-bars>
-        {[
-          ['Mon', 14],
-          ['Tue', 22],
-          ['Wed', 18],
-          ['Thu', 26],
-          ['Fri', 30],
-          ['Sat', 9],
-          ['Sun', 7],
-        ].map(([day, value]) => (
+        {d.labels.map((label, i) => (
           <div>
-            <b>{value}</b>
-            <span style={`height:${Number(value) * 5}px`}></span>
-            <small>{day}</small>
+            <b>{d.completed[i]}</b>
+            <span
+              style={`--bar:${(d.completed[i] / Math.max(...d.completed)) * 140}px`}
+            ></span>
+            <small>{label}</small>
           </div>
         ))}
       </div>
     </div>
     <p class="signal-insight" role="status" data-signal-insight>
-      Friday has the highest example volume. A higher count alone does not
-      explain quality or team workload.
+      This week: {total} illustrative completions. Counts alone do not explain
+      quality or workload.
     </p>
     <details class="data-disclosure">
       <summary>Read the underlying example data</summary>
@@ -94,23 +82,24 @@
             </tr>
           </thead>
           <tbody data-signal-table>
-            {[
-              ['Monday', 14],
-              ['Tuesday', 22],
-              ['Wednesday', 18],
-              ['Thursday', 26],
-              ['Friday', 30],
-              ['Saturday', 9],
-              ['Sunday', 7],
-            ].map(([d, v]) => (
+            {d.labels.map((l, i) => (
               <tr>
-                <th scope="row">{d}</th>
-                <td>{v}</td>
+                <th scope="row">{l}</th>
+                <td>{d.completed[i]}</td>
               </tr>
             ))}
           </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td data-signal-table-total>{total}</td>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </details>
+    <button class="text-button signal-reset js-only" data-signal-reset>
+      Reset dashboard
+    </button>
   </div>
 </div>

@@ -1,0 +1,76 @@
+---
+import { pages, portfolio } from '../data/site';
+import Workspace from './Workspace.astro';
+const { label } = Astro.props;
+const p = pages.find((p) => p.label === label)!;
+const primary: Record<string, string> = {
+  Home: '/platform/',
+  Platform: '/products/workflows/',
+  Workflows: '#demo',
+  Knowledge: '#demo',
+  Insights: '#demo',
+  Technology: '#system',
+  Experience: '#principles',
+  Compare: '#finder',
+  About: '#concept',
+  Journal: '#articles',
+  Guides: '#faqs',
+  Contact: portfolio,
+};
+const secondary: Record<string, string> = {
+  Home: '/compare/',
+  Platform: '/compare/',
+  Workflows: '/compare/',
+  Knowledge: '/products/workflows/',
+  Insights: '/compare/',
+  Technology: '/compare/',
+  Experience: '/platform/',
+  Compare: '/platform/',
+  About: '/technology/',
+  Journal: '/compare/',
+  Guides: '/compare/',
+  Contact: '/compare/',
+};
+---
+
+<section
+  class={`page-hero container hero-${p.label.toLowerCase()}`}
+  aria-labelledby="page-heading"
+>
+  <div class="hero-copy">
+    <p class="eyebrow">{p.eyebrow}</p>
+    <h1 id="page-heading">
+      {p.head.map((line) => (
+        <span>{line}</span>
+      ))}
+    </h1>
+    <p class="hero-description">{p.intro}</p>
+    <div class="hero-actions">
+      <a
+        class="button"
+        href={primary[p.label]}
+        data-event={p.label === 'Contact' ? 'portfolio_cta_click' : undefined}
+        data-component="hero"
+      >
+        {p.primary}
+        {p.label === 'Contact' && <span aria-hidden="true"> ↗</span>}
+      </a>
+      <a class="text-link secondary-action" href={secondary[p.label]}>
+        {p.secondary}
+        <span aria-hidden="true"> ↗</span>
+      </a>
+    </div>
+    <p class="hero-disclosure">
+      Fictional product concept. Real frontend craft by{' '}
+      <a
+        href={portfolio}
+        data-event="portfolio_cta_click"
+        data-component="hero-credit"
+      >
+        ISMAIL ↗
+      </a>
+      .
+    </p>
+  </div>
+  <Workspace kind={p.hero} />
+</section>

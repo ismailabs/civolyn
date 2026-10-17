@@ -1,3 +1,5 @@
+import fixtures from '../data/demo-fixtures.json';
+
 const menuButton = document.querySelector<HTMLButtonElement>('.menu-toggle');
 const nav = document.querySelector<HTMLElement>('#primary-nav');
 function closeMenu(restore = false) {
@@ -14,15 +16,14 @@ menuButton?.addEventListener('click', () => {
   nav?.classList.toggle('is-open', open);
 });
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    const dropdown =
-      document.querySelector<HTMLDetailsElement>('.nav-group[open]');
-    if (dropdown) {
-      dropdown.open = false;
-      dropdown.querySelector('summary')?.focus();
-    } else if (menuButton?.getAttribute('aria-expanded') === 'true')
-      closeMenu(true);
-  }
+  if (e.key !== 'Escape') return;
+  const dropdown =
+    document.querySelector<HTMLDetailsElement>('.nav-group[open]');
+  if (dropdown) {
+    dropdown.open = false;
+    dropdown.querySelector('summary')?.focus();
+  } else if (menuButton?.getAttribute('aria-expanded') === 'true')
+    closeMenu(true);
 });
 document.addEventListener('click', (e) => {
   if (!(e.target instanceof Node)) return;
@@ -31,82 +32,123 @@ document.addEventListener('click', (e) => {
     document.querySelector<HTMLDetailsElement>('.nav-group[open]');
   if (dropdown && !dropdown.contains(e.target)) dropdown.open = false;
 });
-nav?.addEventListener('focusout', () => {
+nav?.addEventListener('focusout', () =>
   requestAnimationFrame(() => {
     if (!nav.contains(document.activeElement)) closeMenu();
-  });
-});
-const desktopQuery = matchMedia('(min-width: 1000px)');
-desktopQuery.addEventListener('change', () => closeMenu());
-
+  }),
+);
+matchMedia('(min-width:1000px)').addEventListener('change', () => closeMenu());
 function openLinkedDisclosure() {
-  let id: string;
   try {
-    id = decodeURIComponent(location.hash.slice(1));
+    const target = document.getElementById(
+      decodeURIComponent(location.hash.slice(1)),
+    );
+    if (target instanceof HTMLDetailsElement) target.open = true;
   } catch {
-    return;
+    /* Malformed fragment has no disclosure target. */
   }
-  const target = document.getElementById(id);
-  if (target instanceof HTMLDetailsElement) target.open = true;
 }
 openLinkedDisclosure();
 window.addEventListener('hashchange', openLinkedDisclosure);
 
 document.querySelectorAll<HTMLElement>('[data-flow]').forEach((root) => {
-  let state = 0;
-  const next = root.querySelector<HTMLButtonElement>('[data-flow-next]')!;
-  const status = root.querySelector<HTMLElement>('[data-flow-status]')!;
-  const labels = [
-    'Start example',
-    'Prepare sample summary',
-    'Approve example',
-    'Complete example',
-    'Run again',
-  ];
+  let state = 0,
+    approved = false;
+  const next = root.querySelector<HTMLButtonElement>('[data-flow-next]')!,
+    approve = root.querySelector<HTMLButtonElement>('[data-flow-approve]')!,
+    confirm = root.querySelector<HTMLInputElement>('[data-flow-confirm]')!,
+    status = root.querySelector<HTMLElement>('[data-flow-status]')!,
+    log = root.querySelector<HTMLOListElement>('[data-flow-log]')!;
   const messages = [
     'Ready when you are. This example runs only in your browser.',
-    'Step 1 complete. An illustrative brief is ready; prepare its sample summary next.',
-    'Step 2 complete. Paused for human review. Read the proposed handover and approve when ready.',
-    'Step 3 complete. You approved this illustrative handover. Complete the last step to finish.',
+    'Step 1 complete. Prepare the sample brief and assign an owner.',
+    'Step 2 complete. Paused for human review. Read the proposal and confirm you have reviewed it.',
+    'Step 3 complete. You approved this illustrative hand-off. Complete the final stage.',
     'Example complete. Four steps recorded locally; no messages, projects or accounts were created.',
   ];
-  function render() {
-    root.querySelectorAll<HTMLElement>('[data-step]').forEach((step, index) => {
-      step.classList.toggle('complete', index < state);
-      step.classList.toggle('current', index === state);
+  const labels = [
+    'Start example →',
+    'Prepare sample summary →',
+    'Approval required',
+    'Complete example →',
+    'Run again →',
+  ];
+  const render = () => {
+    root.dataset.state = String(state);
+    root.querySelectorAll<HTMLElement>('[data-step]').forEach((step, i) => {
+      step.classList.toggle('complete', i < state);
+      step.classList.toggle('current', i === state);
       step.querySelector('.step-status')!.textContent =
-        index < state
+        i < state
           ? 'Complete'
-          : index === state
+          : i === state
             ? state === 2
               ? 'Your review'
               : 'Ready'
             : 'Waiting';
     });
-    next.textContent = labels[state] + ' →';
+    next.textContent = labels[state];
+    next.disabled = state === 2;
+    next.hidden = state === 2;
+    approve.hidden = state !== 2;
+    approve.disabled = !confirm.checked || state !== 2;
+    confirm.disabled = state !== 2;
     status.textContent = messages[state];
-  }
-  next.addEventListener('click', () => {
-    state = (state + 1) % 5;
-    render();
-  });
-  root.querySelector('[data-flow-reset]')?.addEventListener('click', () => {
+  };
+  const record = (message: string) => {
+    const li = document.createElement('li');
+    li.textContent = message;
+    log.append(li);
+  };
+  const reset = () => {
     state = 0;
+    approved = false;
+    confirm.checked = false;
+    log.replaceChildren();
+    record('Example ready. Intake is the current stage.');
     render();
+    next.focus();
+  };
+  next.addEventListener('click', (e) => {
+    if (e.detail > 1 || state === 2) return;
+    if (state === 4) {
+      reset();
+      return;
+    }
+    if (state === 3 && !approved) return;
+    state++;
+    record(messages[state]);
+    render();
+    if (state === 2) confirm.focus();
+    else next.focus();
   });
+  confirm.addEventListener(
+    'change',
+    () => (approve.disabled = !confirm.checked || state !== 2),
+  );
+  approve.addEventListener('click', () => {
+    if (state !== 2 || !confirm.checked) return;
+    approved = true;
+    state = 3;
+    record('Human review: you explicitly approved the sample proposal.');
+    render();
+    next.focus();
+  });
+  root.querySelector('[data-flow-reset]')?.addEventListener('click', reset);
+  render();
 });
 
 document.querySelectorAll<HTMLElement>('[data-knowledge]').forEach((root) => {
   const search = root.querySelector<HTMLInputElement>(
-    '[data-knowledge-search]',
-  )!;
-  const radios = root.querySelectorAll<HTMLInputElement>('input[type=radio]');
-  const docs = root.querySelectorAll<HTMLDetailsElement>('[data-document]');
+      '[data-knowledge-search]',
+    )!,
+    radios = root.querySelectorAll<HTMLInputElement>('input[type=radio]'),
+    docs = root.querySelectorAll<HTMLDetailsElement>('[data-document]');
   const update = () => {
-    const query = search.value.trim().toLowerCase();
-    const category =
-      root.querySelector<HTMLInputElement>('input[type=radio]:checked')
-        ?.value || 'All';
+    const query = search.value.trim().toLowerCase(),
+      category =
+        root.querySelector<HTMLInputElement>('input[type=radio]:checked')
+          ?.value || 'All';
     let count = 0;
     docs.forEach((doc) => {
       const visible =
@@ -117,7 +159,7 @@ document.querySelectorAll<HTMLElement>('[data-knowledge]').forEach((root) => {
       if (visible) count++;
     });
     root.querySelector('[data-knowledge-count]')!.textContent =
-      `${count} example document${count === 1 ? '' : 's'}`;
+      count + ' example document' + (count === 1 ? '' : 's') + ' · ' + category;
     (root.querySelector('[data-knowledge-empty]') as HTMLElement).hidden =
       count !== 0;
   };
@@ -133,180 +175,133 @@ document.querySelectorAll<HTMLElement>('[data-knowledge]').forEach((root) => {
     });
 });
 
-const signalData: Record<
-  string,
-  {
-    labels: string[];
-    values: number[];
-    review: number;
-    time: string;
-    change: string;
-    summary: string;
-    insight: string;
-    caption: string;
-  }
-> = {
-  week: {
-    labels: [
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday',
-    ],
-    values: [14, 22, 18, 26, 30, 9, 7],
-    review: 12,
-    time: '2.4 days',
-    change: '18 more than the previous week',
-    summary: 'Example daily workflow completions for one week.',
-    insight:
-      'Friday has the highest example volume. A higher count alone does not explain quality or team workload.',
-    caption: 'this week',
-  },
-  month: {
-    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-    values: [108, 119, 126, 137],
-    review: 18,
-    time: '2.7 days',
-    change: '42 more than the previous month',
-    summary: 'Example weekly workflow completions for one month.',
-    insight:
-      'The example volume rises across four weeks. Compare the workload and review queue before changing team capacity.',
-    caption: 'this month',
-  },
-  quarter: {
-    labels: ['Month 1', 'Month 2', 'Month 3'],
-    values: [448, 472, 490],
-    review: 24,
-    time: '2.6 days',
-    change: '64 more than the previous quarter',
-    summary: 'Example monthly workflow completions for one quarter.',
-    insight:
-      'The final month has the highest example volume. These prepared values illustrate a trend; they are not business results.',
-    caption: 'this quarter',
-  },
-};
 document.querySelectorAll<HTMLElement>('[data-signal]').forEach((root) => {
-  root
-    .querySelector<HTMLSelectElement>('[data-signal-period]')
-    ?.addEventListener('change', (e) => {
-      const d = signalData[(e.target as HTMLSelectElement).value];
-      root.querySelector('[data-signal-total]')!.textContent = d.values
-        .reduce((a, b) => a + b, 0)
-        .toLocaleString('en');
-      root.querySelector('[data-signal-review]')!.textContent = String(
-        d.review,
+  const select = root.querySelector<HTMLSelectElement>('[data-signal-period]')!;
+  function render() {
+    const period = select.value as keyof typeof fixtures.insights,
+      d = fixtures.insights[period],
+      total = d.completed.reduce((a, b) => a + b, 0),
+      caption = 'this ' + period;
+    root.querySelector('[data-signal-total]')!.textContent =
+      total.toLocaleString('en-MY');
+    root.querySelector('[data-signal-review]')!.textContent = String(
+      d.pending_review,
+    );
+    root.querySelector('[data-signal-time]')!.textContent =
+      d.median_days + ' days';
+    root.querySelector('[data-signal-summary]')!.textContent =
+      'Illustrative ' +
+      { week: 'daily', month: 'weekly', quarter: 'monthly' }[period] +
+      ' completions for ' +
+      caption +
+      '.';
+    root.querySelector('[data-signal-insight]')!.textContent =
+      'This ' +
+      period +
+      ': ' +
+      total +
+      ' illustrative completions. Counts alone do not explain quality or workload.';
+    root.querySelector('[data-signal-caption]')!.textContent = caption;
+    root.querySelector('[data-signal-table-total]')!.textContent =
+      String(total);
+    const bars = root.querySelector('[data-signal-bars]')!,
+      table = root.querySelector('[data-signal-table]')!;
+    bars.replaceChildren();
+    table.replaceChildren();
+    d.labels.forEach((label, i) => {
+      const bar = document.createElement('div'),
+        value = document.createElement('b'),
+        shape = document.createElement('span'),
+        text = document.createElement('small');
+      value.textContent = String(d.completed[i]);
+      shape.style.setProperty(
+        '--bar',
+        (d.completed[i] / Math.max(...d.completed)) * 140 + 'px',
       );
-      root.querySelector('[data-signal-time]')!.textContent = d.time;
-      root.querySelector('[data-signal-change]')!.textContent = d.change;
-      root.querySelector('[data-signal-summary]')!.textContent = d.summary;
-      root.querySelector('[data-signal-insight]')!.textContent = d.insight;
-      root.querySelector('[data-signal-caption]')!.textContent = d.caption;
-      const bars = root.querySelector('[data-signal-bars]')!;
-      const table = root.querySelector('[data-signal-table]')!;
-      bars.replaceChildren();
-      table.replaceChildren();
-      d.labels.forEach((label, i) => {
-        const bar = document.createElement('div');
-        const value = document.createElement('b');
-        value.textContent = String(d.values[i]);
-        const shape = document.createElement('span');
-        shape.style.height = `${(d.values[i] / Math.max(...d.values)) * 150}px`;
-        const text = document.createElement('small');
-        text.textContent =
-          label.length > 6 && !label.includes(' ') ? label.slice(0, 3) : label;
-        bar.append(value, shape, text);
-        bars.append(bar);
-        const row = document.createElement('tr');
-        const th = document.createElement('th');
-        th.scope = 'row';
-        th.textContent = label;
-        const td = document.createElement('td');
-        td.textContent = String(d.values[i]);
-        row.append(th, td);
-        table.append(row);
-      });
-      root
-        .querySelector('[data-signal-chart]')!
-        .setAttribute(
-          'aria-label',
-          `Illustrative completions ${d.caption}: ${d.labels.map((l, i) => `${l} ${d.values[i]}`).join(', ')}. Full data in the table below.`,
-        );
+      text.textContent = label;
+      bar.append(value, shape, text);
+      bars.append(bar);
+      const row = document.createElement('tr'),
+        th = document.createElement('th'),
+        td = document.createElement('td');
+      th.scope = 'row';
+      th.textContent = label;
+      td.textContent = String(d.completed[i]);
+      row.append(th, td);
+      table.append(row);
     });
+    root
+      .querySelector('[data-signal-chart]')!
+      .setAttribute(
+        'aria-label',
+        'Illustrative ' +
+          period +
+          ' completions: ' +
+          d.labels.map((l, i) => l + ' ' + d.completed[i]).join(', ') +
+          '. Total ' +
+          total +
+          '. Full data in the table below.',
+      );
+  }
+  select.addEventListener('change', render);
+  root.querySelector('[data-signal-reset]')?.addEventListener('click', () => {
+    select.value = 'week';
+    render();
+    select.focus();
+  });
 });
-
 document.querySelectorAll<HTMLElement>('[data-compare]').forEach((root) => {
   const descriptions: Record<
     string,
-    { title: string; body: string; href: string; name: string }
+    { name: string; body: string; href: string }
   > = {
     process: {
-      title: 'Start with Flow.',
-      body: 'When the same request keeps crossing the same desks, make its steps explicit. Flow explores triggers, visible handovers and a human review before the work moves on.',
-      href: '/products/flow/',
-      name: 'Try the Flow preview',
+      name: 'Workflows',
+      body: 'Make the stages and owners visible, then pause at a deliberate human approval gate before hand-off.',
+      href: '/products/workflows/',
     },
     context: {
-      title: 'Start with Knowledge.',
-      body: 'When the answer exists but nobody knows where, make the source easier to find. Knowledge explores local discovery, clear snippets and references you can inspect.',
+      name: 'Knowledge',
+      body: 'Find relevant guidance in the six-document local library and inspect its fictional source before acting.',
       href: '/products/knowledge/',
-      name: 'Search the example library',
     },
     insight: {
-      title: 'Start with Signal.',
-      body: 'When a report has numbers but no useful perspective, explore the pattern. Signal brings example periods, clear labels and an underlying data table into one view.',
-      href: '/products/signal/',
-      name: 'Explore the Signal dashboard',
+      name: 'Insights',
+      body: 'Inspect clearly defined completion counts, select a period and check the chart against its underlying table.',
+      href: '/products/insights/',
     },
   };
-  root.querySelectorAll<HTMLInputElement>('input').forEach((input) =>
-    input.addEventListener('change', () => {
-      const d = descriptions[input.value];
-      root.querySelector('[data-compare-title]')!.textContent = d.title;
-      root.querySelector('[data-compare-body]')!.textContent = d.body;
-      const link = root.querySelector<HTMLAnchorElement>(
-        '[data-compare-link]',
-      )!;
-      link.href = d.href;
-      link.textContent = d.name + ' ↗';
-    }),
-  );
+  const update = (key: string) => {
+    const d = descriptions[key];
+    root.querySelector('[data-compare-title]')!.textContent =
+      'Start with ' + d.name + '.';
+    root.querySelector('[data-compare-body]')!.textContent = d.body;
+    const link = root.querySelector<HTMLAnchorElement>('[data-compare-link]')!;
+    link.href = d.href;
+    link.textContent = 'Try ' + d.name + ' →';
+  };
+  root
+    .querySelectorAll<HTMLInputElement>('input')
+    .forEach((input) =>
+      input.addEventListener('change', () => update(input.value)),
+    );
+  root.querySelector('[data-compare-reset]')?.addEventListener('click', () => {
+    const first = root.querySelector<HTMLInputElement>('input[value=process]')!;
+    first.checked = true;
+    update('process');
+    first.focus();
+  });
 });
-
 document
   .querySelectorAll<HTMLElement>('[data-preview-picker]')
   .forEach((root) => {
-    const select = root.querySelector<HTMLSelectElement>('select')!;
-    const link = root.querySelector<HTMLAnchorElement>('[data-preview-link]')!;
+    const select = root.querySelector<HTMLSelectElement>('select')!,
+      link = root.querySelector<HTMLAnchorElement>('[data-preview-link]')!;
     select.addEventListener('change', () => {
-      link.href = `/products/${select.value}/#preview`;
-      link.textContent = `Open ${select.options[select.selectedIndex].text} preview ↗`;
+      link.href = '/products/' + select.value + '/#demo';
+      link.textContent =
+        'Open ' + select.options[select.selectedIndex].text + ' demo →';
     });
   });
-const motion = matchMedia('(prefers-reduced-motion: reduce)');
-if (!motion.matches && 'IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      }),
-    { threshold: 0.08 },
-  );
-  document.querySelectorAll('.reveal').forEach((el) => {
-    el.classList.add('will-reveal');
-    observer.observe(el);
-  });
-  motion.addEventListener('change', () => {
-    if (motion.matches) {
-      document
-        .querySelectorAll('.will-reveal')
-        .forEach((el) => el.classList.add('is-visible'));
-      observer.disconnect();
-    }
-  });
-}
+// Event attributes document the intended taxonomy. No analytics provider is configured,
+// no events are emitted, and demo input is never transmitted or persisted.

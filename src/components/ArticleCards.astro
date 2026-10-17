@@ -1,0 +1,22 @@
+---
+import { articles } from '../data/articles';
+---
+
+<div class="article-cards">
+  {articles.map((a) => (
+    <article class="article-card">
+      <div class="article-art" aria-hidden="true">
+        {a.art.map((s) => (
+          <span>{s}</span>
+        ))}
+      </div>
+      <div class="article-card-body">
+        <p class="eyebrow">{a.category.toUpperCase()}</p>
+        <h3>{a.title}</h3>
+        <p>{a.description}</p>
+        <p class="article-meta">ISMAIL · {a.minutes} minute read</p>
+        <a href={`/journal/${a.slug}/`}>Read the field note →</a>
+      </div>
+    </article>
+  ))}
+</div>

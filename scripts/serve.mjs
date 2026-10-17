@@ -4,6 +4,13 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 const port = Number(process.env.PORT || 4321);
 const root = path.resolve('dist');
+const aliases = {
+  '/products/flow/': '/products/workflows/',
+  '/products/signal/': '/products/insights/',
+  '/design/': '/experience/',
+  '/company/': '/about/',
+  '/support/': '/guides/',
+};
 const mime = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript',
@@ -27,6 +34,12 @@ http
     try {
       const url = new URL(req.url, 'http://localhost');
       const pathname = decodeURIComponent(url.pathname);
+      const alias = aliases[pathname.endsWith('/') ? pathname : pathname + '/'];
+      if (alias) {
+        res.writeHead(301, { Location: alias });
+        res.end();
+        return;
+      }
       let file = path.resolve(root, '.' + pathname);
       if (!file.startsWith(root + path.sep) && file !== root) {
         res.writeHead(403);
@@ -53,6 +66,13 @@ http
       }
       res.writeHead(status, {
         ...headers,
+        'X-Robots-Tag':
+          status === 404 ||
+          !JSON.parse(
+            await fs.readFile(path.join(root, 'release.json'), 'utf8'),
+          ).indexable
+            ? 'noindex, follow'
+            : 'index, follow',
         'Content-Type': mime[path.extname(file)] || 'application/octet-stream',
       });
       res.end(req.method === 'HEAD' ? undefined : body);
@@ -62,5 +82,5 @@ http
     }
   })
   .listen(port, '127.0.0.1', () =>
-    console.log(`CIVOLYN local QA: http://127.0.0.1:${port}`),
+    console.log(`PROWORKS local QA: http://127.0.0.1:${port}`),
   );

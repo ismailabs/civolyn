@@ -1,0 +1,85 @@
+---
+import Frame from '../../components/PageFrame.astro';
+import SignalDemo from '../../components/SignalDemo.astro';
+const items = [
+  {
+    title: 'Coherent period filters',
+    body: 'Switch week, month and quarter. Every dependent number, label, bar and row changes together.',
+  },
+  {
+    title: 'Accessible trends',
+    body: 'Read the exact values in an equivalent semantic table, with a text description of the chart.',
+  },
+  {
+    title: 'Transparent demo datasets',
+    body: 'Prepared fixtures make the arithmetic inspectable. Counts and snapshot metrics have distinct definitions.',
+  },
+];
+---
+
+<Frame label="Insights" items={items}>
+  <section class="container section demo-section" id="demo">
+    <div class="section-heading">
+      <p class="eyebrow">TRY IT / ILLUSTRATIVE OPERATIONS</p>
+      <h2>A dashboard you can check.</h2>
+      <p>
+        Change the period, inspect the total and open the underlying table. The
+        figures are fictional local fixtures, designed to demonstrate consistent
+        reporting interactions.
+      </p>
+    </div>
+    <SignalDemo />
+    <noscript>
+      <p class="callout">
+        The initial weekly chart and data table remain available without
+        JavaScript. Period switching requires JavaScript.
+      </p>
+    </noscript>
+  </section>
+  <section class="container section split-section">
+    <div>
+      <p class="eyebrow">DEFINED BEFORE DESIGNED</p>
+      <h2>Know what a number means.</h2>
+      <p>
+        Completed workflows is the sum of all completion counts for the selected
+        sample period: 103 this week, 181 this month and 558 this quarter. The
+        bars and the table use those same values.
+      </p>
+      <p>
+        Awaiting review is a separate snapshot. Median duration is a prepared
+        illustrative value; it cannot be calculated from daily completion
+        counts. There is no previous-period dataset, so this dashboard makes no
+        growth claim.
+      </p>
+    </div>
+    <div class="reading">
+      <h3>A higher count is a question, not a conclusion.</h3>
+      <p>
+        More completed work could reflect a busier period, a different task mix
+        or a changed definition. A chart alone cannot explain quality, workload
+        or customer satisfaction.
+      </p>
+      <p>
+        Before comparing two periods, check their duration, coverage and rules.
+        Week, month and quarter in this demo have different lengths and are not
+        directly comparable growth windows.
+      </p>
+      <a class="text-link" href="/journal/choosing-useful-dashboard-metrics/">
+        Choose useful dashboard metrics →
+      </a>
+    </div>
+  </section>
+  <section class="container section">
+    <img
+      class="diagram"
+      src="/images/diagrams/insights-flow.svg"
+      width="1200"
+      height="340"
+      loading="lazy"
+      alt="Sample events move through a period filter and reconciliation into an accessible report."
+    />
+    <a class="text-link" href="/experience/">
+      Explore the interface decisions →
+    </a>
+  </section>
+</Frame>

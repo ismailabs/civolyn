@@ -1,23 +1,40 @@
 ---
-interface Props {
-  title?: string;
-  text?: string;
-}
+import { portfolio } from '../data/site';
 const {
-  title = 'Better work starts with a little clarity.',
-  text = 'Explore the ideas. Try the previews. Make room for what comes next.',
+  compact = false,
+  title = 'Interested in a site designed this thoughtfully?',
+  body = 'The product is fictional. The design and development are real. Explore ISMAIL’s work and discuss a website for your business.',
 } = Astro.props;
 ---
 
-<section class="cta-section section">
-  <div class="container cta-inner">
-    <div>
-      <p class="eyebrow">A CLEARER WAY FORWARD</p>
-      <h2>{title}</h2>
-      <p>{text}</p>
-    </div>
-    <a class="button button-blue" href="/contact/">
-      Explore the demos <span aria-hidden="true">↗</span>
+{compact ? (
+  <aside class="container concept-strip">
+    <p>
+      FICTIONAL PROWORKS PLATFORM <span aria-hidden="true"> · </span> AN ISMAIL
+      PORTFOLIO CONCEPT
+    </p>
+    <a
+      href={portfolio}
+      data-event="portfolio_cta_click"
+      data-component="concept-strip"
+    >
+      Explore ISMAIL <span aria-hidden="true">→</span>
     </a>
-  </div>
-</section>
+  </aside>
+) : (
+  <section class="container conversion-bridge">
+    <div>
+      <p class="eyebrow">GOOD DESIGN HAS A REAL CREATOR</p>
+      <h2>{title}</h2>
+      <p>{body}</p>
+    </div>
+    <a
+      class="button"
+      href={portfolio}
+      data-event="portfolio_cta_click"
+      data-component="creator-bridge"
+    >
+      Discuss your website with ISMAIL <span aria-hidden="true">↗</span>
+    </a>
+  </section>
+)}

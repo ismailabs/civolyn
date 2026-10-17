@@ -11,5 +11,21 @@ export default defineConfig({
     url: 'http://127.0.0.1:4321',
     reuseExistingServer: !process.env.CI,
   },
-  projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
+  projects: [
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    ...(process.env.CROSS_BROWSER === '1'
+      ? [
+          {
+            name: 'firefox',
+            testMatch: 'engines.spec.ts',
+            use: { ...devices['Desktop Firefox'] },
+          },
+          {
+            name: 'webkit',
+            testMatch: 'engines.spec.ts',
+            use: { ...devices['Desktop Safari'] },
+          },
+        ]
+      : []),
+  ],
 });

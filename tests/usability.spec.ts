@@ -1,59 +1,57 @@
 import { test, expect } from '@playwright/test';
-
-test('navigation remains usable in a short landscape viewport', async ({
-  page,
-}) => {
+import contracts from '../src/data/page-design-contract.json' with { type: 'json' };
+test('short landscape navigation remains reachable', async ({ page }) => {
   await page.setViewportSize({ width: 844, height: 390 });
   await page.goto('/platform/');
   await page.getByRole('button', { name: 'Menu', exact: true }).click();
   const navigation = page.getByRole('navigation', { name: 'Main navigation' });
   await navigation.locator('summary').click();
   const bounds = await navigation.boundingBox();
-  expect(bounds).not.toBeNull();
   expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(391);
-  await navigation.getByRole('link', { name: /Flow/ }).click();
-  await expect(page).toHaveURL(/\/products\/flow\/$/);
+  await navigation.getByRole('link', { name: /Workflows/ }).click();
+  await expect(page).toHaveURL(/\/products\/workflows\/$/);
 });
-
-test('keyboard focus has sufficient contrast on dark surfaces', async ({
+test('all core pages support 200 percent text enlargement', async ({
   page,
 }) => {
-  for (const [route, scope, name] of [
-    ['/', '.tile-technology', 'Explore the technology concept'],
-    ['/platform/', '.dark-section', 'Explore Flow'],
-  ]) {
-    await page.goto(route);
-    const link = page.locator(scope).getByRole('link', { name, exact: true });
-    await link.focus();
-    const focus = await link.evaluate((el) => {
-      const style = getComputedStyle(el);
-      const background = getComputedStyle(
-        el.closest('.dark-section, .tile-technology')!,
-      ).backgroundColor;
-      const luminance = (color: string) =>
-        color
-          .match(/[\d.]+/g)!
-          .slice(0, 3)
-          .map(Number)
-          .map((value) => value / 255)
-          .map((value) =>
-            value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4,
-          )
-          .reduce(
-            (sum, value, index) =>
-              sum + value * [0.2126, 0.7152, 0.0722][index],
-            0,
-          );
-      const foreground = luminance(style.outlineColor);
-      const behind = luminance(background);
-      return {
-        ratio:
-          (Math.max(foreground, behind) + 0.05) /
-          (Math.min(foreground, behind) + 0.05),
-        width: parseFloat(style.outlineWidth),
-      };
+  await page.setViewportSize({ width: 1280, height: 900 });
+  for (const c of contracts) {
+    await page.goto(c.new);
+    await page.addStyleTag({
+      content:
+        'html{font-size:200%}body{font-size:inherit}p,a,button,label,summary,input,select{font-size:inherit!important}',
     });
-    expect(focus.ratio).toBeGreaterThanOrEqual(3);
-    expect(focus.width).toBeGreaterThanOrEqual(2);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth + 1,
+      ),
+      c.label,
+    ).toBeTruthy();
   }
+});
+test('focus is visible against dark conversion surfaces', async ({ page }) => {
+  await page.goto('/');
+  const link = page.locator('.concept-strip a');
+  await link.focus();
+  const f = await link.evaluate((el) => {
+    const s = getComputedStyle(el),
+      bg = getComputedStyle(el.closest('.concept-strip')!);
+    function l(c: string) {
+      return c
+        .match(/[\d.]+/g)!
+        .slice(0, 3)
+        .map(Number)
+        .map((x) => x / 255)
+        .map((x) => (x <= 0.04045 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4))
+        .reduce((n, v, i) => n + v * [0.2126, 0.7152, 0.0722][i], 0);
+    }
+    const a = l(s.outlineColor),
+      b = l(bg.backgroundColor);
+    return {
+      ratio: (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05),
+      width: parseFloat(s.outlineWidth),
+    };
+  });
+  expect(f.ratio).toBeGreaterThanOrEqual(3);
+  expect(f.width).toBeGreaterThanOrEqual(2);
 });

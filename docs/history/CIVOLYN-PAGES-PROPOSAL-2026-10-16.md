@@ -1,5 +1,7 @@
 # Future Cloudflare Pages deployment
 
+> Historical, unused proposal. Actual production was subsequently observed to be a Worker. Do not execute this Pages guide; use `../CLOUDFLARE-WORKER.md` and the current release report.
+
 **Preparation only. No deployment or DNS change has been performed.** The repository produces a static `dist/` directory. This guide is for a later, separately authorised publication.
 
 ## Connect the existing repository

@@ -1,0 +1,62 @@
+---
+import Layout from './Layout.astro';
+import { portfolio } from '../data/site';
+const { frontmatter } = Astro.props;
+---
+
+<Layout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  article={{ date: '2026-10-17', title: frontmatter.title }}
+>
+  <article class="container article-layout">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="/journal/">Journal</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{frontmatter.category}</span>
+    </nav>
+    <header class="article-header">
+      <p class="eyebrow">FIELD NOTES / {frontmatter.category.toUpperCase()}</p>
+      <h1>{frontmatter.title}</h1>
+      <p class="standfirst">{frontmatter.description}</p>
+      <p class="article-meta">
+        By{' '}
+        <a
+          href={portfolio}
+          data-event="article_to_portfolio_click"
+          data-component="article-byline"
+        >
+          ISMAIL ↗
+        </a>{' '}
+        · Published and reviewed 17 October 2026
+      </p>
+    </header>
+    <div class="article-body reading">
+      <p class="callout">
+        PROWORKS is a fictional portfolio concept. The examples use illustrative
+        data, not customer results.
+      </p>
+      <slot />
+      <aside class="callout">
+        <h2>Thoughtful websites have a real creator.</h2>
+        <p>
+          Explore ISMAIL’s genuine web-development portfolio and enquiry
+          options.
+        </p>
+        <a
+          class="text-link"
+          href={portfolio}
+          data-event="article_to_portfolio_click"
+          data-component="article-end"
+        >
+          Explore ISMAIL ↗
+        </a>
+      </aside>
+      <a class="text-link" href="/journal/">
+        ← Back to the journal
+      </a>
+    </div>
+  </article>
+</Layout>

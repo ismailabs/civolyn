@@ -1,5 +1,7 @@
 # CIVOLYN local acceptance record
 
+> Historical evidence for the prior CIVOLYN implementation only. Superseded for PROWORKS by `../RELEASE-REPORT.md`; none of these results establish the current rebrand or production deployment.
+
 Recorded 16 October 2026 (Asia/Kuala_Lumpur). This record covers the actual local implementation and testing. GitHub publication is independently checked after the final commit. No Cloudflare deployment, domain attachment, DNS change or nameserver change is part of this delivery.
 
 ## Implemented scope

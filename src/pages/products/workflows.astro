@@ -1,0 +1,110 @@
+---
+import Frame from '../../components/PageFrame.astro';
+import FlowDemo from '../../components/FlowDemo.astro';
+const items = [
+  {
+    title: 'Stages and ownership',
+    body: 'Every stage has a responsible role, a clear condition and an understandable next action.',
+  },
+  {
+    title: 'Explicit approval gate',
+    body: 'The example pauses for your decision. A suggestion cannot silently become an approved hand-off.',
+  },
+  {
+    title: 'Complete activity history',
+    body: 'Read the local sequence as you progress; reset it whenever you want to explore again.',
+  },
+];
+---
+
+<Frame label="Workflows" items={items}>
+  <section class="container section demo-section" id="demo">
+    <div class="section-heading">
+      <p class="eyebrow">TRY IT / LOCAL DEMONSTRATION</p>
+      <h2>A considered start, from brief to hand-off.</h2>
+      <p>
+        Advance the sample client-onboarding request through four stages. At
+        Human review, inspect the proposed hand-off and explicitly approve it
+        before completion. No business action or message is sent.
+      </p>
+    </div>
+    <FlowDemo />
+    <noscript>
+      <p class="callout">
+        JavaScript is needed to progress the example. The stages, owners and
+        sample proposal remain readable above; nothing runs externally.
+      </p>
+    </noscript>
+  </section>
+  <section class="container section split-section">
+    <div>
+      <p class="eyebrow">DECISIONS WITH CONTEXT</p>
+      <h2>The pause is part of the process.</h2>
+      <p>
+        An approval is useful when it gives a person enough context to make a
+        decision. Our example holds the delivery step until you actively accept
+        the proposed next action.
+      </p>
+      <p>
+        For an actual team, define who may approve, what they should check and
+        what happens when information is missing. A visually complete process
+        can still be incomplete in practice.
+      </p>
+      <a
+        class="text-link"
+        href="/journal/mapping-a-repeatable-business-process/"
+      >
+        Map a repeatable process →
+      </a>
+    </div>
+    <div>
+      <h3>Patterns worth making explicit</h3>
+      <ol class="lifecycle">
+        <li>
+          <span class="number">A</span>
+          <div>
+            <h3>Project intake</h3>
+            <p>
+              Confirm the request, scope and first milestone before committing
+              to delivery.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="number">B</span>
+          <div>
+            <h3>Document review</h3>
+            <p>
+              Route a proposed revision to the right reviewer and record the
+              accepted decision.
+            </p>
+          </div>
+        </li>
+        <li>
+          <span class="number">C</span>
+          <div>
+            <h3>Weekly coordination</h3>
+            <p>
+              Identify a blocker, give it an owner and agree on a specific next
+              step.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="container section reading">
+    <h2>What does this example prove?</h2>
+    <p>
+      It demonstrates a deterministic frontend state model, visible ownership,
+      keyboard controls and an inspectable activity history. It does not prove
+      integration with your existing tools or savings from automation.
+    </p>
+    <p>
+      For a source that explains each role, explore{' '}
+      <a href="/products/knowledge/">Knowledge</a>. To inspect a separate
+      fictional reporting dataset, try{' '}
+      <a href="/products/insights/">Insights</a>.
+    </p>
+  </section>
+</Frame>

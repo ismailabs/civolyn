@@ -1,0 +1,526 @@
+{
+  "recordedAt": "2026-10-17T03:41:30.622Z",
+  "environment": "Local Windows, real Chromium and workerd; not hosted production",
+  "sourceIdentity": "Containing source commit; pre-commit checks ran on this implementation. Build release.json explicitly records dirty source. Hosted verification requires clean committed source.",
+  "baselineAncestor": "34b5027e9ac148964a6fe754fe7be89cbc91c9b1",
+  "checks": {
+    "astro": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 0
+    },
+    "workerTypes": "passed",
+    "chromium": {
+      "passed": 67,
+      "failed": 0,
+      "elapsed": "3.4 minutes",
+      "routes": 15,
+      "coreRoutes": 12,
+      "widths": [320, 360, 375, 390, 430, 768, 1024, 1280, 1440, 1920],
+      "landscape": [844, 390],
+      "textEnlargement": "200%",
+      "axeViolations": 0
+    },
+    "webkit": "Twelve routes and all three demo smoke flows passed; not the full Chromium suite",
+    "firefox": "Unavailable: launch spawn UNKNOWN persisted after binary reinstall",
+    "newWorkerDryRun": "passed, 0.59 KiB bundle",
+    "legacyWorkerDryRun": "passed, 9.53 KiB bundle",
+    "referenceComparisons": 24,
+    "physicalDevices": "not tested",
+    "manualScreenReader": "not tested"
+  },
+  "static": {
+    "date": "2026-10-17T03:40:51.106Z",
+    "pages": 15,
+    "corePages": 12,
+    "articles": 3,
+    "indexable": true,
+    "uniqueTitles": 15,
+    "uniqueDescriptions": 15,
+    "checkedInternalLinks": 358,
+    "checkedAssetReferences": 138,
+    "clientJavaScriptBytes": 8695,
+    "cssBytes": 29377
+  },
+  "workerProduction": {
+    "observedAt": "2026-10-17T03:30:31.375Z",
+    "environment": "Wrangler local workerd runtime; not deployed",
+    "origin": "http://127.0.0.1:8787",
+    "indexable": true,
+    "results": [
+      {
+        "route": "/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/platform/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/products/workflows/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/products/knowledge/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/products/insights/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/technology/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/experience/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/compare/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/about/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/journal/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/guides/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/contact/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/journal/mapping-a-repeatable-business-process/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/journal/choosing-useful-dashboard-metrics/",
+        "status": 200,
+        "robots": "index, follow"
+      },
+      {
+        "route": "/products/flow/",
+        "status": 301,
+        "location": "/products/workflows/"
+      },
+      {
+        "route": "/products/flow",
+        "status": 301,
+        "location": "/products/workflows/"
+      },
+      {
+        "route": "/products/signal/",
+        "status": 301,
+        "location": "/products/insights/"
+      },
+      {
+        "route": "/products/signal",
+        "status": 301,
+        "location": "/products/insights/"
+      },
+      {
+        "route": "/design/",
+        "status": 301,
+        "location": "/experience/"
+      },
+      {
+        "route": "/design",
+        "status": 301,
+        "location": "/experience/"
+      },
+      {
+        "route": "/company/",
+        "status": 301,
+        "location": "/about/"
+      },
+      {
+        "route": "/company",
+        "status": 301,
+        "location": "/about/"
+      },
+      {
+        "route": "/support/",
+        "status": 301,
+        "location": "/guides/"
+      },
+      {
+        "route": "/support",
+        "status": 301,
+        "location": "/guides/"
+      }
+    ],
+    "head": 200,
+    "missing": 404,
+    "missingRobots": "noindex, follow",
+    "post": 405,
+    "svg": 200
+  },
+  "workerPreview": {
+    "observedAt": "2026-10-17T03:35:39.092Z",
+    "environment": "Wrangler local workerd runtime; not deployed",
+    "origin": "http://127.0.0.1:8787",
+    "indexable": false,
+    "results": [
+      {
+        "route": "/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/platform/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/products/workflows/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/products/knowledge/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/products/insights/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/technology/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/experience/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/compare/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/about/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/journal/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/guides/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/contact/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/journal/mapping-a-repeatable-business-process/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/journal/choosing-useful-dashboard-metrics/",
+        "status": 200,
+        "robots": "noindex, follow"
+      },
+      {
+        "route": "/products/flow/",
+        "status": 301,
+        "location": "/products/workflows/"
+      },
+      {
+        "route": "/products/flow",
+        "status": 301,
+        "location": "/products/workflows/"
+      },
+      {
+        "route": "/products/signal/",
+        "status": 301,
+        "location": "/products/insights/"
+      },
+      {
+        "route": "/products/signal",
+        "status": 301,
+        "location": "/products/insights/"
+      },
+      {
+        "route": "/design/",
+        "status": 301,
+        "location": "/experience/"
+      },
+      {
+        "route": "/design",
+        "status": 301,
+        "location": "/experience/"
+      },
+      {
+        "route": "/company/",
+        "status": 301,
+        "location": "/about/"
+      },
+      {
+        "route": "/company",
+        "status": 301,
+        "location": "/about/"
+      },
+      {
+        "route": "/support/",
+        "status": 301,
+        "location": "/guides/"
+      },
+      {
+        "route": "/support",
+        "status": 301,
+        "location": "/guides/"
+      }
+    ],
+    "head": 200,
+    "missing": 404,
+    "missingRobots": "noindex, follow",
+    "post": 405,
+    "svg": 200
+  },
+  "performance": {
+    "initial": [
+      {
+        "route": "/",
+        "iterations": 3,
+        "performanceRange": [97, 98],
+        "performanceMedian": 97,
+        "lcpMedian": 1261.352,
+        "clsMedian": 0,
+        "tbtMedian": 205.5
+      },
+      {
+        "route": "/products/insights/",
+        "iterations": 3,
+        "performanceRange": [74, 78],
+        "performanceMedian": 77,
+        "lcpMedian": 1932.4175,
+        "clsMedian": 0,
+        "tbtMedian": 989
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "iterations": 3,
+        "performanceRange": [87, 100],
+        "performanceMedian": 100,
+        "lcpMedian": 1456.696,
+        "clsMedian": 0,
+        "tbtMedian": 90.65200000000004
+      }
+    ],
+    "freshBrowser": [
+      {
+        "route": "/",
+        "iterations": 3,
+        "performanceRange": [48, 100],
+        "performanceMedian": 80,
+        "lcpMedian": 2434.6499999999996,
+        "clsMedian": 0,
+        "tbtMedian": 546.6749999999997
+      },
+      {
+        "route": "/products/insights/",
+        "iterations": 3,
+        "performanceRange": [63, 99],
+        "performanceMedian": 79,
+        "lcpMedian": 1836.7540000000001,
+        "clsMedian": 0,
+        "tbtMedian": 887.5000000000002
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "iterations": 3,
+        "performanceRange": [51, 98],
+        "performanceMedian": 75,
+        "lcpMedian": 3224.0025,
+        "clsMedian": 0,
+        "tbtMedian": 475
+      }
+    ],
+    "note": "Both raw series retained. Local mobile simulated lab runs, not field CWV or INP; large run variance; no claim that fresh browser proves an improvement."
+  },
+  "creatorDestinations": {
+    "observedAt": "2026-10-17T03:35:40.585Z",
+    "method": "Read-only HTTP plus earlier public portfolio inspection; no message or form submitted",
+    "results": [
+      {
+        "destination": "https://www.ismailstudio.my/",
+        "status": 200,
+        "location": null
+      },
+      {
+        "destination": "https://wa.me/601163265610",
+        "status": 302,
+        "location": "https://api.whatsapp.com/send/?phone=601163265610&text&type=phone_number&app_absent=0"
+      }
+    ]
+  },
+  "credentialPatterns": {
+    "observedAt": "2026-10-17T03:35:04.353Z",
+    "filesChecked": 89,
+    "patterns": "Private-key blocks, common GitHub token formats, AWS access key IDs, Stripe keys; targeted source patterns only, not Gitleaks or a comprehensive audit",
+    "flags": []
+  },
+  "screenshots": [
+    {
+      "path": "artifacts/screenshots/about-desktop.png",
+      "bytes": 367355,
+      "sha256": "09134efdf0747f36d6057750aec892ab8386b18a126395a1a250ea380093fc36"
+    },
+    {
+      "path": "artifacts/screenshots/about-mobile.png",
+      "bytes": 316951,
+      "sha256": "14fbf5f1600dd038b912d0cc31f95ef7ba41a6ca1344ea72bb9e4b06b9b6cd3c"
+    },
+    {
+      "path": "artifacts/screenshots/compare-desktop.png",
+      "bytes": 386566,
+      "sha256": "fb92f5869ccc2230f736dbbed26cb39df50731c6607e9f77e7b18d4af7395870"
+    },
+    {
+      "path": "artifacts/screenshots/compare-mobile.png",
+      "bytes": 346969,
+      "sha256": "0c0a93cc3fcb85eb25bad2d9b2ace8d4fea262bb15f5b605d12f6430b70f3e6b"
+    },
+    {
+      "path": "artifacts/screenshots/contact-desktop.png",
+      "bytes": 346714,
+      "sha256": "ef664c5daab3b78c088d915c8f79089513e28f03e665cad1b1e0625ef3e4f173"
+    },
+    {
+      "path": "artifacts/screenshots/contact-mobile.png",
+      "bytes": 293157,
+      "sha256": "01e8c5227e096d0dcd219e2b08a3ad9c42597015abd6224cd86f10d277a04c23"
+    },
+    {
+      "path": "artifacts/screenshots/experience-desktop.png",
+      "bytes": 335650,
+      "sha256": "58fbcc2ec42a3c3f9a8b70a15c8a6c3b241f661314bdaf5500817a6f02159b3a"
+    },
+    {
+      "path": "artifacts/screenshots/experience-mobile.png",
+      "bytes": 289635,
+      "sha256": "e47a2eeda1886b197a1cc223f9f32d96dcc3fde68a26da556c9557084c54d585"
+    },
+    {
+      "path": "artifacts/screenshots/guides-desktop.png",
+      "bytes": 362528,
+      "sha256": "11ccfd88ed5c5222d2c95364f203b45e5817cb6f1a6f37a67ac5ed581b798a19"
+    },
+    {
+      "path": "artifacts/screenshots/guides-mobile.png",
+      "bytes": 305968,
+      "sha256": "99304b7483334c8401afed0ad0a0ffa05d51395df01f9e41bbdca718c6613a34"
+    },
+    {
+      "path": "artifacts/screenshots/home-desktop.png",
+      "bytes": 356110,
+      "sha256": "ce27fb09e4ea902fc1e357151c9e1aa255322407679a08083c3cdbb25221c986"
+    },
+    {
+      "path": "artifacts/screenshots/home-mobile.png",
+      "bytes": 311277,
+      "sha256": "8137f8f5aa2a6a9c7f7d579a2e06f1aeffbb5a057db833a3adcaf0a9c254bc71"
+    },
+    {
+      "path": "artifacts/screenshots/insights-desktop.png",
+      "bytes": 380437,
+      "sha256": "2e8fe86e9708348b6fc04e2a4a00517293fd0bd4ddbe87975ae569977a4c11a4"
+    },
+    {
+      "path": "artifacts/screenshots/insights-mobile.png",
+      "bytes": 306704,
+      "sha256": "8bdb86d5ea37492d890de175847b94eb34cb193ec603eff197d3119dfc84e470"
+    },
+    {
+      "path": "artifacts/screenshots/journal-desktop.png",
+      "bytes": 365653,
+      "sha256": "dc4c8132aca3b160dbb9badf286cfc0a6c36c805b50225bd79410fea13b843d8"
+    },
+    {
+      "path": "artifacts/screenshots/journal-mobile.png",
+      "bytes": 325620,
+      "sha256": "8eec3719fc73f32c13b636d86f5aa04bbd75fb9f8972b029aef46b3aa9b8064c"
+    },
+    {
+      "path": "artifacts/screenshots/knowledge-desktop.png",
+      "bytes": 428803,
+      "sha256": "e8a09e2e174c19dc9f49647a4175037b011d959f6163b60a96f2965cc34a8e65"
+    },
+    {
+      "path": "artifacts/screenshots/knowledge-mobile.png",
+      "bytes": 349163,
+      "sha256": "5aa9779e90b1993eda5f09b3f021aadf75ee750c298d339f432cc2a0fd742f05"
+    },
+    {
+      "path": "artifacts/screenshots/platform-desktop.png",
+      "bytes": 354269,
+      "sha256": "f9dd0366ea335077a4c472dd543420f61ae6e704e2b5a0d6a827e51a9c11d7e9"
+    },
+    {
+      "path": "artifacts/screenshots/platform-mobile.png",
+      "bytes": 308143,
+      "sha256": "926e88c9975984ea6bab184302966e618cb59185ebe46b29042de45830470f51"
+    },
+    {
+      "path": "artifacts/screenshots/technology-desktop.png",
+      "bytes": 386189,
+      "sha256": "cca8a52d53f9f9284bd846cd330c52cc70c748c95840b028fa3517b8ff8714ec"
+    },
+    {
+      "path": "artifacts/screenshots/technology-mobile.png",
+      "bytes": 312053,
+      "sha256": "8bb31b9a6876a6f0bf87976b903bee42ae6a0fe932871efec550034f4d5a8477"
+    },
+    {
+      "path": "artifacts/screenshots/workflows-desktop.png",
+      "bytes": 433672,
+      "sha256": "aba332823a77d261d3ff4512475f56a8ec9fa696aecf85971d8a362a1de34c67"
+    },
+    {
+      "path": "artifacts/screenshots/workflows-mobile.png",
+      "bytes": 363057,
+      "sha256": "cdf4eb83ec6e330accca51376a7315790e510a8d28c3e8604638007f44d32078"
+    }
+  ]
+}

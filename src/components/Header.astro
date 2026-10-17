@@ -1,67 +1,71 @@
 ---
 import Logo from './Logo.astro';
+import { products, portfolio } from '../data/site';
 const path = Astro.url.pathname;
-const active = (href: string) => (path === href ? 'page' : undefined);
 ---
 
 <header class="site-header">
-  <div class="header-inner">
-    <Logo />
+  <div class="container header-inner">
+    <a class="brand-link" href="/" aria-label="PROWORKS home">
+      <Logo />
+    </a>
     <button
       class="menu-toggle"
       aria-expanded="false"
       aria-controls="primary-nav"
+      aria-label="Menu"
     >
-      <span>Menu</span>
-      <span class="menu-lines" aria-hidden="true"></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
     <nav id="primary-nav" aria-label="Main navigation">
-      <a href="/platform/" aria-current={active('/platform/')}>
+      <a
+        href="/platform/"
+        aria-current={path === '/platform/' ? 'page' : undefined}
+      >
         Platform
       </a>
       <details class="nav-group">
         <summary>
           Products <span aria-hidden="true">⌄</span>
         </summary>
-        <div class="nav-dropdown">
-          <a href="/products/flow/" aria-current={active('/products/flow/')}>
-            <b>↗ &nbsp; Flow</b>
-            <span>Let work move</span>
-          </a>
-          <a
-            href="/products/knowledge/"
-            aria-current={active('/products/knowledge/')}
-          >
-            <b>⌕ &nbsp; Knowledge</b>
-            <span>Find your context</span>
-          </a>
-          <a
-            href="/products/signal/"
-            aria-current={active('/products/signal/')}
-          >
-            <b>▥ &nbsp; Signal</b>
-            <span>See what matters</span>
-          </a>
+        <div class="product-menu">
+          {products.map((p) => (
+            <a
+              href={p.link}
+              aria-current={path === p.link ? 'page' : undefined}
+            >
+              <span class="product-symbol" aria-hidden="true">
+                {p.symbol}
+              </span>
+              <span>
+                <b>{p.name}</b>
+                <small>{p.detail}</small>
+              </span>
+            </a>
+          ))}
           <a href="/compare/">
-            Compare the products <span aria-hidden="true">↗</span>
+            Compare all three <span aria-hidden="true">→</span>
           </a>
         </div>
       </details>
-      <a href="/technology/" aria-current={active('/technology/')}>
-        Technology
+      <a
+        href="/guides/"
+        aria-current={path === '/guides/' ? 'page' : undefined}
+      >
+        Guides
       </a>
-      <a href="/journal/" aria-current={active('/journal/')}>
-        Journal
-      </a>
-      <a href="/company/" aria-current={active('/company/')}>
-        Company
+      <a href="/about/" aria-current={path === '/about/' ? 'page' : undefined}>
+        About
       </a>
       <a
-        class="button button-dark nav-cta"
-        href="/contact/"
-        aria-current={active('/contact/')}
+        class="button header-cta"
+        href={portfolio}
+        data-event="portfolio_cta_click"
+        data-component="header"
       >
-        Explore a demo <span aria-hidden="true">↗</span>
+        Talk to ISMAIL <span aria-hidden="true">↗</span>
       </a>
     </nav>
   </div>

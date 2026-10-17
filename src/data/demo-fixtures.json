@@ -1,0 +1,86 @@
+{
+  "workflows": {
+    "stages": [
+      {
+        "id": "intake",
+        "name": "Intake",
+        "description": "Sample onboarding request received"
+      },
+      {
+        "id": "prepare",
+        "name": "Prepare",
+        "description": "Gather sample brief and owner"
+      },
+      {
+        "id": "review",
+        "name": "Human review",
+        "description": "Explicit approval required"
+      },
+      {
+        "id": "handoff",
+        "name": "Hand-off",
+        "description": "Local simulation completed"
+      }
+    ],
+    "approval_required_before_completion": true
+  },
+  "documents": [
+    {
+      "title": "A considered start: client onboarding",
+      "category": "Guides",
+      "source": "Sample operations handbook \u00a7 2.1",
+      "excerpt": "Confirm the owner, scope and first milestone before proposing a timetable."
+    },
+    {
+      "title": "Project intake: a useful brief",
+      "category": "Projects",
+      "source": "Sample playbook \u00a7 1.3",
+      "excerpt": "State the audience, problem, constraints and success conditions."
+    },
+    {
+      "title": "Weekly reviews that help",
+      "category": "Guides",
+      "source": "Sample team practice \u00a7 4.2",
+      "excerpt": "Use a review to record blockers, owners and specific next actions."
+    },
+    {
+      "title": "Human approval policy",
+      "category": "Policies",
+      "source": "Sample governance \u00a7 3.1",
+      "excerpt": "An example suggestion is not externally approved until reviewed."
+    },
+    {
+      "title": "Quarterly priorities",
+      "category": "Projects",
+      "source": "Sample planning collection \u00a7 2.4",
+      "excerpt": "Choose fewer priorities and revisit based on new evidence."
+    },
+    {
+      "title": "Writing for busy teams",
+      "category": "Guides",
+      "source": "Sample editorial guide \u00a7 1.1",
+      "excerpt": "Lead with the point and connect to the original reference."
+    }
+  ],
+  "insights": {
+    "week": {
+      "labels": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      "completed": [8, 12, 15, 10, 20, 22, 16],
+      "pending_review": 9,
+      "median_days": 2.4
+    },
+    "month": {
+      "labels": ["W1", "W2", "W3", "W4"],
+      "completed": [37, 44, 51, 49],
+      "pending_review": 12,
+      "median_days": 2.2
+    },
+    "quarter": {
+      "labels": ["M1", "M2", "M3"],
+      "completed": [168, 203, 187],
+      "pending_review": 18,
+      "median_days": 2.5
+    }
+  },
+  "note": "All data fictional and intended for local deterministic display. Do not present as PROWORKS customers or outcomes."
+}

@@ -1,0 +1,109 @@
+---
+import Frame from '../components/PageFrame.astro';
+import { portfolio } from '../data/site';
+const items = [
+  {
+    title: 'Why it was designed',
+    body: 'To explore how a convincing product story can remain transparent about its fictional nature.',
+  },
+  {
+    title: 'The Malaysian SME perspective',
+    body: 'Clear language, useful next steps and a manageable amount of information for people running busy businesses.',
+  },
+  {
+    title: 'Who actually built this',
+    body: 'An original frontend portfolio concept by ISMAIL, the separate real website-development destination.',
+    href: '/contact/',
+  },
+];
+---
+
+<Frame label="About" items={items}>
+  <section class="container section split-section" id="concept">
+    <div>
+      <p class="eyebrow">AN IMAGINED PRODUCT. A REAL PIECE OF WORK.</p>
+      <h2>A concept built around a simple question.</h2>
+      <p>
+        What would an operations interface feel like if it made work easier to
+        understand? PROWORKS explores that question through three related ideas:
+        a visible process, a source-aware library and a readable report.
+      </p>
+      <p>
+        The product company is fictional. There is no founding story, staff
+        directory, customer roster or subscription service. The website exists
+        to demonstrate thoughtful design and frontend engineering.
+      </p>
+    </div>
+    <div class="callout">
+      <h3>Created by ISMAIL</h3>
+      <p>
+        PROWORKS is an original portfolio project for the real ISMAIL
+        web-development business. Follow the creator link to evaluate the work
+        and discuss a real website project.
+      </p>
+      <a
+        class="text-link"
+        href={portfolio}
+        data-event="portfolio_cta_click"
+        data-component="about-credit"
+      >
+        Explore the ISMAIL portfolio ↗
+      </a>
+    </div>
+  </section>
+  <section class="container section">
+    <div class="section-heading">
+      <p class="eyebrow">PRINCIPLES THAT SHAPE THE WORK</p>
+      <h2>Useful before impressive.</h2>
+    </div>
+    <ol class="lifecycle">
+      <li>
+        <span class="number">01</span>
+        <div>
+          <h3>Begin with the visitor’s question</h3>
+          <p>
+            A business owner needs a clear explanation and a credible next step.
+            Each page serves a different purpose, from understanding the product
+            concept to inspecting the technical work.
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="number">02</span>
+        <div>
+          <h3>Show the consequence</h3>
+          <p>
+            The workflow pauses at review. The library identifies its sources.
+            The dashboard exposes its figures. Every example makes the boundary
+            between an illustration and a real action visible.
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="number">03</span>
+        <div>
+          <h3>Keep the experience considerate</h3>
+          <p>
+            Readable typography, responsive layouts, native controls and
+            restrained motion make the content easier to use across different
+            ways of browsing.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </section>
+  <section class="container section reading">
+    <h2>A note on the name</h2>
+    <p>
+      PROWORKS is the chosen identity for this fictional portfolio concept. The
+      name is used by other businesses and has not been trademark-cleared. This
+      project does not claim exclusive rights, legal clearance or an association
+      with those businesses.
+    </p>
+    <p>
+      Explore the <a href="/technology/">actual implementation</a>, read the{' '}
+      <a href="/journal/">original field notes</a>, or{' '}
+      <a href="/contact/">choose a next step</a>.
+    </p>
+  </section>
+</Frame>

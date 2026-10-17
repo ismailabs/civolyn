@@ -1,168 +1,110 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Workspace from '../components/Workspace.astro';
-import CTA from '../components/CTA.astro';
+import Frame from '../components/PageFrame.astro';
+import { products } from '../data/site';
+const items = [
+  {
+    title: 'Connected, not complicated',
+    body: 'One example journey ties requests, references and reporting together without hiding how each part works.',
+  },
+  {
+    title: 'Simple hand-offs',
+    body: 'A stage changes when its exit condition is met, with an owner and a clear next action.',
+  },
+  {
+    title: 'Understandable information',
+    body: 'Inspect the source of an answer and the figures behind a chart before relying on either.',
+  },
+];
 ---
 
-<Layout>
-  <section class="page-intro">
-    <div class="container">
-      <p class="eyebrow">THE CIVOLYN PLATFORM</p>
-      <div class="intro-split">
-        <h1>
-          One workspace.
-          <br />
-          <em>A clearer way forward.</em>
-        </h1>
-        <p class="intro-copy">
-          An unanswered question holds up a task. An unfinished task changes the
-          report. Your work is connected. CIVOLYN imagines tools that see those
-          connections, too.
-        </p>
-      </div>
-      <div class="intro-rule">
-        <span>A unified workspace for work, context and direction.</span>
-        <span>FICTIONAL PLATFORM CONCEPT / 01</span>
-      </div>
+<Frame label="Platform" items={items}>
+  <section class="container section split-section">
+    <div>
+      <p class="eyebrow">FROM REQUEST TO PERSPECTIVE</p>
+      <h2>One story, told in three useful ways.</h2>
+      <p>
+        A hypothetical creative team receives a project brief. Someone prepares
+        the context, an approver checks the proposal, and a delivery owner takes
+        the next step. Documentation explains the process; reporting makes the
+        pattern visible.
+      </p>
+      <p class="demo-note">
+        This relationship is conceptual. The three demos use separate local
+        fixtures and do not synchronise business data.
+      </p>
     </div>
-  </section>
-  <section class="container">
-    <div class="platform-stage">
-      <Workspace />
-    </div>
-    <p class="section-caption">
-      <span>A concept workspace, built around the way a team works.</span>
-      <span>Illustrative content</span>
-    </p>
-  </section>
-  <section class="section">
-    <div class="container platform-principle">
-      <div>
-        <p class="eyebrow">THE IDEA IS SIMPLE</p>
-        <blockquote>
-          Give work a shared context.
-          <br />
-          <em>Keep the next step in sight.</em>
-        </blockquote>
-      </div>
-      <div class="editorial-copy">
-        <p>
-          In a growing team, the cost of switching tools is often the context
-          left behind. A brief lives in one place. Its approval happens
-          somewhere else. The numbers arrive after everyone has moved on.
-        </p>
-        <p>
-          CIVOLYN connects three useful perspectives: what needs to happen, what
-          the team already knows, and what the activity can tell us. The concept
-          brings those perspectives into one calm workspace without making every
-          task look the same.
-        </p>
-        <p>
-          It is an exploration of a possible product experience. The previews
-          use local example data; they do not connect your tools or run real
-          business processes.
-        </p>
-      </div>
-    </div>
-  </section>
-  <section class="section dark-section">
-    <div class="container">
-      <p class="eyebrow">A CONNECTED DAY, FROM START TO FINISH</p>
-      <h2>
-        One request.
-        <br />
-        <em>Three ways to make it clearer.</em>
-      </h2>
-      <div class="connected-story">
-        <article>
-          <span class="number">01 / MOVE</span>
-          <h3>A new project comes in.</h3>
+    <ol class="lifecycle">
+      <li>
+        <span class="number">01</span>
+        <div>
+          <h3>Make the next step visible</h3>
           <p>
-            Flow gives an illustrative intake request a visible path: gather a
-            brief, prepare a summary, ask for approval and identify the next
-            owner.
+            Workflows shows Intake → Prepare → Human review → Hand-off. An
+            approval gate pauses the process until you choose to proceed.
           </p>
-          <a class="arrow-link" href="/products/flow/">
-            Explore Flow <span aria-hidden="true">↗</span>
+        </div>
+      </li>
+      <li>
+        <span class="number">02</span>
+        <div>
+          <h3>Keep context close</h3>
+          <p>
+            Knowledge offers six searchable sample references. Read an excerpt
+            and check where it came from.
+          </p>
+        </div>
+      </li>
+      <li>
+        <span class="number">03</span>
+        <div>
+          <h3>Check the pattern</h3>
+          <p>
+            Insights changes periods, totals, bars and table rows together.
+            Counts are illustrative; they do not establish business results.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </section>
+  <section class="container section">
+    <div class="section-heading">
+      <p class="eyebrow">CHOOSE A PERSPECTIVE</p>
+      <h2>Explore the part that interests you.</h2>
+    </div>
+    <div class="product-grid">
+      {products.map((p) => (
+        <article class="product-card">
+          <span class="product-symbol" aria-hidden="true">
+            {p.symbol}
+          </span>
+          <h3>{p.name}</h3>
+          <p>{p.description}</p>
+          <a class="text-link" href={p.link}>
+            Try {p.name} →
           </a>
         </article>
-        <article>
-          <span class="number">02 / UNDERSTAND</span>
-          <h3>The right context is close.</h3>
-          <p>
-            Knowledge gives the team a place to find the onboarding guide and
-            review policy. A useful answer stays connected to its original
-            reference.
-          </p>
-          <a class="arrow-link" href="/products/knowledge/">
-            Explore Knowledge <span aria-hidden="true">↗</span>
-          </a>
-        </article>
-        <article>
-          <span class="number">03 / REFLECT</span>
-          <h3>The pattern comes into view.</h3>
-          <p>
-            Signal presents example completion volumes over time. The team can
-            ask what changed, where a queue is growing and what needs a closer
-            look.
-          </p>
-          <a class="arrow-link" href="/products/signal/">
-            Explore Signal <span aria-hidden="true">↗</span>
-          </a>
-        </article>
-      </div>
+      ))}
     </div>
   </section>
-  <section class="section">
+  <section class="dark-section">
     <div class="container split-section">
       <div>
-        <p class="eyebrow">CONNECTED DOESN’T HAVE TO MEAN COMPLICATED</p>
-        <h2>
-          A common foundation.
-          <br />
-          <em>Room for different work.</em>
-        </h2>
+        <p class="eyebrow">CLEAR BOUNDARIES</p>
+        <h2>A useful model of a work system.</h2>
+      </div>
+      <div>
         <p>
-          A small operations team and a project lead may begin in different
-          places. The underlying principles stay consistent.
+          No external integrations, private documents, live data pipeline or
+          deployed AI are connected. Trying an example changes only this
+          browser’s local interface state. Reload the page to start fresh.
         </p>
-        <a class="arrow-link" href="/compare/">
-          Compare the three products <span aria-hidden="true">↗</span>
+        <a class="text-link" href="/technology/">
+          Understand the actual architecture →
+        </a>
+        <a class="text-link" href="/compare/">
+          Find a starting point →
         </a>
       </div>
-      <ol class="numbered-list">
-        <li>
-          <span class="number">01</span>
-          <div>
-            <h3>Context travels with the task.</h3>
-            <p>
-              Keep a brief, a relevant reference and a next step near each
-              other, so handovers need less explanation.
-            </p>
-          </div>
-        </li>
-        <li>
-          <span class="number">02</span>
-          <div>
-            <h3>People stay in the loop.</h3>
-            <p>
-              A suggestion is a starting point. Review checkpoints make space
-              for the judgment that a process cannot supply.
-            </p>
-          </div>
-        </li>
-        <li>
-          <span class="number">03</span>
-          <div>
-            <h3>Progress can be understood.</h3>
-            <p>
-              Clear labels and source references help people interpret what they
-              see, including what the examples cannot tell them.
-            </p>
-          </div>
-        </li>
-      </ol>
     </div>
   </section>
-  <CTA title="Find a little more room in your day." />
-</Layout>
+</Frame>

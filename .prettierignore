@@ -8,3 +8,5 @@ package-lock.json
 docs/licenses
 public/images
 src/assets
+worker-configuration.d.ts
+PROWORKS-Complete-Codex-Handoff

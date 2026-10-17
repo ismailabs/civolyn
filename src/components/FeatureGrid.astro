@@ -1,0 +1,29 @@
+---
+const {
+  items,
+  title = 'Design that makes business easier.',
+  eyebrow = 'CRAFTED FOR CLARITY',
+} = Astro.props;
+---
+
+<section class="container feature-section" aria-labelledby="features-title">
+  <p class="eyebrow">{eyebrow}</p>
+  <h2 id="features-title">{title}</h2>
+  <div class="feature-grid">
+    {items.map(
+      (item: { title: string; body: string; href?: string }, i: number) => (
+        <article class="feature-card">
+          <span class="number">{String(i + 1).padStart(2, '0')}</span>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+          {item.href && (
+            <a href={item.href}>
+              Explore {item.title.toLowerCase()}{' '}
+              <span aria-hidden="true">→</span>
+            </a>
+          )}
+        </article>
+      ),
+    )}
+  </div>
+</section>

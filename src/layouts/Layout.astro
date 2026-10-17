@@ -2,6 +2,7 @@
 import '../styles/fonts.css';
 import manropeFont from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url';
 import '../styles/global.css';
+import '../styles/refinements.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { pages } from '../data/site';
@@ -9,38 +10,52 @@ interface Props {
   title?: string;
   description?: string;
   noindex?: boolean;
+  article?: { date: string; title: string };
 }
 const page = pages.find((p) => p.path === Astro.url.pathname);
 const {
   title = page?.title || 'Page not found',
   description = page?.description ||
-    'Explore the CIVOLYN fictional concept by ISMAIL.',
+    'Explore the fictional PROWORKS concept by ISMAIL.',
   noindex = false,
+  article,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const indexable = !noindex && !__PREVIEW__;
-const fullTitle = `${title} · CIVOLYN`;
+const fullTitle = `${title} | PROWORKS`;
 const structured = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
+  '@type': article ? 'Article' : 'WebPage',
   name: fullTitle,
+  headline: article?.title,
   description,
   url: canonical.href,
   isPartOf: {
     '@type': 'WebSite',
-    name: 'CIVOLYN — fictional concept by ISMAIL',
+    name: 'PROWORKS — fictional concept by ISMAIL',
     url: Astro.site?.href,
   },
-  inLanguage: 'en',
+  inLanguage: 'en-MY',
+  ...(article
+    ? {
+        datePublished: article.date,
+        dateModified: article.date,
+        author: {
+          '@type': 'Organization',
+          name: 'ISMAIL',
+          url: 'https://www.ismailstudio.my/',
+        },
+      }
+    : {}),
 };
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en-MY">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#F7F6F2" />
+    <meta name="theme-color" content="#F6F8FC" />
     <meta name="color-scheme" content="light" />
     <link
       rel="preload"
@@ -59,10 +74,10 @@ const structured = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta property="og:type" content="website" />
+    {indexable && <link rel="sitemap" href="/sitemap-index.xml" />}
+    <meta property="og:type" content={article ? 'article' : 'website'} />
     <meta property="og:locale" content="en_MY" />
-    <meta property="og:site_name" content="CIVOLYN · Fictional concept" />
+    <meta property="og:site_name" content="PROWORKS · Fictional concept" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -74,7 +89,7 @@ const structured = {
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="CIVOLYN. Make room for better work. Fictional concept, an ISMAIL portfolio project."
+      content="PROWORKS. A fictional platform. An original ISMAIL portfolio concept."
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
@@ -83,12 +98,20 @@ const structured = {
       name="twitter:image"
       content={new URL('/social-preview.png', Astro.site)}
     />
-    <script type="application/ld+json" set:html={JSON.stringify(structured)} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structured).replace(/</g, '\\u003c')}
+    />
   </head>
   <body>
     <noscript>
       <style>
-        .menu-toggle {
+        .menu-toggle,
+        .demo-controls,
+        .filter-chips,
+        .period-select,
+        .knowledge-search-control,
+        .js-only {
           display: none !important;
         }
         @media (max-width: 999px) {
@@ -107,6 +130,9 @@ const structured = {
             max-height: none;
             padding: 0 0 20px;
             box-shadow: none;
+          }
+          .header-cta {
+            margin-left: 0;
           }
         }
       </style>

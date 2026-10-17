@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from './PageHero.astro';
+import FeatureGrid from './FeatureGrid.astro';
+import CTA from './CTA.astro';
+interface Props {
+  label: string;
+  items: { title: string; body: string; href?: string }[];
+  title?: string;
+}
+const { label, items, title } = Astro.props;
+---
+
+<Layout>
+  <PageHero label={label} />
+  <FeatureGrid items={items} title={title} />
+  <CTA compact />
+  <slot />
+  <CTA />
+</Layout>

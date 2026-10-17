@@ -1,55 +1,55 @@
 ---
 import Logo from './Logo.astro';
-import { portfolio } from '../data/site';
+import { products, portfolio } from '../data/site';
 ---
 
 <footer class="site-footer">
-  <div class="container footer-top">
+  <div class="container footer-grid">
     <div>
-      <Logo />
-      <p>
-        Less friction.
-        <br />
-        More clarity. Better progress.
-      </p>
-      <p class="disclosure">
-        <span class="status-dot"></span> Fictional concept · An ISMAIL portfolio
-        project
+      <a href="/" aria-label="PROWORKS home">
+        <Logo />
+      </a>
+      <p>Make room for work that moves.</p>
+      <p class="footer-disclosure">
+        Fictional concept by ISMAIL. Sample data and browser-only demos. No
+        software subscription or connected AI.
       </p>
     </div>
-    <div class="footer-links">
-      <div>
-        <h2>Explore</h2>
-        <a href="/platform/">Platform</a>
-        <a href="/products/flow/">Flow</a>
-        <a href="/products/knowledge/">Knowledge</a>
-        <a href="/products/signal/">Signal</a>
-        <a href="/compare/">Compare products</a>
-      </div>
-      <div>
-        <h2>Perspective</h2>
-        <a href="/technology/">Technology</a>
-        <a href="/design/">Design & experience</a>
-        <a href="/company/">Our story</a>
-        <a href="/journal/">Journal</a>
-      </div>
-      <div>
-        <h2>A little help</h2>
-        <a href="/support/">Support & FAQs</a>
-        <a href="/contact/">Explore a demo</a>
-        <a href={portfolio}>
-          Explore ISMAIL <span aria-hidden="true">↗</span>
-        </a>
-      </div>
+    <nav aria-label="Product navigation">
+      <b>Explore the concept</b>
+      <a href="/platform/">Platform</a>
+      {products.map((p) => (
+        <a href={p.link}>{p.name}</a>
+      ))}
+      <a href="/compare/">Compare products</a>
+    </nav>
+    <nav aria-label="Learn and understand">
+      <b>A little more context</b>
+      <a href="/technology/">Technology</a>
+      <a href="/experience/">Experience</a>
+      <a href="/journal/">Journal</a>
+      <a href="/guides/">Guides & FAQs</a>
+      <a href="/about/">About the concept</a>
+    </nav>
+    <div class="footer-creator">
+      <b>The real creator</b>
+      <p>Thoughtful websites for real businesses.</p>
+      <a
+        href={portfolio}
+        data-event="portfolio_cta_click"
+        data-component="footer"
+      >
+        Explore ISMAIL <span aria-hidden="true">↗</span>
+      </a>
+      <a href="/contact/">Choose your next step →</a>
+      <a href="/guides/#privacy">Privacy & demo boundaries</a>
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>
-      © {new Date().getFullYear()} CIVOLYN concept. Designed with intention.
-    </span>
-    <a href={portfolio}>
-      An original project by ISMAIL <span aria-hidden="true">↗</span>
-    </a>
-    <a href="/support/#privacy">About these previews</a>
+    <p>
+      © {new Date().getUTCFullYear()} PROWORKS · An original ISMAIL portfolio
+      concept.
+    </p>
+    <p>No analytics provider configured. Demo input stays local.</p>
   </div>
 </footer>

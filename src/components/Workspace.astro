@@ -1,117 +1,118 @@
 ---
-interface Props {
-  compact?: boolean;
-}
-const { compact = false } = Astro.props;
+import {
+  documents,
+  insightData,
+  products,
+  stages,
+  portfolio,
+} from '../data/site';
+const { kind = 'workspace' } = Astro.props;
+const d = insightData.week;
+const total = d.completed.reduce((a, b) => a + b, 0);
+const chart = ['workspace', 'platform', 'analytics'].includes(kind),
+  list = ['knowledge', 'support', 'articles'].includes(kind),
+  flow = ['workflow', 'tech', 'compare'].includes(kind);
 ---
 
 <div
-  class:list={['workspace', { compact }]}
-  role="region"
-  aria-label="Illustrative CIVOLYN workspace"
+  class:list={['workspace', `workspace-${kind}`]}
+  aria-label="Illustrative product preview"
 >
-  <h2 class="sr-only">Illustrative CIVOLYN workspace</h2>
-  <aside class="workspace-sidebar" aria-hidden="true">
-    <div class="app-mark">C</div>
-    <span class="selected">⌂</span>
-    <span>↗</span>
-    <span>⌕</span>
-    <span>▥</span>
-    <div class="sidebar-bottom">CV</div>
-  </aside>
-  <div class="workspace-main">
-    <div class="workspace-top">
-      <span>
-        Workspace <span class="slash">/</span> Overview
-      </span>
-      <span class="sample-pill">Illustrative workspace</span>
-    </div>
-    <div class="workspace-greeting">
-      <div>
-        <p class="mini-label">YOUR DAY, WITH A LITTLE MORE CLARITY</p>
-        <h3>Good things are in motion.</h3>
-        <p>Here’s where your team’s work comes together.</p>
-      </div>
-      <span class="avatar" aria-hidden="true">
-        A
-      </span>
-    </div>
-    <div class="workspace-search">
-      <span aria-hidden="true">⌕</span>
-      <span>A clearer view of your work starts here.</span>
-      <span class="search-arrow" aria-hidden="true">
-        ↗
-      </span>
-    </div>
-    <div class="workspace-products">
-      <a href="/products/flow/">
-        <span class="app-icon blue">↗</span>
-        <b>Move work forward</b>
-        <small>
-          Explore Flow <span aria-hidden="true">↗</span>
-        </small>
-      </a>
-      <a href="/products/knowledge/">
-        <span class="app-icon green">⌕</span>
-        <b>Find your context</b>
-        <small>
-          Explore Knowledge <span aria-hidden="true">↗</span>
-        </small>
-      </a>
-      <a href="/products/signal/">
-        <span class="app-icon lavender">▥</span>
-        <b>See what matters</b>
-        <small>
-          Explore Signal <span aria-hidden="true">↗</span>
-        </small>
-      </a>
-    </div>
-    <div class="workspace-bottom">
-      <div class="activity">
-        <div class="panel-heading">
-          <b>Work in motion</b>
-          <span>Example activity</span>
-        </div>
-        <div class="activity-row">
-          <span class="activity-dot blue"></span>
+  <div class="workspace-title">
+    <b>
+      PROWORKS <span aria-hidden="true"> / </span> SAMPLE WORKSPACE
+    </b>
+    <span>DEMO DATA</span>
+  </div>
+  <div class="workspace-body">
+    <p class="mobile-demo-label">ILLUSTRATIVE DEMO — NOT LIVE</p>
+    {chart && (
+      <>
+        <div class="preview-metrics">
           <div>
-            <b>Client onboarding</b>
-            <small>Ready for a human review</small>
+            <span>Completed</span>
+            <strong>{total}</strong>
           </div>
-          <span class="tiny-tag">Flow</span>
-        </div>
-        <div class="activity-row">
-          <span class="activity-dot green"></span>
           <div>
-            <b>Project playbook</b>
-            <small>A source for your next question</small>
+            <span>In review</span>
+            <strong>{d.pending_review}</strong>
           </div>
-          <span class="tiny-tag">Knowledge</span>
-        </div>
-        <div class="activity-row">
-          <span class="activity-dot lavender"></span>
           <div>
-            <b>Weekly operations</b>
-            <small>A new perspective on progress</small>
+            <span>Median duration</span>
+            <strong>{d.median_days}d</strong>
           </div>
-          <span class="tiny-tag">Signal</span>
         </div>
+        <div class="preview-chart">
+          <p>Illustrative activity, this week</p>
+          <div
+            role="img"
+            aria-label={`Sample weekly completions: ${d.completed.join(', ')}. Total ${total}.`}
+            class="preview-bars"
+          >
+            {d.completed.map((value, i) => (
+              <div style={`--bar:${(value / 22) * 100}%`}>
+                <span></span>
+                <small>{d.labels[i]}</small>
+              </div>
+            ))}
+          </div>
+        </div>
+      </>
+    )}
+    {list && (
+      <div class="preview-library">
+        <p class="preview-search">
+          {kind === 'articles'
+            ? 'Field notes / operations and design'
+            : 'Search sample documents…'}
+        </p>
+        {documents.slice(0, 3).map((d) => (
+          <div>
+            <b>{d.title}</b>
+            <small>{d.category} · Sample source available</small>
+          </div>
+        ))}
       </div>
-      <div class="mini-chart">
-        <div class="panel-heading">
-          <b>A week in view</b>
-          <span>Example data</span>
-        </div>
-        <div class="chart-bars" aria-hidden="true">
-          {[35, 58, 46, 76, 63, 91, 72].map((h, i) => (
-            <div>
-              <span style={`height:${h}%`}></span>
-              <small>{['M', 'T', 'W', 'T', 'F', 'S', 'S'][i]}</small>
-            </div>
-          ))}
-        </div>
-        <p>24 example workflows completed</p>
+    )}
+    {flow && (
+      <ol class="preview-flow">
+        {(kind === 'compare'
+          ? [...products.map((p) => p.name), 'Find your fit']
+          : stages.map((s) => s.name)
+        ).map((name, i) => (
+          <li class:list={{ highlight: i === 2 }}>
+            <span>{i + 1}</span>
+            <b>{name}</b>
+            <small>SAMPLE</small>
+          </li>
+        ))}
+      </ol>
+    )}
+    {!chart && !list && !flow && (
+      <div class="preview-paths">
+        <a href="/compare/">
+          <b>Choose a demo</b>
+          <span>
+            Three sample experiences <i aria-hidden="true">↗</i>
+          </span>
+        </a>
+        <a href="/platform/">
+          <b>Explore the product</b>
+          <span>
+            No signup required <i aria-hidden="true">↗</i>
+          </span>
+        </a>
+        <a
+          href={portfolio}
+          data-event="portfolio_cta_click"
+          data-component="preview"
+        >
+          <b>Talk to ISMAIL</b>
+          <span>
+            Real website services <i aria-hidden="true">↗</i>
+          </span>
+        </a>
       </div>
-    </div>
+    )}
   </div>
 </div>

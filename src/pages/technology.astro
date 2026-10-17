@@ -1,184 +1,118 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import CTA from '../components/CTA.astro';
+import Frame from '../components/PageFrame.astro';
+const items = [
+  {
+    title: 'Human approval',
+    body: 'A local state model holds the workflow at review until a person explicitly accepts the proposal.',
+  },
+  {
+    title: 'Boundaries explained',
+    body: 'Static content and browser-only fixtures make it clear what is working and what is conceptual.',
+  },
+  {
+    title: 'No secret AI claims',
+    body: 'Search is a local text match. Reports use prepared data. No AI provider or company account is connected.',
+  },
+];
 ---
 
-<Layout>
-  <section class="page-intro">
-    <div class="container">
-      <p class="eyebrow">TECHNOLOGY, WITH PERSPECTIVE</p>
-      <div class="intro-split">
-        <h1>
-          Intelligence with
-          <br />
-          <em>a visible process.</em>
-        </h1>
-        <p class="intro-copy">
-          A useful system should make its reasoning easier to inspect. CIVOLYN’s
-          conceptual architecture begins with context, keeps decisions visible
-          and leaves room for people to disagree.
-        </p>
-      </div>
-      <div class="intro-rule">
-        <span>
-          A proposed product architecture, not production infrastructure.
-        </span>
-        <span>CONCEPTUAL SYSTEM / 02</span>
-      </div>
+<Frame label="Technology" items={items}>
+  <section class="container section split-section" id="system">
+    <div>
+      <p class="eyebrow">THE ACTUAL IMPLEMENTATION</p>
+      <h2>Static where it helps. Interactive where it matters.</h2>
+      <p>
+        Astro renders the pages into HTML at build time. Shared styles and local
+        fonts establish the visual system. A small TypeScript module enhances
+        navigation, the product selector and the three local demos.
+      </p>
+      <p>
+        Meaningful headings, explanations, links and sample documents arrive in
+        the HTML. JavaScript adds interaction; it does not supply the only
+        readable version of the site.
+      </p>
+      <a class="text-link" href="/compare/">
+        Try the local interactions →
+      </a>
     </div>
-  </section>
-  <section class="container" aria-label="Conceptual architecture">
-    <h2 class="sr-only">Conceptual architecture</h2>
-    <div class="architecture-diagram">
-      <div class="arch-node">
-        <small>01 / CONTEXT</small>
-        <h3>Information sources</h3>
-        <p>Approved briefs, team playbooks and relevant operational records.</p>
-      </div>
-      <span aria-hidden="true">→</span>
-      <div class="arch-node primary">
-        <small>02 / ORCHESTRATION</small>
-        <h3>A visible working process</h3>
-        <p>
-          Scoped retrieval, suggested steps, readable state and a place to
-          pause.
-        </p>
-      </div>
-      <span aria-hidden="true">→</span>
-      <div class="arch-node">
-        <small>03 / PRESENTATION</small>
-        <h3>Results with context</h3>
-        <p>
-          Source references, clear status and information people can question.
-        </p>
-      </div>
-      <div class="architecture-review">
-        <span aria-hidden="true">↕</span>
-        <b>Human oversight</b>
-        <br />
-        Review · correct · approve · stop
-      </div>
-    </div>
-    <p class="section-caption">
-      <span>From context, through orchestration, to presentation.</span>
-      <span>Human oversight applies throughout.</span>
-    </p>
-  </section>
-  <section class="section">
-    <div class="container">
-      <div class="section-heading">
+    <ol class="lifecycle">
+      <li>
+        <span class="number">01</span>
         <div>
-          <p class="eyebrow">THE PRINCIPLES BEHIND THE IDEA</p>
-          <h2>
-            Capability matters.
-            <br />
-            <em>So do its boundaries.</em>
-          </h2>
+          <h3>Source and content</h3>
+          <p>
+            A shared page registry controls identity and routes. Typed fixtures
+            supply the documents, workflow roles and reporting series.
+          </p>
         </div>
-        <p>
-          These are design intentions for an imagined platform. They are not
-          claims about implemented security controls, model performance or
-          certified infrastructure.
-        </p>
-      </div>
-      <div class="principles-grid">
-        <article>
-          <span class="number">01 / SCOPED INFORMATION</span>
-          <h3>The right context, for the task.</h3>
+      </li>
+      <li>
+        <span class="number">02</span>
+        <div>
+          <h3>Static build</h3>
           <p>
-            A future system would need explicit permissions for each information
-            source. Access to one workspace should not imply access to
-            everything a team knows.
+            Astro produces a page for every route, plus metadata, the sitemap
+            and a real not-found page.
           </p>
-        </article>
-        <article>
-          <span class="number">02 / TRACEABLE OUTPUT</span>
-          <h3>A reference you can inspect.</h3>
+        </div>
+      </li>
+      <li>
+        <span class="number">03</span>
+        <div>
+          <h3>Browser interaction</h3>
           <p>
-            An assisted summary should identify the material it draws from and
-            make uncertainty visible. When sources conflict, the interface
-            should help a reader see the disagreement.
+            State updates stay local. Text nodes, native controls and explicit
+            status messages keep the process inspectable.
           </p>
-        </article>
-        <article>
-          <span class="number">03 / EXPLICIT CONTROL</span>
-          <h3>A person owns the decision.</h3>
-          <p>
-            Proposals and actions deserve different treatment. A draft may be
-            useful without being approved. Consequential steps should have a
-            clear owner, a review point and a way to stop.
-          </p>
-        </article>
-        <article>
-          <span class="number">04 / LEGIBLE STATE</span>
-          <h3>Know what has happened.</h3>
-          <p>
-            Waiting, suggested, approved and complete mean different things. The
-            interface should preserve those distinctions rather than make
-            activity look like certainty.
-          </p>
-        </article>
-      </div>
-    </div>
+        </div>
+      </li>
+    </ol>
   </section>
-  <section class="section dark-section">
+  <section class="dark-section">
     <div class="container split-section">
       <div>
-        <p class="eyebrow">AI AS AN ASSISTANT TO JUDGMENT</p>
-        <h2>
-          Make a suggestion useful.
-          <br />
-          <em>Make its limits visible.</em>
-        </h2>
+        <p class="eyebrow">VISION AND REALITY</p>
+        <h2>A concept with an honest boundary.</h2>
+        <p>
+          A real operations system would need authentication, permissions,
+          durable storage, recovery, audit history and tested integrations.
+          Those services are outside this portfolio demonstration.
+        </p>
       </div>
       <div>
+        <h3>What runs here</h3>
         <p>
-          Language models can produce fluent text that is incomplete or wrong.
-          Retrieval can supply irrelevant context. A confident interface can
-          make both harder to notice.
+          A four-stage local workflow, a fixed searchable document library and
+          three selectable reporting fixtures.
         </p>
+        <h3>What remains conceptual</h3>
         <p>
-          The CIVOLYN concept puts references, review and clear state close to
-          the output. It imagines assistance with preparation and discovery,
-          while leaving decisions with an informed person.
+          Cross-product data sharing, automated external actions, AI retrieval
+          and company data ingestion. No certifications, uptime guarantees or
+          customer deployments are claimed.
         </p>
-        <a class="arrow-link" href="/journal/#human-judgment">
-          Read the essay on human judgment <span aria-hidden="true">↗</span>
-        </a>
       </div>
     </div>
   </section>
-  <section class="section">
-    <div class="container tech-two-col">
-      <div>
-        <p class="eyebrow">WHAT THIS WEBSITE ACTUALLY RUNS</p>
-        <h3>A small, static frontend.</h3>
-        <p>
-          Astro generates the pages as HTML. A little TypeScript handles
-          navigation and local previews. Fonts, artwork and styling are served
-          from the same site.
-        </p>
-        <ul>
-          <li>Flow updates a four-step example in browser memory.</li>
-          <li>Knowledge searches prepared sample text on the page.</li>
-          <li>Signal selects between three fixed example datasets.</li>
-        </ul>
-      </div>
-      <div>
-        <p class="eyebrow">WHAT A REAL PRODUCT WOULD STILL NEED</p>
-        <h3>The difficult work behind the screen.</h3>
-        <p>
-          A production platform would require a separately designed and
-          evaluated backend, permission model, data lifecycle, audit trail and
-          operational support.
-        </p>
-        <ul>
-          <li>Real identity and source-level authorisation.</li>
-          <li>Model evaluation, error handling and safety controls.</li>
-          <li>Verified infrastructure, privacy practices and reliability.</li>
-        </ul>
-      </div>
+  <section class="container section">
+    <div class="section-heading">
+      <p class="eyebrow">EXPLAIN THE FLOW</p>
+      <h2>From a request to a considered decision.</h2>
     </div>
+    <img
+      class="diagram"
+      src="/images/diagrams/workflows-flow.svg"
+      width="1200"
+      height="340"
+      loading="lazy"
+      alt="Illustrative frontend stages: Intake, Prepare, Human review, Hand-off."
+    />
+    <p class="demo-note">
+      This diagram is a conceptual model of the browser demo. It is not evidence
+      of an external automation engine.
+    </p>
+    <a class="text-link" href="/guides/#privacy">
+      Understand data and privacy boundaries →
+    </a>
   </section>
-  <CTA title="Explore the thinking through the experience." />
-</Layout>
+</Frame>

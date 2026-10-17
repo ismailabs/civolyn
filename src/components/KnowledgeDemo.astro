@@ -5,20 +5,16 @@ import { documents } from '../data/site';
 <div class="demo-shell knowledge-demo" data-knowledge>
   <div class="demo-toolbar">
     <div>
-      <span class="app-icon green">⌕</span>
-      <div>
-        <b>A good place to find an answer.</b>
-        <small>CIVOLYN Knowledge · Local preview</small>
-      </div>
+      <b>A good place to find an answer.</b>
+      <small>PROWORKS Knowledge · Local demo / fictional product</small>
     </div>
     <span class="sample-pill">Illustrative documents</span>
   </div>
   <div class="knowledge-body">
-    <label class="input-label" for="knowledge-search">
-      Search the example library
-    </label>
-    <div class="search-field">
-      <span aria-hidden="true">⌕</span>
+    <div class="knowledge-search-control">
+      <label class="input-label" for="knowledge-search">
+        Search the example library
+      </label>
       <input
         id="knowledge-search"
         type="search"
@@ -26,7 +22,6 @@ import { documents } from '../data/site';
         autocomplete="off"
         data-knowledge-search
       />
-      <kbd aria-hidden="true">↵</kbd>
     </div>
     <fieldset class="filter-chips">
       <legend class="sr-only">Filter by document type</legend>
@@ -43,7 +38,7 @@ import { documents } from '../data/site';
       ))}
     </fieldset>
     <p class="results-count" role="status" data-knowledge-count>
-      {documents.length} example documents
+      {documents.length} example documents · All
     </p>
     <div class="document-list">
       {documents.map((doc, i) => (
@@ -79,15 +74,16 @@ import { documents } from '../data/site';
     <div class="empty-state" data-knowledge-empty hidden>
       <b>No example documents found.</b>
       <p>
-        Try a broader term, or choose All. This library only contains the six
+        Try a broader term or choose All. This library contains only the six
         supplied samples.
       </p>
-      <button class="text-button" data-knowledge-reset>
-        Clear search and filters
-      </button>
     </div>
+    <button class="text-button knowledge-reset js-only" data-knowledge-reset>
+      Clear search and filters
+    </button>
     <p class="demo-note">
-      A small, local library. No private sources, connected accounts or live AI.
+      Your search stays in this browser. No uploads, private sources, connected
+      accounts or live AI.
     </p>
   </div>
 </div>

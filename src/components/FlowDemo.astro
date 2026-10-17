@@ -1,60 +1,61 @@
+---
+import { stages } from '../data/site';
+---
+
 <div class="demo-shell flow-demo" data-flow>
   <div class="demo-toolbar">
     <div>
-      <span class="app-icon blue">↗</span>
-      <div>
-        <b>Client onboarding</b>
-        <small>CIVOLYN Flow · Local preview</small>
-      </div>
+      <b>Client onboarding</b>
+      <small>PROWORKS Workflows · Local demo / fictional product</small>
     </div>
     <span class="sample-pill">Illustrative data</span>
   </div>
   <div class="flow-canvas">
-    <p class="mini-label">A CLEAR PATH FROM HELLO TO HANDOVER</p>
+    <p class="mini-label">INTAKE → PREPARE → HUMAN REVIEW → HAND-OFF</p>
     <ol class="flow-steps">
-      <li data-step="0" class="current">
-        <span class="step-icon">01</span>
-        <div>
-          <b>A brief arrives</b>
-          <small>A sample project request enters the queue.</small>
-        </div>
-        <span class="step-status">Ready</span>
-      </li>
-      <li data-step="1">
-        <span class="step-icon">02</span>
-        <div>
-          <b>Gather the context</b>
-          <small>Prepare an example project summary.</small>
-        </div>
-        <span class="step-status">Waiting</span>
-      </li>
-      <li data-step="2">
-        <span class="step-icon review-icon">03</span>
-        <div>
-          <b>A person reviews</b>
-          <small>Check the proposal before it moves on.</small>
-        </div>
-        <span class="step-status">Waiting</span>
-      </li>
-      <li data-step="3">
-        <span class="step-icon">04</span>
-        <div>
-          <b>Ready for the team</b>
-          <small>Keep the next step and its owner visible.</small>
-        </div>
-        <span class="step-status">Waiting</span>
-      </li>
+      {stages.map((s, i) => (
+        <li data-step={i} class:list={{ current: i === 0 }}>
+          <span class="step-icon">{String(i + 1).padStart(2, '0')}</span>
+          <div>
+            <b>{s.name}</b>
+            <small>{s.description}</small>
+            <small>Owner: {s.owner}</small>
+          </div>
+          <span class="step-status">{i === 0 ? 'Ready' : 'Waiting'}</span>
+        </li>
+      ))}
     </ol>
+    <aside class="approval-proposal" aria-labelledby="proposal-title">
+      <h3 id="proposal-title">Sample proposal for human review</h3>
+      <p>
+        Accept the example brief, assign the delivery owner and agree the first
+        scope review as the next milestone. No client is contacted and no
+        external work is created.
+      </p>
+      <label class="js-only">
+        <input type="checkbox" data-flow-confirm disabled /> I have reviewed
+        this sample proposal.
+      </label>
+    </aside>
   </div>
   <div class="demo-controls">
-    <button class="button button-blue" data-flow-next>
-      Start example <span aria-hidden="true">→</span>
+    <button class="button" data-flow-next>
+      Start example →
+    </button>
+    <button class="button" data-flow-approve disabled hidden>
+      Approve example →
     </button>
     <button class="text-button" data-flow-reset>
-      Reset preview
+      Reset demo
     </button>
   </div>
   <p class="demo-status" role="status" aria-live="polite" data-flow-status>
     Ready when you are. This example runs only in your browser.
   </p>
+  <details class="activity">
+    <summary>Read the local activity history</summary>
+    <ol data-flow-log>
+      <li>Example ready. Intake is the current stage.</li>
+    </ol>
+  </details>
 </div>

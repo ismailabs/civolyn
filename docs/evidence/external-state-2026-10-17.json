@@ -1,0 +1,87 @@
+{
+  "observedAt": "2026-10-17T03:38:27.155Z",
+  "method": "Public read-only HTTP, no provider mutation",
+  "oldOrigin": "https://civolyn.ismailstudio.my",
+  "oldRoutes": [
+    {
+      "path": "/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/platform/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/products/flow/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/products/knowledge/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/products/signal/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/technology/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/design/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/compare/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/company/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/journal/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/support/",
+      "status": 200,
+      "location": null
+    },
+    {
+      "path": "/contact/",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "targetOrigin": "https://proworks.ismailstudio.my",
+  "targetProbe": {
+    "error": "fetch failed",
+    "cause": "ENOTFOUND"
+  },
+  "cloudflareConnector": "UNAUTHORIZED: This app connection requires reauthentication.",
+  "wrangler": "You are not authenticated. Please run wrangler login.",
+  "repo": {
+    "id": 1421054534,
+    "name": "ismailabs/proworks",
+    "main": "34b5027e9ac148964a6fe754fe7be89cbc91c9b1"
+  },
+  "mutations": {
+    "githubRename": true,
+    "worker": false,
+    "dns": false,
+    "domains": false,
+    "oldBuildSettings": false,
+    "oldRedirects": false
+  }
+}

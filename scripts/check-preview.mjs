@@ -1,36 +1,43 @@
 import fs from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import assert from 'node:assert/strict';
-// Build separately so the normal production preview and browser evidence stay intact.
-const build = spawnSync(
-  process.execPath,
+for (const [label, vars] of [
+  ['explicit', { SITE_INDEXABLE: 'false' }],
   [
-    'node_modules/astro/bin/astro.mjs',
-    'build',
-    '--outDir',
-    'artifacts/preview-build',
+    'worker-branch',
+    { SITE_INDEXABLE: 'true', WORKERS_CI_BRANCH: 'feature-preview' },
   ],
-  {
-    env: {
-      ...process.env,
-      SITE_URL: 'https://civolyn.ismailstudio.my',
-      SITE_INDEXABLE: 'false',
-      CF_PAGES: '1',
-      CF_PAGES_BRANCH: 'review-example',
+]) {
+  const out = 'artifacts/preview-' + label;
+  const r = spawnSync(
+    process.execPath,
+    ['node_modules/astro/bin/astro.mjs', 'build', '--outDir', out],
+    {
+      env: {
+        ...process.env,
+        SITE_URL: 'https://proworks.ismailstudio.my',
+        ...vars,
+      },
+      encoding: 'utf8',
     },
-    encoding: 'utf8',
-  },
-);
-if (build.status !== 0) {
-  console.error(build.stdout, build.stderr);
-  process.exit(build.status || 1);
+  );
+  if (r.status !== 0) {
+    console.error(r.stdout, r.stderr);
+    process.exit(r.status || 1);
+  }
+  const html = await fs.readFile(out + '/index.html', 'utf8');
+  assert.match(html, /<meta name="robots" content="noindex, follow"/);
+  assert.match(
+    html,
+    /<link rel="canonical" href="https:\/\/proworks.ismailstudio.my\/"/,
+  );
+  assert.doesNotMatch(html, /rel="sitemap"/);
+  assert.doesNotMatch(
+    await fs.readFile(out + '/robots.txt', 'utf8'),
+    /Sitemap:/,
+  );
+  await assert.rejects(fs.access(out + '/sitemap-0.xml'));
+  console.log(
+    label + ': preview noindex, canonical, robots and sitemap exclusion passed',
+  );
 }
-const html = await fs.readFile('artifacts/preview-build/index.html', 'utf8');
-assert.match(html, /<meta name="robots" content="noindex, follow"/);
-assert.match(
-  html,
-  /<link rel="canonical" href="https:\/\/civolyn.ismailstudio.my\/"/,
-);
-console.log(
-  'Preview build: noindex metadata and stable production canonical verified.',
-);

@@ -1,0 +1,77 @@
+---
+import Frame from '../components/PageFrame.astro';
+import { faqs } from '../data/site';
+const items = [
+  {
+    title: 'How local previews work',
+    body: 'Use prepared sample data, inspect each state and reset whenever you want to begin again.',
+  },
+  {
+    title: 'Privacy and data boundaries',
+    body: 'No connected accounts, uploads or remote search. Learn exactly what stays in your browser.',
+  },
+  {
+    title: 'Get real website help',
+    body: 'Website enquiries belong with the real creator, ISMAIL. PROWORKS has no fictional support service.',
+  },
+];
+---
+
+<Frame label="Guides" items={items}>
+  <section class="container section split-section" id="faqs">
+    <div>
+      <p class="eyebrow">A LITTLE CONTEXT GOES A LONG WAY</p>
+      <h2>Questions worth answering clearly.</h2>
+      <p>
+        These guides explain the concept and its working examples. They are not
+        a customer helpdesk, service agreement or promise of support
+        availability.
+      </p>
+      <p>
+        Each answer opens with a native disclosure, including when JavaScript is
+        unavailable. Link directly to an answer to share its context.
+      </p>
+      <a class="text-link" href="/compare/">
+        Choose a demo →
+      </a>
+    </div>
+    <div class="faq-list">
+      {faqs.map((f) => (
+        <details id={f.id}>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+  <section class="container section split-section">
+    <div>
+      <p class="eyebrow">KEYBOARD QUICK START</p>
+      <h2>Move through the interface at your pace.</h2>
+      <p>
+        Tab moves to the next interactive control; Shift+Tab moves back. Use
+        Enter to follow links, Space or Enter for buttons, and arrow keys to
+        change a radio selection or select option.
+      </p>
+      <p>
+        Escape closes the product disclosure first, then the mobile navigation.
+        Focus returns to the relevant trigger.
+      </p>
+    </div>
+    <div>
+      <h3>Reset and recover</h3>
+      <p>
+        Use Reset demo in Workflows to restore all stages. Clear search and
+        filters in Knowledge to show every sample document. Reset dashboard in
+        Insights returns to the weekly fixture. Reloading also resets the local
+        state.
+      </p>
+      <h3>When JavaScript is unavailable</h3>
+      <p>
+        You can still read the stage descriptions, open sample document
+        excerpts, inspect the initial reporting table and browse the site.
+        Controls that need scripting are hidden with an explanation.
+      </p>
+    </div>
+  </section>
+</Frame>

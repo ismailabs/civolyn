@@ -1,107 +1,115 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { portfolio, whatsapp } from '../data/site';
+import Frame from '../components/PageFrame.astro';
+import { portfolio, products, whatsapp } from '../data/site';
+const items = [
+  {
+    title: 'Try fictional product previews',
+    body: 'Explore the local examples without registering, uploading documents or sharing business information.',
+  },
+  {
+    title: 'See the real web studio',
+    body: 'Visit ISMAIL to evaluate real design and development work and choose a genuine enquiry pathway.',
+  },
+  {
+    title: 'No demo booking or sign-up',
+    body: 'There is no PROWORKS sales desk. Every action here explains whether it is a demo or an external destination.',
+  },
+];
 ---
 
-<Layout>
-  <section class="page-intro">
-    <div class="container">
-      <p class="eyebrow">EXPLORE THE IDEA. START A REAL CONVERSATION.</p>
-      <h1>
-        See what better work
-        <br />
-        <em>could look like.</em>
-      </h1>
-      <p class="intro-copy">
-        Take a local product preview for a spin. Or, if you’re here for the
-        website itself, talk to ISMAIL about a real project.
-      </p>
-    </div>
-  </section>
-  <section class="container contact-grid">
-    <div class="contact-demo-panel" data-preview-picker>
-      <p class="eyebrow">01 / THE FICTIONAL PRODUCT EXPERIENCE</p>
-      <h2>
-        A demo, without
-        <br />
-        <em>the diary invitation.</em>
-      </h2>
+<Frame label="Contact" items={items}>
+  <section class="container section contact-paths">
+    <article class="contact-card" data-preview-picker>
+      <p class="eyebrow">FICTIONAL PRODUCT / LOCAL EXAMPLES</p>
+      <h2>Keep exploring the concept.</h2>
       <p>
-        CIVOLYN is a fictional concept · An ISMAIL portfolio project. There is
-        no sales team, booking service or live AI. Choose a preview and explore
-        prepared example data in your browser.
+        Choose a working demo with illustrative data. Nothing is submitted and
+        no account is created.
       </p>
-      <label for="contact-product">What would you like to explore?</label>
-      <select id="contact-product">
-        <option value="flow">Flow</option>
-        <option value="knowledge">Knowledge</option>
-        <option value="signal">Signal</option>
+      <label for="preview-choice">What would you like to explore?</label>
+      <select id="preview-choice" class="js-only">
+        {products.map((p) => (
+          <option value={p.id}>{p.name}</option>
+        ))}
       </select>
       <a
-        class="button button-blue"
-        href="/products/flow/#preview"
+        class="button"
+        href="/products/workflows/#demo"
         data-preview-link
+        data-event="contact_path_selected"
+        data-component="contact-demo"
       >
-        Open Flow preview ↗
+        Open Workflows demo →
       </a>
-      <div class="preview-facts">
-        <span>✓ No signup</span>
-        <span>✓ No personal details</span>
-        <span>✓ No form submission</span>
-      </div>
-    </div>
-    <div class="real-enquiry">
-      <p class="eyebrow">02 / A REAL WEBSITE CONVERSATION</p>
-      <h2>
-        Want a website
-        <br />
-        <em>like this?</em>
-      </h2>
+      <noscript>
+        <ul>
+          {products.map((p) => (
+            <li>
+              <a href={p.link}>Explore {p.name}</a>
+            </li>
+          ))}
+        </ul>
+      </noscript>
+    </article>
+    <article class="contact-card real">
+      <p class="eyebrow">REAL CREATOR / REAL WEBSITE PROJECTS</p>
+      <h2>Discuss your website with ISMAIL.</h2>
       <p>
-        The product is imagined. The care behind this website is real. Explore
-        ISMAIL’s work or start a conversation about a considered website for
-        your business.
+        Like the care behind this experience? Visit the separate ISMAIL
+        portfolio for real website design, development and enquiry options.
       </p>
-      <div class="button-row">
-        <a href={portfolio} class="button button-dark">
-          Explore ISMAIL <span aria-hidden="true">↗</span>
-        </a>
-        <a href={whatsapp} class="arrow-link">
-          Discuss your website on WhatsApp <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-      <p class="disclosure">
-        <span class="status-dot"></span> Genuine ISMAIL enquiry paths · No
-        message is sent automatically
+      <a
+        class="button"
+        href={portfolio}
+        data-event="portfolio_cta_click"
+        data-component="contact-real"
+      >
+        Explore ISMAIL <span aria-hidden="true">↗</span>
+      </a>
+      <a
+        class="text-link"
+        href={whatsapp}
+        data-event="whatsapp_outbound_click"
+        data-component="contact-whatsapp"
+      >
+        Discuss your website on WhatsApp <span aria-hidden="true">↗</span>
+      </a>
+      <p class="demo-note">
+        External destination: ismailstudio.my. Opening the portfolio is not a
+        submitted enquiry.
+      </p>
+    </article>
+  </section>
+  <section class="container section split-section">
+    <div>
+      <p class="eyebrow">A USEFUL START TO THE CONVERSATION</p>
+      <h2>Bring the problem, not just the page count.</h2>
+      <p>
+        Think about who your website needs to help, the questions they ask and
+        the next action they should be able to take. Existing pages, content and
+        real feedback can help define the scope.
       </p>
     </div>
-  </section>
-  <section class="section feature-demo-section">
-    <div class="container contact-notes">
-      <div>
-        <p class="eyebrow">WHAT HAPPENS IN A PREVIEW?</p>
-        <h3>Just the idea. In your hands.</h3>
-        <p>
-          Flow walks through a four-step example. Knowledge searches a tiny
-          sample library. Signal changes the perspective on prepared operational
-          data. Nothing is connected to a real company.
-        </p>
-        <a class="arrow-link" href="/compare/">
-          Compare the previews <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-      <div>
-        <p class="eyebrow">A NOTE ABOUT YOUR INFORMATION</p>
-        <h3>No details needed.</h3>
-        <p>
-          This site does not collect a name, email address or business brief.
-          Search terms and control selections stay in browser memory. External
-          ISMAIL and WhatsApp pages have their own privacy practices.
-        </p>
-        <a class="arrow-link" href="/support/#privacy">
-          Read the privacy boundaries <span aria-hidden="true">↗</span>
-        </a>
-      </div>
+    <div class="reading">
+      <h3>Prepare a short project brief</h3>
+      <p>
+        Describe your business and audience, the main website goal, what is
+        frustrating today, and any practical timing or content constraints.
+        Share private information only through the genuine enquiry channel you
+        choose at ISMAIL.
+      </p>
+      <h3>Your information stays yours</h3>
+      <p>
+        PROWORKS has no enquiry form and does not collect message drafts or
+        personal contact details. No analytics provider is currently configured.
+        Demo activity is not a lead or a business outcome.
+      </p>
+      <a
+        class="text-link"
+        href="/journal/website-redesign-checklist-for-malaysian-smes/"
+      >
+        Read the redesign checklist →
+      </a>
     </div>
   </section>
-</Layout>
+</Frame>

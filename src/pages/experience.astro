@@ -1,0 +1,98 @@
+---
+import Frame from '../components/PageFrame.astro';
+const items = [
+  {
+    title: 'Accessible from the start',
+    body: 'Visible focus, native controls and readable status messages make actions understandable beyond a screenshot.',
+  },
+  {
+    title: 'Responsive by intent',
+    body: 'Content order and flexible layouts give a phone the same meaningful journey as a larger screen.',
+  },
+  {
+    title: 'Motion with a purpose',
+    body: 'Brief state transitions support understanding. Reduced-motion preferences keep the experience calm.',
+  },
+];
+---
+
+<Frame label="Experience" items={items}>
+  <section class="container section split-section" id="principles">
+    <div>
+      <p class="eyebrow">DETAILS THAT DO A JOB</p>
+      <h2>Make the next action feel obvious.</h2>
+      <p>
+        A clear label tells you what will happen. A visible focus ring shows
+        where you are. A status message explains what changed. These details are
+        part of the interface’s meaning.
+      </p>
+      <p>
+        Try the native controls here with Tab, Space and Enter. The examples
+        work without a custom component framework; their labels stay associated
+        with the controls.
+      </p>
+      <p class="demo-note">
+        Accessibility is an ongoing practice. Automated checks and keyboard
+        testing do not replace testing with people and assistive technology.
+      </p>
+    </div>
+    <div class="principle-gallery">
+      <h3>A few useful interaction details</h3>
+      <label>
+        <input type="checkbox" checked />
+        <span>Show context before a decision</span>
+      </label>
+      <label>
+        <input type="checkbox" />
+        <span>Keep the original source nearby</span>
+      </label>
+      <details>
+        <summary>What makes a state change clear?</summary>
+        <p>
+          Text explains the new state, the relevant control remains available,
+          and meaning is not carried by colour alone. Open a product demo to see
+          this applied.
+        </p>
+      </details>
+      <a class="text-link" href="/products/workflows/#demo">
+        Try the approval interaction →
+      </a>
+    </div>
+  </section>
+  <section class="container section split-section">
+    <div class="reading">
+      <p class="eyebrow">CONTENT BEFORE DECORATION</p>
+      <h2>Responsive means reconsidered.</h2>
+      <p>
+        On a narrow screen, the proposition comes before the sample interface.
+        Cards stack into a readable sequence. Dense comparison tables scroll
+        within their own labelled region, while surrounding content reflows.
+      </p>
+      <p>
+        Long headings can wrap rather than disappear beyond the viewport. Touch
+        targets have space around them. Navigation can scroll in a short
+        landscape window.
+      </p>
+    </div>
+    <div class="reading">
+      <p class="eyebrow">MORE THAN COLOUR</p>
+      <h2>Let the information do the work.</h2>
+      <p>
+        Workflow stages include written statuses. Knowledge results identify
+        sources. Insights offers a chart description and the exact values in a
+        table. A person can check the same information through more than one
+        representation.
+      </p>
+      <p>
+        The site honours reduced-motion preferences and keeps reading
+        independent of entrance animations.
+      </p>
+      <a
+        class="text-link"
+        href="/journal/website-redesign-checklist-for-malaysian-smes/"
+      >
+        Use the SME website checklist →
+      </a>
+    </div>
+  </section>
+</Frame>

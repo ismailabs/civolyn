@@ -1,183 +1,142 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import CTA from '../components/CTA.astro';
-const rows = [
-  [
-    'The main question',
-    'What needs to happen next?',
-    'What do we already know?',
-    'What does the activity tell us?',
-  ],
-  [
-    'A useful starting point',
-    'A recurring process with unclear handovers.',
-    'Information spread across team resources.',
-    'Operational figures that need context.',
-  ],
-  [
-    'Conceptual capabilities',
-    'Visual steps, triggers, routing, approval checkpoints and status history.',
-    'Connected discovery, source references, summaries and organised collections.',
-    'Labelled dashboards, time filters, trend exploration and readable reporting.',
-  ],
-  [
-    'Example use cases',
-    'Client onboarding, intake, approvals and recurring reports.',
-    'Playbooks, project briefs, internal policies and research notes.',
-    'Completion volume, review queues and operational reporting.',
-  ],
-  [
-    'What the local preview does',
-    'Advance four sample steps, explicitly approve a review and reset.',
-    'Search six example documents, filter by type and read prepared snippets.',
-    'Select a week, month or quarter and inspect matching chart and table values.',
-  ],
-  [
-    'Where human judgment belongs',
-    'Approving a consequential handover.',
-    'Checking a source and whether it applies.',
-    'Interpreting a pattern before choosing an action.',
-  ],
-  [
-    'What is not connected here',
-    'No live triggers, messages or external workflows.',
-    'No private documents, AI model or uploaded files.',
-    'No live analytics, forecasts or business records.',
-  ],
+import Frame from '../components/PageFrame.astro';
+import { products } from '../data/site';
+const items = [
+  {
+    title: 'Plain-language choice finder',
+    body: 'Choose the problem closest to yours and see a reasoned suggestion for which local demo to explore.',
+  },
+  {
+    title: 'Comparable feature table',
+    body: 'Compare purpose, input, interaction and limitations using the same criteria.',
+  },
+  {
+    title: 'No purchase implication',
+    body: 'There are no subscriptions or pricing tiers. Every recommendation leads to a fictional product demonstration.',
+  },
 ];
 ---
 
-<Layout>
-  <section class="page-intro">
-    <div class="container">
-      <p class="eyebrow">COMPARE THE PRODUCTS</p>
-      <h1>
-        Start with the work
-        <br />
-        <em>in front of you.</em>
-      </h1>
-      <p class="intro-copy">
-        Three products, three different jobs. Choose the point where work feels
-        unclear, then explore how the other perspectives might help.
+<Frame label="Compare" items={items}>
+  <section class="container section split-section" id="finder">
+    <div>
+      <p class="eyebrow">A USEFUL FIRST STEP</p>
+      <h2>What needs to become clearer?</h2>
+      <p>
+        The examples serve different questions. Choose the nearest situation,
+        read the reason and follow the matching demo. This is a local guide, not
+        a software quotation or business assessment.
+      </p>
+      <p>
+        If your needs span all three, start with the{' '}
+        <a href="/platform/">platform story</a> and follow the sample request
+        through each perspective.
       </p>
     </div>
-  </section>
-  <section class="container" aria-label="Product starting point finder">
-    <div class="compare-selector" data-compare>
+    <div class="finder" data-compare>
+      <h3>Find your starting point</h3>
       <fieldset>
-        <legend>What would you like to make clearer?</legend>
-        <label class="compare-choice">
-          <input type="radio" name="starting-point" value="process" checked /> A
-          process that needs a better path.
+        <legend>Choose your main challenge</legend>
+        <label>
+          <input type="radio" name="challenge" value="process" checked />
+          Repeated work with unclear next steps.
         </label>
-        <label class="compare-choice">
-          <input type="radio" name="starting-point" value="context" />{' '}
+        <label>
+          <input type="radio" name="challenge" value="context" />
           Information that is hard to find.
         </label>
-        <label class="compare-choice">
-          <input type="radio" name="starting-point" value="insight" /> Numbers
-          that need a useful perspective.
+        <label>
+          <input type="radio" name="challenge" value="insight" />
+          Numbers that need a useful perspective.
         </label>
       </fieldset>
-      <div class="compare-result" aria-live="polite">
-        <p class="eyebrow">YOUR CONCEPTUAL STARTING POINT</p>
-        <h2 data-compare-title>Start with Flow.</h2>
+      <div class="finder-result" role="status">
+        <h3 data-compare-title>Start with Workflows.</h3>
         <p data-compare-body>
-          When the same request keeps crossing the same desks, make its steps
-          explicit. Flow explores triggers, visible handovers and a human review
-          before the work moves on.
+          Make the stages and owners visible, then pause at a deliberate human
+          approval gate before hand-off.
         </p>
-        <a class="arrow-link" href="/products/flow/" data-compare-link>
-          Try the Flow preview ↗
+        <a class="text-link" data-compare-link href="/products/workflows/">
+          Try Workflows →
         </a>
       </div>
+      <button class="text-button js-only" data-compare-reset>
+        Reset choice
+      </button>
     </div>
-    <p class="section-caption">
-      <span>
-        A simple guide to fictional products. No assessment or recommendation
-        service.
-      </span>
+  </section>
+  <section class="container section">
+    <div class="section-heading">
+      <p class="eyebrow">SAME CRITERIA, DIFFERENT ROLES</p>
+      <h2>Compare the examples.</h2>
+      <p>
+        On a small screen, scroll the table horizontally. Each product page also
+        explains its purpose in a single column.
+      </p>
+    </div>
+    <div
+      class="table-wrap"
+      role="region"
+      aria-label="Product comparison, scroll horizontally"
+      tabindex="0"
+    >
+      <table>
+        <caption>Fictional PROWORKS demos — no plans or pricing</caption>
+        <thead>
+          <tr>
+            <th scope="col">Question</th>
+            {products.map((p) => (
+              <th scope="col">
+                <a href={p.link}>{p.name}</a>
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Best starting point</th>
+            <td>A repeatable process</td>
+            <td>A source you need to find</td>
+            <td>A pattern you need to inspect</td>
+          </tr>
+          <tr>
+            <th scope="row">Prepared input</th>
+            <td>One sample onboarding request</td>
+            <td>Six sample documents</td>
+            <td>Three period datasets</td>
+          </tr>
+          <tr>
+            <th scope="row">Working interaction</th>
+            <td>Progress, approve, complete, reset</td>
+            <td>Search, filter, open sources, reset</td>
+            <td>Change period, read chart and table, reset</td>
+          </tr>
+          <tr>
+            <th scope="row">Human role</th>
+            <td>Approve the proposed hand-off</td>
+            <td>Assess relevance and source</td>
+            <td>Interpret counts and their limits</td>
+          </tr>
+          <tr>
+            <th scope="row">Important boundary</th>
+            <td>No external execution</td>
+            <td>No uploads or live AI</td>
+            <td>No real operational feed</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section class="container section reading">
+    <h2>Choose a question before choosing a tool.</h2>
+    <p>
+      A missing process cannot be fixed by adding a chart. A searchable library
+      cannot decide whether a request should be approved. Use the examples to
+      explore the interface pattern, then consider what your actual team needs.
+    </p>
+    <p>
+      For genuine website design and development, the real creator is ISMAIL.
+      PROWORKS has no account creation or sales process.
     </p>
   </section>
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">THE DETAILS, SIDE BY SIDE</p>
-      <h2>
-        Different capabilities.
-        <br />
-        <em>A connected way of thinking.</em>
-      </h2>
-      <div
-        class="table-wrap comparison-table"
-        tabindex="0"
-        role="region"
-        aria-label="Scrollable product comparison"
-      >
-        <table>
-          <caption>
-            Compare CIVOLYN’s fictional product concepts and implemented local
-            previews. On a narrow screen, scroll the table horizontally.
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col">A closer look</th>
-              <th scope="col">
-                <a class="table-product" href="/products/flow/">
-                  ↗ &nbsp; Flow
-                </a>
-              </th>
-              <th scope="col">
-                <a class="table-product" href="/products/knowledge/">
-                  ⌕ &nbsp; Knowledge
-                </a>
-              </th>
-              <th scope="col">
-                <a class="table-product" href="/products/signal/">
-                  ▥ &nbsp; Signal
-                </a>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr>
-                <th scope="row">{row[0]}</th>
-                {row.slice(1).map((value) => (
-                  <td>{value}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-  <section class="section dark-section">
-    <div class="container split-section">
-      <div>
-        <p class="eyebrow">A BETTER TOGETHER STORY</p>
-        <h2>
-          The work doesn’t end
-          <br />
-          <em>at the edge of a tool.</em>
-        </h2>
-      </div>
-      <div>
-        <p>
-          A process often needs a reference. A report often raises a question
-          about a process. A useful reference often points to a decision someone
-          still needs to make.
-        </p>
-        <p>
-          Flow, Knowledge and Signal are imagined as parts of one experience.
-          You can explore them separately here, with no signup and no connection
-          to real business information.
-        </p>
-        <a class="arrow-link" href="/platform/">
-          See the connected platform concept <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </div>
-  </section>
-  <CTA title="Choose a starting point. Follow your curiosity." />
-</Layout>
+</Frame>

@@ -1,0 +1,145 @@
+/* Visual comparison pass: preserve the authored 1440/390 compositions with complete text. */
+@layer layout {
+  .site-header {
+    height: auto;
+    min-height: 88px;
+  }
+  .header-inner {
+    min-height: 88px;
+    flex-wrap: wrap;
+  }
+  .site-header nav {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  .page-hero {
+    grid-template-columns: minmax(0, 0.93fr) minmax(0, 1.07fr);
+    gap: 30px;
+  }
+  h1 {
+    font-size: clamp(38px, 4.1vw, 59px);
+    letter-spacing: 0;
+    font-weight: 800;
+  }
+  .hero-insights h1 {
+    font-size: 47px;
+  }
+  .hero-journal h1 {
+    font-size: 52px;
+  }
+  .hero-platform h1,
+  .hero-contact h1 {
+    font-size: 56px;
+  }
+  .hero-description {
+    max-width: 505px;
+    letter-spacing: 0.015em;
+  }
+  .hero-actions > .button {
+    min-width: 249px;
+  }
+  .feature-card p {
+    max-width: none;
+  }
+  .feature-card a {
+    font-size: 12px;
+  }
+  .product-menu {
+    max-width: calc(100vw - 48px);
+  }
+}
+@layer components {
+  .approval-proposal label,
+  .principle-gallery label {
+    min-height: 44px;
+  }
+  .approval-proposal label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .approval-proposal input {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    accent-color: var(--color-blue);
+  }
+  .article-body table {
+    display: block;
+    max-width: 100%;
+    overflow: auto;
+  }
+  .site-footer a {
+    min-height: 44px;
+  }
+  .preview-bars {
+    height: 106px;
+  }
+  .preview-bars span {
+    max-height: 90px;
+  }
+}
+@layer responsive {
+  @media (min-width: 600px) {
+    .feature-card > a {
+      display: none;
+    }
+  }
+  @media (max-width: 1199px) and (min-width: 1000px) {
+    h1 {
+      font-size: 46px;
+    }
+  }
+  @media (max-width: 999px) {
+    .site-header,
+    .header-inner {
+      min-height: 72px;
+    }
+    .page-hero {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .hero-copy h1 {
+      font-size: clamp(36px, 5.8vw, 52px);
+    }
+    .preview-bars {
+      height: 126px;
+    }
+  }
+  @media (max-width: 599px) {
+    .hero-copy h1 {
+      font-size: clamp(31px, 9.75vw, 38px);
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+    .hero-platform h1,
+    .hero-contact h1 {
+      font-size: 34px;
+    }
+    .hero-workflows h1,
+    .hero-guides h1 {
+      font-size: 36px;
+    }
+    .hero-journal h1 {
+      font-size: 32px;
+    }
+    .hero-insights h1 {
+      font-size: 34px;
+    }
+    .hero-actions .button {
+      min-width: 243px;
+      font-size: 15px;
+      max-width: 100%;
+    }
+    .preview-bars {
+      height: 105px;
+    }
+    .preview-bars span {
+      max-height: 88px;
+    }
+    .hero-description {
+      letter-spacing: 0.015em;
+    }
+  }
+}

@@ -6,6 +6,9 @@
     "node_modules",
     "artifacts",
     "test-results",
-    "playwright-report"
+    "playwright-report",
+    "worker",
+    "worker-configuration.d.ts",
+    "PROWORKS-Complete-Codex-Handoff"
   ]
 }
