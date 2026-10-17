@@ -1,0 +1,480 @@
+{
+  "observedAt": "2026-10-17T09:55:17.285Z",
+  "branch": "codex/proworks-visual-fidelity-v2",
+  "baseline": "04f3af27342bedb5f1aeffd75fc5a9452be43a43",
+  "status": "IMPLEMENTED; USER VISUAL APPROVAL AND PRODUCTION RELEASE HELD",
+  "astro": {
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "static": {
+    "date": "2026-10-17T09:47:08.752Z",
+    "pages": 15,
+    "corePages": 12,
+    "articles": 3,
+    "indexable": true,
+    "uniqueTitles": 15,
+    "uniqueDescriptions": 15,
+    "checkedInternalLinks": 390,
+    "checkedAssetReferences": 143,
+    "clientJavaScriptBytes": 8695,
+    "cssBytes": 44989
+  },
+  "chromium": {
+    "startTime": "2026-10-17T09:52:19.182Z",
+    "duration": 132066.128,
+    "expected": 70,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "webkit": {
+    "engineSmokePassed": true,
+    "scope": "All twelve routes plus Knowledge query, quarter fixture and explicit workflow approval",
+    "evidence": "Final cross-browser local run: WebKit 22.3 seconds passed"
+  },
+  "firefox": {
+    "status": "local_launch_unavailable",
+    "error": "browserType.launch: spawn UNKNOWN",
+    "repair": "Forced reinstall completed; launch still failed before page navigation",
+    "ci": "Fresh Linux CI installs all three engines and runs CROSS_BROWSER=1"
+  },
+  "previewChecks": {
+    "explicitNoindex": true,
+    "nonMainWorkerNoindex": true,
+    "canonicalAndRobots": true,
+    "sitemapExcluded": true
+  },
+  "workerTypes": true,
+  "workerBundleDryRun": true,
+  "formatCheck": true,
+  "secretScan": {
+    "method": "Targeted staged-text patterns; not Gitleaks",
+    "hits": 0
+  },
+  "gallery": {
+    "all24SetsDecodeAtExpectedWidths": true,
+    "overlayControl": true,
+    "noScriptErrors": true
+  },
+  "viewports": [
+    320,
+    360,
+    375,
+    390,
+    430,
+    768,
+    1024,
+    1280,
+    1440,
+    1920
+  ],
+  "landscape": {
+    "width": 844,
+    "height": 390
+  },
+  "textEnlargement": "200 percent; native browser zoom UI not claimed",
+  "visualCoverage": [
+    {
+      "route": "/",
+      "desktop": "comparisons/after/home-desktop-pair.png",
+      "mobile": "comparisons/after/home-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    },
+    {
+      "route": "/platform/",
+      "desktop": "comparisons/after/platform-desktop-pair.png",
+      "mobile": "comparisons/after/platform-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    },
+    {
+      "route": "/products/workflows/",
+      "desktop": "comparisons/after/workflows-desktop-pair.png",
+      "mobile": "comparisons/after/workflows-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    },
+    {
+      "route": "/products/knowledge/",
+      "desktop": "comparisons/after/knowledge-desktop-pair.png",
+      "mobile": "comparisons/after/knowledge-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    },
+    {
+      "route": "/products/insights/",
+      "desktop": "comparisons/after/insights-desktop-pair.png",
+      "mobile": "comparisons/after/insights-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    },
+    {
+      "route": "/technology/",
+      "desktop": "comparisons/after/technology-desktop-pair.png",
+      "mobile": "comparisons/after/technology-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    },
+    {
+      "route": "/experience/",
+      "desktop": "comparisons/after/experience-desktop-pair.png",
+      "mobile": "comparisons/after/experience-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    },
+    {
+      "route": "/compare/",
+      "desktop": "comparisons/after/compare-desktop-pair.png",
+      "mobile": "comparisons/after/compare-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    },
+    {
+      "route": "/about/",
+      "desktop": "comparisons/after/about-desktop-pair.png",
+      "mobile": "comparisons/after/about-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    },
+    {
+      "route": "/journal/",
+      "desktop": "comparisons/after/journal-desktop-pair.png",
+      "mobile": "comparisons/after/journal-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    },
+    {
+      "route": "/guides/",
+      "desktop": "comparisons/after/guides-desktop-pair.png",
+      "mobile": "comparisons/after/guides-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    },
+    {
+      "route": "/contact/",
+      "desktop": "comparisons/after/contact-desktop-pair.png",
+      "mobile": "comparisons/after/contact-mobile-pair.png",
+      "overlays": true,
+      "review": "Compared at both artboard sizes; adaptations are documented in discrepancy register"
+    }
+  ],
+  "stateScreenshots": [
+    "insights-month.png",
+    "insights-quarter.png",
+    "insights-week.png",
+    "knowledge-filtered.png",
+    "knowledge-initial.png",
+    "knowledge-no-matches.png",
+    "knowledge-reset.png",
+    "knowledge-source-open.png",
+    "workflows-complete-history.png",
+    "workflows-intake.png",
+    "workflows-prepare.png",
+    "workflows-reset.png",
+    "workflows-review-confirmed.png",
+    "workflows-review-waiting.png"
+  ],
+  "performance": {
+    "method": "Lighthouse 13.5 mobile, three cold runs per route, 4x CPU and simulated mobile network; local synthetic results",
+    "medians": [
+      {
+        "route": "/",
+        "performance": 99,
+        "LCPms": 1592.95,
+        "CLS": 0,
+        "TBTms": 0,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      {
+        "route": "/products/insights/",
+        "performance": 98,
+        "LCPms": 1591.464,
+        "CLS": 0,
+        "TBTms": 156,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "performance": 100,
+        "LCPms": 1592.34,
+        "CLS": 0,
+        "TBTms": 0,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100
+      }
+    ],
+    "allRuns": [
+      {
+        "route": "/",
+        "iteration": 1,
+        "fetchTime": "2026-10-17T09:43:45.508Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1591.656,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      },
+      {
+        "route": "/",
+        "iteration": 2,
+        "fetchTime": "2026-10-17T09:43:54.999Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 73,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1849.0819999999999,
+        "CLS": 0,
+        "TBT": 1478.4999999999998,
+        "error": null
+      },
+      {
+        "route": "/",
+        "iteration": 3,
+        "fetchTime": "2026-10-17T09:44:09.435Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 99,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1592.95,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      },
+      {
+        "route": "/products/insights/",
+        "iteration": 1,
+        "fetchTime": "2026-10-17T09:44:17.706Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 98,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1593.196,
+        "CLS": 0,
+        "TBT": 156,
+        "error": null
+      },
+      {
+        "route": "/products/insights/",
+        "iteration": 2,
+        "fetchTime": "2026-10-17T09:44:27.070Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1591.464,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      },
+      {
+        "route": "/products/insights/",
+        "iteration": 3,
+        "fetchTime": "2026-10-17T09:44:38.388Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 93,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1591.384,
+        "CLS": 0,
+        "TBT": 301.5,
+        "error": null
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "iteration": 1,
+        "fetchTime": "2026-10-17T09:44:48.204Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1590.378,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "iteration": 2,
+        "fetchTime": "2026-10-17T09:45:02.245Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 94,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1758.3559999999998,
+        "CLS": 0,
+        "TBT": 263.66100000000006,
+        "error": null
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "iteration": 3,
+        "fetchTime": "2026-10-17T09:45:12.518Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1592.34,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      }
+    ],
+    "outlier": "Home iteration 2 scored 73 with TBT 1478.5ms; retained without discarding. Median home score is 99."
+  },
+  "githubPreflight": {
+    "observedAt": "2026-10-17T09:48:49.345Z",
+    "hooks": {
+      "status": 200,
+      "hooks": []
+    },
+    "pages": {
+      "status": 404
+    }
+  },
+  "cloudflareInventory": "Connector requires reauthentication; no current Builds inventory claimed",
+  "productionBeforePush": {
+    "brand": "PROWORKS",
+    "sourceCommit": "04f3af27342bedb5f1aeffd75fc5a9452be43a43",
+    "sourceDirty": false,
+    "indexable": true,
+    "builtAt": "2026-10-17T07:39:00.951Z"
+  },
+  "sourceProtection": {
+    "originalVisualPackageRetained": true,
+    "providedHashesVerified": 50,
+    "legacyHandoff": "Absent on initial audit; never deleted",
+    "workerAndRedirectFilesChanged": false,
+    "fixtureAndInteractionLogicChanged": false,
+    "publishedArticleTextChanged": false
+  },
+  "release": {
+    "userApproved": false,
+    "merged": false,
+    "deployed": false,
+    "dnsChanged": false
+  },
+  "limits": [
+    "No physical-device user testing",
+    "No assistive-technology user session",
+    "Local Firefox process launch unavailable; Linux CI checks required"
+  ]
+}

@@ -1,8 +1,53 @@
 ---
+import Icon from './ProductIcon.astro';
+const titles: Record<string, string[]> = {
+  '/': ['Workflows', 'Knowledge', 'Insights'],
+  '/platform/': ['Visible ownership', 'Context nearby', 'Numbers explained'],
+  '/products/workflows/': [
+    'Human approval',
+    'Named owners',
+    'Activity history',
+  ],
+  '/products/knowledge/': ['Searchable', 'Source-aware', 'Clear empty states'],
+  '/products/insights/': [
+    'Useful periods',
+    'Accessible data',
+    'Transparent fixtures',
+  ],
+  '/technology/': [
+    'Static foundation',
+    'Local data',
+    'Accessible interactions',
+  ],
+  '/experience/': [
+    'Understand first',
+    'Act with confidence',
+    'Trust the context',
+  ],
+  '/compare/': ['Workflows', 'Knowledge', 'Insights'],
+  '/about/': ['Local perspective', 'Practical ambition', 'Honest scope'],
+  '/journal/': ['Mapping a process', 'Redesign checklist', 'Useful metrics'],
+  '/guides/': ['Start a workflow', 'Find a source', 'Read a report'],
+  '/contact/': ['Explore a demo', 'See real studio', 'Discuss a website'],
+};
+const headings: Record<string, string> = {
+  '/': 'One platform idea. Three useful views.',
+  '/platform/': 'One connected story, three practical starting points.',
+  '/products/workflows/': 'Keep momentum without skipping a decision.',
+  '/products/knowledge/': 'Every answer deserves a traceable source.',
+  '/products/insights/': 'Numbers that can be understood and checked.',
+  '/technology/': 'A reliable foundation for the frontend.',
+  '/experience/': 'A calmer way to understand and act.',
+  '/compare/': 'Find the right starting point for your question.',
+  '/about/': 'A portfolio project with transparent boundaries.',
+  '/journal/': 'Practical thinking for better everyday work.',
+  '/guides/': 'Find answers before you need to ask.',
+  '/contact/': 'A real next step, without a fictional sales desk.',
+};
 const {
   items,
-  title = 'Design that makes business easier.',
-  eyebrow = 'CRAFTED FOR CLARITY',
+  title = headings[Astro.url.pathname] || 'Design that makes business easier.',
+  eyebrow = 'BUILT FOR USEFUL PROGRESS',
 } = Astro.props;
 ---
 
@@ -13,13 +58,15 @@ const {
     {items.map(
       (item: { title: string; body: string; href?: string }, i: number) => (
         <article class="feature-card">
-          <span class="number">{String(i + 1).padStart(2, '0')}</span>
-          <h3>{item.title}</h3>
+          <Icon kind={['workflows', 'knowledge', 'insights'][i % 3]} />
+          <h3>{titles[Astro.url.pathname]?.[i] || item.title}</h3>
           <p>{item.body}</p>
           {item.href && (
-            <a href={item.href}>
-              Explore {item.title.toLowerCase()}{' '}
-              <span aria-hidden="true">→</span>
+            <a
+              href={item.href}
+              aria-label={`Explore ${item.title.toLowerCase()}`}
+            >
+              <span aria-hidden="true">↗</span>
             </a>
           )}
         </article>

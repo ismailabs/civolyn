@@ -5,114 +5,306 @@ import {
   products,
   stages,
   portfolio,
+  whatsapp,
 } from '../data/site';
+import { articles } from '../data/articles';
+import Icon from './ProductIcon.astro';
+import Skyline from './Skyline.astro';
 const { kind = 'workspace' } = Astro.props;
 const d = insightData.week;
 const total = d.completed.reduce((a, b) => a + b, 0);
-const chart = ['workspace', 'platform', 'analytics'].includes(kind),
-  list = ['knowledge', 'support', 'articles'].includes(kind),
-  flow = ['workflow', 'tech', 'compare'].includes(kind);
+const title: Record<string, string> = {
+  workspace: 'Operations overview',
+  platform: 'Three perspectives',
+  workflow: 'Workflows · staged approval',
+  knowledge: 'Knowledge · sample library',
+  analytics: 'Insights · reporting',
+  tech: 'Frontend architecture',
+  support: 'Guides · helpful answers',
+};
+const chart = ['workspace', 'platform', 'analytics'].includes(kind);
+const shell = !['compare', 'contact', 'design', 'story', 'articles'].includes(
+  kind,
+);
+const links = [
+  {
+    title: 'Explore the local demos',
+    body: 'See the frontend interactions without signing up.',
+    href: '/compare/',
+  },
+  {
+    title: 'See the real ISMAIL studio',
+    body: 'View ISMAIL website projects and services.',
+    href: portfolio,
+  },
+  {
+    title: 'Discuss a website project',
+    body: 'Use the real external WhatsApp contact route.',
+    href: whatsapp,
+  },
+];
 ---
 
-<div
-  class:list={['workspace', `workspace-${kind}`]}
-  aria-label="Illustrative product preview"
->
-  <div class="workspace-title">
-    <b>
-      PROWORKS <span aria-hidden="true"> / </span> SAMPLE WORKSPACE
-    </b>
-    <span>DEMO DATA</span>
-  </div>
-  <div class="workspace-body">
-    <p class="mobile-demo-label">ILLUSTRATIVE DEMO — NOT LIVE</p>
-    {chart && (
-      <>
-        <div class="preview-metrics">
-          <div>
-            <span>Completed</span>
-            <strong>{total}</strong>
-          </div>
-          <div>
-            <span>In review</span>
-            <strong>{d.pending_review}</strong>
-          </div>
-          <div>
-            <span>Median duration</span>
-            <strong>{d.median_days}d</strong>
-          </div>
+<div class={`hero-visual visual-${kind}`}>
+  {shell && (
+    <div
+      class={`workspace workspace-${kind}`}
+      aria-label="Illustrative product preview"
+    >
+      <div class="workspace-title">
+        <b>
+          <i aria-hidden="true"></i> PROWORKS / CONCEPT DEMO
+        </b>
+        <span>● LOCAL DATA</span>
+      </div>
+      <div class="workspace-layout">
+        <div class="workspace-rail" aria-hidden="true">
+          {products.map((p) => (
+            <Icon kind={p.id} />
+          ))}
         </div>
-        <div class="preview-chart">
-          <p>Illustrative activity, this week</p>
-          <div
-            role="img"
-            aria-label={`Sample weekly completions: ${d.completed.join(', ')}. Total ${total}.`}
-            class="preview-bars"
-          >
-            {d.completed.map((value, i) => (
-              <div style={`--bar:${(value / 22) * 100}%`}>
-                <span></span>
-                <small>{d.labels[i]}</small>
+        <div class="workspace-body">
+          <div class="workspace-heading">
+            <h2>{title[kind]}</h2>
+            <p>Illustrative workspace · no live data</p>
+          </div>
+          {kind === 'analytics' && (
+            <div
+              class="preview-periods"
+              aria-label="Preview uses the weekly fixture"
+            >
+              <span class="selected">Week</span>
+              <span>Month</span>
+              <span>Quarter</span>
+            </div>
+          )}
+          {chart && (
+            <>
+              <div class="preview-metrics">
+                <div>
+                  <span>Completed</span>
+                  <strong>{total}</strong>
+                </div>
+                <div>
+                  <span>Awaiting review</span>
+                  <strong>{d.pending_review}</strong>
+                </div>
+                <div>
+                  <span>Median days</span>
+                  <strong>{d.median_days}</strong>
+                </div>
               </div>
-            ))}
-          </div>
+              <div class="preview-report">
+                <div class="preview-chart">
+                  <div
+                    role="img"
+                    aria-label={`Sample weekly completions: ${d.labels.map((l, i) => `${l} ${d.completed[i]}`).join(', ')}. Total ${total}.`}
+                    class="preview-bars"
+                  >
+                    {d.completed.map((v, i) => (
+                      <div
+                        style={`--bar:${(v / Math.max(...d.completed)) * 100}%`}
+                      >
+                        <span></span>
+                        <small>{d.labels[i]}</small>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {kind !== 'analytics' && (
+                  <div class="preview-activity">
+                    <b>Recent sample activity</b>
+                    {['Project brief', 'Scope review', 'Source document'].map(
+                      (t) => (
+                        <p>
+                          <i aria-hidden="true"></i>
+                          {t}
+                        </p>
+                      ),
+                    )}
+                  </div>
+                )}
+              </div>
+            </>
+          )}
+          {kind === 'workflow' && (
+            <div class="preview-kanban">
+              {stages.map((s, i) => (
+                <div class="preview-column">
+                  <b>{s.name}</b>
+                  <div>
+                    <strong>
+                      {
+                        [
+                          'Project brief',
+                          'Scope details',
+                          'Proposal',
+                          'Next action',
+                        ][i]
+                      }
+                    </strong>
+                    <small>Sample task</small>
+                    <em>{i === 2 ? 'Human review' : 'Local'}</em>
+                  </div>
+                  {[1, 3].includes(i) && (
+                    <div class="extra-task">
+                      <strong>
+                        {i === 1 ? 'Scope details' : 'Next action'}
+                      </strong>
+                      <small>Sample task</small>
+                      <em>Local</em>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+          {kind === 'knowledge' && (
+            <div class="preview-library">
+              <p class="preview-search">
+                <span aria-hidden="true">⌕</span> Search six sample documents…
+              </p>
+              {documents.slice(0, 3).map((doc) => (
+                <a href="/products/knowledge/#demo">
+                  <Icon kind="knowledge" />
+                  <span>
+                    <b>{doc.title}</b>
+                    <small>Fictional source · {doc.category}</small>
+                  </span>
+                </a>
+              ))}
+            </div>
+          )}
+          {kind === 'tech' && (
+            <ol class="preview-architecture">
+              <li>Accessible browser UI</li>
+              <li>Local interaction state</li>
+              <li>Prepared demo fixtures</li>
+            </ol>
+          )}
+          {kind === 'support' && (
+            <div class="preview-guides">
+              <div class="guide-categories">
+                <b>All guides</b>
+                {['Workflows', 'Knowledge', 'Insights', 'Privacy'].map(
+                  (t, i) => (
+                    <a
+                      href={
+                        '/guides/#' +
+                        ['approval', 'search', 'metrics', 'privacy'][i]
+                      }
+                    >
+                      {t}
+                    </a>
+                  ),
+                )}
+              </div>
+              <div>
+                {[
+                  'Start with a sample workflow',
+                  'Find a source you can inspect',
+                  'Understand the report data',
+                ].map((t, i) => (
+                  <a href={'/guides/#' + ['approval', 'search', 'metrics'][i]}>
+                    <Icon kind={products[i].id} />
+                    <b>{t}</b>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-      </>
-    )}
-    {list && (
-      <div class="preview-library">
-        <p class="preview-search">
-          {kind === 'articles'
-            ? 'Field notes / operations and design'
-            : 'Search sample documents…'}
+      </div>
+    </div>
+  )}
+  {['story', 'design'].includes(kind) && (
+    <figure class={`editorial-city city-${kind}`}>
+      {kind === 'story' ? (
+        <Skyline />
+      ) : (
+        <img
+          src="/images/editorial/malaysian-skyline.webp"
+          width="1600"
+          height="900"
+          alt="Original illustration of a Malaysian city skyline with stylised twin towers."
+        />
+      )}
+      <figcaption>
+        <p class="eyebrow">
+          {kind === 'story' ? 'CREATED BY ISMAIL' : 'DESIGN THAT EARNS TRUST'}
         </p>
-        {documents.slice(0, 3).map((d) => (
-          <div>
-            <b>{d.title}</b>
-            <small>{d.category} · Sample source available</small>
+        <h2>
+          {kind === 'story'
+            ? 'A Malaysian frontend portfolio concept.'
+            : 'Clarity you can actually use.'}
+        </h2>
+      </figcaption>
+    </figure>
+  )}
+  {kind === 'compare' && (
+    <div class="preview-comparison">
+      <h2>Start where the problem is clearest.</h2>
+      <div>
+        {products.map((p) => (
+          <a href={p.link}>
+            <Icon kind={p.id} />
+            <h3>{p.name}</h3>
+            <p>{p.detail}</p>
+            <ul>
+              <li>Local demo</li>
+              <li>Accessible UI</li>
+              <li>Explore →</li>
+            </ul>
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+  {kind === 'contact' && (
+    <div class="preview-contact">
+      <p class="eyebrow">CHOOSE YOUR NEXT STEP</p>
+      {links.map((l, i) => (
+        <a href={l.href}>
+          <Icon kind={products[i].id} />
+          <span>
+            <b>{l.title}</b>
+            <small>{l.body}</small>
+          </span>
+          <i aria-hidden="true">↗</i>
+        </a>
+      ))}
+    </div>
+  )}
+  {kind === 'articles' && (
+    <div class="preview-editorial">
+      {articles.map((a, i) => (
+        <a href={`/journal/${a.slug}/`}>
+          <div class={`editorial-art art-${i}`}>
+            <img
+              src="/images/editorial/abstract-blue.webp"
+              width="1600"
+              height="900"
+              alt=""
+            />
+            <Icon kind={products[i].id} />
           </div>
-        ))}
-      </div>
-    )}
-    {flow && (
-      <ol class="preview-flow">
-        {(kind === 'compare'
-          ? [...products.map((p) => p.name), 'Find your fit']
-          : stages.map((s) => s.name)
-        ).map((name, i) => (
-          <li class:list={{ highlight: i === 2 }}>
-            <span>{i + 1}</span>
-            <b>{name}</b>
-            <small>SAMPLE</small>
-          </li>
-        ))}
-      </ol>
-    )}
-    {!chart && !list && !flow && (
-      <div class="preview-paths">
-        <a href="/compare/">
-          <b>Choose a demo</b>
-          <span>
-            Three sample experiences <i aria-hidden="true">↗</i>
-          </span>
+          <h2>{a.title}</h2>
+          <p>{a.description}</p>
+          <span>Read article ↗</span>
         </a>
-        <a href="/platform/">
-          <b>Explore the product</b>
-          <span>
-            No signup required <i aria-hidden="true">↗</i>
-          </span>
+      ))}
+    </div>
+  )}
+  {kind === 'platform' && (
+    <div class="preview-pathway">
+      {products.map((p, i) => (
+        <a href={p.link}>
+          <Icon kind={p.id} />
+          <b>
+            0{i + 1} {p.name}
+          </b>
         </a>
-        <a
-          href={portfolio}
-          data-event="portfolio_cta_click"
-          data-component="preview"
-        >
-          <b>Talk to ISMAIL</b>
-          <span>
-            Real website services <i aria-hidden="true">↗</i>
-          </span>
-        </a>
-      </div>
-    )}
-  </div>
+      ))}
+    </div>
+  )}
 </div>

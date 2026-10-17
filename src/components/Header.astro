@@ -51,6 +51,20 @@ const path = Astro.url.pathname;
         </div>
       </details>
       <a
+        class="nav-product-shortcut"
+        href="/products/knowledge/"
+        aria-current={path === '/products/knowledge/' ? 'page' : undefined}
+      >
+        Knowledge
+      </a>
+      <a
+        class="nav-product-shortcut"
+        href="/products/insights/"
+        aria-current={path === '/products/insights/' ? 'page' : undefined}
+      >
+        Insights
+      </a>
+      <a
         href="/guides/"
         aria-current={path === '/guides/' ? 'page' : undefined}
       >

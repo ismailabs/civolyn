@@ -1,0 +1,242 @@
+[
+  {
+    "route": "/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/home-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/home-1440x1040.png"
+  },
+  {
+    "route": "/platform/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/platform-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/platform-1440x1040.png"
+  },
+  {
+    "route": "/products/workflows/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/workflows-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/workflows-1440x1040.png"
+  },
+  {
+    "route": "/products/knowledge/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/knowledge-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/knowledge-1440x1040.png"
+  },
+  {
+    "route": "/products/insights/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/insights-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/insights-1440x1040.png"
+  },
+  {
+    "route": "/technology/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/technology-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/technology-1440x1040.png"
+  },
+  {
+    "route": "/experience/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/experience-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/experience-1440x1040.png"
+  },
+  {
+    "route": "/compare/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/compare-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/compare-1440x1040.png"
+  },
+  {
+    "route": "/about/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/about-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/about-1440x1040.png"
+  },
+  {
+    "route": "/journal/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/journal-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/journal-1440x1040.png"
+  },
+  {
+    "route": "/guides/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/guides-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/guides-1440x1040.png"
+  },
+  {
+    "route": "/contact/",
+    "device": "desktop",
+    "viewport": {
+      "width": 1440,
+      "height": 1040
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/contact-desktop.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/desktop/contact-1440x1040.png"
+  },
+  {
+    "route": "/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/home-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/home-390x900.png"
+  },
+  {
+    "route": "/platform/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/platform-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/platform-390x900.png"
+  },
+  {
+    "route": "/products/workflows/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/workflows-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/workflows-390x900.png"
+  },
+  {
+    "route": "/products/knowledge/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/knowledge-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/knowledge-390x900.png"
+  },
+  {
+    "route": "/products/insights/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/insights-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/insights-390x900.png"
+  },
+  {
+    "route": "/technology/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/technology-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/technology-390x900.png"
+  },
+  {
+    "route": "/experience/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/experience-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/experience-390x900.png"
+  },
+  {
+    "route": "/compare/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/compare-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/compare-390x900.png"
+  },
+  {
+    "route": "/about/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/about-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/about-390x900.png"
+  },
+  {
+    "route": "/journal/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/journal-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/journal-390x900.png"
+  },
+  {
+    "route": "/guides/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/guides-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/guides-390x900.png"
+  },
+  {
+    "route": "/contact/",
+    "device": "mobile",
+    "viewport": {
+      "width": 390,
+      "height": 900
+    },
+    "actual": "artifacts/visual-fidelity-v2/after/contact-mobile.png",
+    "reference": "PROWORKS-Visual-Design-Reference-Package/02-pages/mobile/contact-390x900.png"
+  }
+]

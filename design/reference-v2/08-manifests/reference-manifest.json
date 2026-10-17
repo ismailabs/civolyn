@@ -1,0 +1,244 @@
+{
+  "project": "PROWORKS Visual Design Reference Package",
+  "edition": "2.0 / 2026-10-17",
+  "source_concept": "09-source-reference/original-user-concept.png",
+  "base_repo": "https://github.com/ismailabs/proworks",
+  "production": "https://proworks.ismailstudio.my/",
+  "brand": "PROWORKS (fictional portfolio concept by ISMAIL)",
+  "choices": {
+    "direction": "faithful refinement",
+    "personality": "enterprise x startup x premium",
+    "theme": "light + electric blue + navy",
+    "page_coverage": "12 routes + product and component refs",
+    "product_ui": "marketing and functional UI",
+    "media": "Malaysian context + custom illustration; editorial photography guidance",
+    "delivery": "comprehensive image and prompt ZIP",
+    "codex": "fully autonomous implementation",
+    "functional_scope": "improvements permitted; core protections retained",
+    "legacy_handoff": "DO NOT DELETE"
+  },
+  "artboards": {
+    "desktop": {
+      "width": 1440,
+      "height": 1040
+    },
+    "mobile": {
+      "width": 390,
+      "height": 900
+    },
+    "product": {
+      "width": 1440,
+      "height": 960
+    }
+  },
+  "tokens": {
+    "navy": "#091B35",
+    "ink": "#10233F",
+    "blue": "#1262EE",
+    "blue2": "#0C4CC8",
+    "bright": "#2C83FA",
+    "sky": "#E9F4FF",
+    "paper": "#F6F9FE",
+    "white": "#FFFFFF",
+    "muted": "#58708D",
+    "stroke": "#DFE8F4",
+    "cyan": "#0DAED5",
+    "teal": "#10A98A",
+    "orange": "#F6A334",
+    "lav": "#A28CFF",
+    "greenbg": "#E1F7F0",
+    "navy2": "#173B63"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "name": "Home",
+      "route": "/",
+      "desktop": "02-pages/desktop/home-1440x1040.png",
+      "mobile": "02-pages/mobile/home-390x900.png",
+      "hero": [
+        "Turn everyday",
+        "operations into",
+        "real progress."
+      ],
+      "body": "A clear, considered concept for the work, knowledge and decisions that shape small teams.",
+      "component": "dashboard",
+      "visual_theme": "hero",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    },
+    {
+      "id": "platform",
+      "name": "Platform",
+      "route": "/platform/",
+      "desktop": "02-pages/desktop/platform-1440x1040.png",
+      "mobile": "02-pages/mobile/platform-390x900.png",
+      "hero": [
+        "One clearer view",
+        "of the work",
+        "that matters."
+      ],
+      "body": "Explore how a request, its supporting knowledge and meaningful reporting fit together.",
+      "component": "dashboard",
+      "visual_theme": "bento",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    },
+    {
+      "id": "workflows",
+      "name": "Workflows",
+      "route": "/products/workflows/",
+      "desktop": "02-pages/desktop/workflows-1440x1040.png",
+      "mobile": "02-pages/mobile/workflows-390x900.png",
+      "hero": [
+        "Keep work moving",
+        "with a clear",
+        "next step."
+      ],
+      "body": "Four explicit stages, named responsibility and a real human approval gate in a local demo.",
+      "component": "kanban",
+      "visual_theme": "product",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    },
+    {
+      "id": "knowledge",
+      "name": "Knowledge",
+      "route": "/products/knowledge/",
+      "desktop": "02-pages/desktop/knowledge-1440x1040.png",
+      "mobile": "02-pages/mobile/knowledge-390x900.png",
+      "hero": [
+        "Answers begin",
+        "with useful",
+        "context."
+      ],
+      "body": "Search six sample documents, inspect the source and understand the answer before you act.",
+      "component": "knowledge",
+      "visual_theme": "product",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    },
+    {
+      "id": "insights",
+      "name": "Insights",
+      "route": "/products/insights/",
+      "desktop": "02-pages/desktop/insights-1440x1040.png",
+      "mobile": "02-pages/mobile/insights-390x900.png",
+      "hero": [
+        "See the work.",
+        "Understand",
+        "the pattern."
+      ],
+      "body": "Readable sample reporting with coherent periods, underlying values and accessible charts.",
+      "component": "insights",
+      "visual_theme": "product",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    },
+    {
+      "id": "technology",
+      "name": "Technology",
+      "route": "/technology/",
+      "desktop": "02-pages/desktop/technology-1440x1040.png",
+      "mobile": "02-pages/mobile/technology-390x900.png",
+      "hero": [
+        "Thoughtful design.",
+        "Visible technical",
+        "boundaries."
+      ],
+      "body": "Modern static delivery, accessible local interactions and honest explanations of what is not connected.",
+      "component": "architecture",
+      "visual_theme": "technical",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    },
+    {
+      "id": "experience",
+      "name": "Experience",
+      "route": "/experience/",
+      "desktop": "02-pages/desktop/experience-1440x1040.png",
+      "mobile": "02-pages/mobile/experience-390x900.png",
+      "hero": [
+        "Technology should",
+        "feel human."
+      ],
+      "body": "Readable interfaces, considered actions and useful context — built with people in mind.",
+      "component": "dashboard",
+      "visual_theme": "editorial",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    },
+    {
+      "id": "compare",
+      "name": "Compare",
+      "route": "/compare/",
+      "desktop": "02-pages/desktop/compare-1440x1040.png",
+      "mobile": "02-pages/mobile/compare-390x900.png",
+      "hero": [
+        "Different needs.",
+        "One clear",
+        "direction."
+      ],
+      "body": "Decide whether your first priority is moving work, finding knowledge or understanding reports.",
+      "component": "dashboard",
+      "visual_theme": "comparison",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    },
+    {
+      "id": "about",
+      "name": "About",
+      "route": "/about/",
+      "desktop": "02-pages/desktop/about-1440x1040.png",
+      "mobile": "02-pages/mobile/about-390x900.png",
+      "hero": [
+        "Built in Malaysia.",
+        "Designed for",
+        "real clarity."
+      ],
+      "body": "A fictional product experience created by ISMAIL to demonstrate thoughtful frontend craftsmanship.",
+      "component": "dashboard",
+      "visual_theme": "city",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    },
+    {
+      "id": "journal",
+      "name": "Journal",
+      "route": "/journal/",
+      "desktop": "02-pages/desktop/journal-1440x1040.png",
+      "mobile": "02-pages/mobile/journal-390x900.png",
+      "hero": [
+        "Better work starts",
+        "with better",
+        "questions."
+      ],
+      "body": "Original writing about useful operations, considered interfaces and understandable information.",
+      "component": "guide",
+      "visual_theme": "editorial",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    },
+    {
+      "id": "guides",
+      "name": "Guides",
+      "route": "/guides/",
+      "desktop": "02-pages/desktop/guides-1440x1040.png",
+      "mobile": "02-pages/mobile/guides-390x900.png",
+      "hero": [
+        "Make the complex",
+        "feel simpler."
+      ],
+      "body": "Clear answers about the three demos, their limitations, privacy and keyboard controls.",
+      "component": "guide",
+      "visual_theme": "guide",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    },
+    {
+      "id": "contact",
+      "name": "Contact",
+      "route": "/contact/",
+      "desktop": "02-pages/desktop/contact-1440x1040.png",
+      "mobile": "02-pages/mobile/contact-390x900.png",
+      "hero": [
+        "Let’s build",
+        "something",
+        "great together."
+      ],
+      "body": "Explore the fictional demos, then visit ISMAIL for a genuine website design and development enquiry.",
+      "component": "dashboard",
+      "visual_theme": "contact",
+      "preserve": "Retain current route, functioning content and real local interactions; above-fold artboard is NOT the full site"
+    }
+  ]
+}

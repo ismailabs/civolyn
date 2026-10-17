@@ -3,7 +3,7 @@ import http from 'node:http';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 const port = Number(process.env.PORT || 4321);
-const root = path.resolve('dist');
+const root = path.resolve(process.env.LOCAL_STATIC_ROOT || 'dist');
 const aliases = {
   '/products/flow/': '/products/workflows/',
   '/products/signal/': '/products/insights/',
