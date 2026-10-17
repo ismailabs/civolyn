@@ -2,6 +2,8 @@
 
 All twelve desktop (1440 × 1040) and twelve mobile (390 × 900) references were inspected before coding. Actual Chromium captures exist for every core route, both full-page and viewport crops, under `artifacts/screenshots/`. Twenty-four left-reference/right-browser comparison images and desktop/mobile overview sheets are under `artifacts/visual-comparison/`. These are qualitative reviews, not a fabricated pixel-similarity score.
 
+After deployment, all twelve pages were captured again through the actual custom HTTPS host at both sizes. A second set of 24 left-reference/right-production pairs, plus desktop/mobile overview sheets, is retained under `artifacts/production/comparisons/`. Both overview sheets were inspected. They preserve the reviewed layout, colour, typography and component decisions; full hosted captures and independent CI screenshots provide the page-level evidence. The adaptations below remain applicable. No pixel-perfect or automated similarity percentage is asserted.
+
 ## Observed refinements
 
 The first implementation had narrow primary buttons, oversized preview chart height, smaller visual hierarchy, and several three/four-line headings. Refinement restored approximately 249/243-pixel desktop/mobile primary actions, the 376-pixel desktop preview rhythm, the navy panel treatment, 18-pixel cards, paper/cobalt palette, 88/72-pixel header rhythm, 92/24-pixel gutters at the reference sizes, and page-specific heading scales. Feature-card filler became useful original copy. No text is intentionally clipped.

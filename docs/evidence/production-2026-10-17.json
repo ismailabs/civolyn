@@ -1,0 +1,885 @@
+{
+  "recordedAt": "2026-10-17T07:37:20.214Z",
+  "qualificationSource": "1c1e7b757d36323f30ad5cded17c2214ffdaf702",
+  "environment": "GitHub ubuntu-latest, public HTTPS with normal DNS and certificate validation; no Cloudflare credentials; no resolver override",
+  "sourceQuality": {
+    "run": "https://github.com/ismailabs/proworks/actions/runs/39013956923",
+    "conclusion": "success"
+  },
+  "hostedQuality": {
+    "run": "https://github.com/ismailabs/proworks/actions/runs/39014006356",
+    "conclusion": "success",
+    "artifactId": 12093823271,
+    "artifactExpires": "2026-10-24T07:35:03Z"
+  },
+  "browserStats": {
+    "startTime": "2026-10-17T07:33:28.042Z",
+    "duration": 34225.058,
+    "expected": 67,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "hosted": {
+    "time": "2026-10-17T07:33:14.189Z",
+    "origin": "https://proworks.ismailstudio.my",
+    "expectedSha": "1c1e7b757d36323f30ad5cded17c2214ffdaf702",
+    "indexable": true,
+    "routes": [
+      {
+        "route": "/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/platform/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/platform/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/products/workflows/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/products/workflows/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/products/knowledge/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/products/knowledge/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/products/insights/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/products/insights/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/technology/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/technology/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/experience/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/experience/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/compare/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/compare/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/about/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/about/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/journal/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/journal/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/guides/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/guides/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/contact/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/contact/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/journal/mapping-a-repeatable-business-process/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/journal/mapping-a-repeatable-business-process/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/journal/website-redesign-checklist-for-malaysian-smes/",
+        "robots": "index, follow"
+      },
+      {
+        "route": "/journal/choosing-useful-dashboard-metrics/",
+        "status": 200,
+        "canonical": "https://proworks.ismailstudio.my/journal/choosing-useful-dashboard-metrics/",
+        "robots": "index, follow"
+      }
+    ],
+    "assets": [
+      {
+        "path": "/_astro/manrope-latin-wght-normal.DHIcAJRg.woff2",
+        "status": 200,
+        "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+        "bytes": 24836
+      },
+      {
+        "path": "/favicon.svg",
+        "status": 200,
+        "sha256": "276710eb714ada9df06981a078b11bba6970ee9b1d1d4d6b01e9edbd9da814a1",
+        "bytes": 266
+      },
+      {
+        "path": "/favicon-32.png",
+        "status": 200,
+        "sha256": "a597d3d878e6759bc866e816a3495a33e5da3d408f1f76947c1af592aa03600b",
+        "bytes": 602
+      },
+      {
+        "path": "/apple-touch-icon.png",
+        "status": 200,
+        "sha256": "707d688226d0bafb2bb6add300693f7abc00c90fde60ddbd2580a146009d2699",
+        "bytes": 3538
+      },
+      {
+        "path": "/sitemap-index.xml",
+        "status": 200,
+        "sha256": "50d4b97ebf1aabd4d175ef834c2750afb94470b6665b8222f4d6ab7bc2a73228",
+        "bytes": 195
+      },
+      {
+        "path": "/_astro/Layout.Cup7DWk9.css",
+        "status": 200,
+        "sha256": "480fc71f72effb76635c249a2267aba9e672f1b69923539f46fa2caf4aae7e66",
+        "bytes": 29377
+      },
+      {
+        "path": "/images/brand/mark.svg",
+        "status": 200,
+        "sha256": "276710eb714ada9df06981a078b11bba6970ee9b1d1d4d6b01e9edbd9da814a1",
+        "bytes": 266
+      },
+      {
+        "path": "/_astro/Layout.astro_astro_type_script_index_0_lang.Bjqi5DoR.js",
+        "status": 200,
+        "sha256": "9ff44e9574a1af23c058ca555455591c79e02b9c16aa06ae4f7e89dbef36b319",
+        "bytes": 8695
+      },
+      {
+        "path": "/images/diagrams/knowledge-flow.svg",
+        "status": 200,
+        "sha256": "182041b68eefb38c522f247a0af312d8c375761c38d9dceb153c27263a2d7449",
+        "bytes": 1970
+      },
+      {
+        "path": "/images/diagrams/insights-flow.svg",
+        "status": 200,
+        "sha256": "cd6b316d178421ce8d88d11a5363db307c2a9ffbca7ae624ea2c69ab390f9683",
+        "bytes": 1977
+      },
+      {
+        "path": "/images/diagrams/workflows-flow.svg",
+        "status": 200,
+        "sha256": "e872ec1442e00387543127c37bd3f47b606fdcde3a40a4e2d5aaac07b8a4e5ec",
+        "bytes": 1958
+      }
+    ],
+    "demos": [
+      "workflow approval/completion/reset",
+      "knowledge search/empty/reset",
+      "insights all periods/table parity"
+    ],
+    "redirects": [
+      {
+        "path": "/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/"
+      },
+      {
+        "path": "/platform/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/platform/"
+      },
+      {
+        "path": "/platform",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/platform/"
+      },
+      {
+        "path": "/products/flow/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/workflows/"
+      },
+      {
+        "path": "/products/flow",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/workflows/"
+      },
+      {
+        "path": "/products/knowledge/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/knowledge/"
+      },
+      {
+        "path": "/products/knowledge",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/knowledge/"
+      },
+      {
+        "path": "/products/signal/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/insights/"
+      },
+      {
+        "path": "/products/signal",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/insights/"
+      },
+      {
+        "path": "/technology/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/technology/"
+      },
+      {
+        "path": "/technology",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/technology/"
+      },
+      {
+        "path": "/design/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/experience/"
+      },
+      {
+        "path": "/design",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/experience/"
+      },
+      {
+        "path": "/compare/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/compare/"
+      },
+      {
+        "path": "/compare",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/compare/"
+      },
+      {
+        "path": "/company/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/about/"
+      },
+      {
+        "path": "/company",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/about/"
+      },
+      {
+        "path": "/journal/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/journal/"
+      },
+      {
+        "path": "/journal",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/journal/"
+      },
+      {
+        "path": "/support/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/guides/"
+      },
+      {
+        "path": "/support",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/guides/"
+      },
+      {
+        "path": "/contact/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/contact/"
+      },
+      {
+        "path": "/contact",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/contact/"
+      }
+    ],
+    "publicDnsAnswers": [],
+    "release": {
+      "brand": "PROWORKS",
+      "sourceCommit": "1c1e7b757d36323f30ad5cded17c2214ffdaf702",
+      "sourceDirty": false,
+      "indexable": true,
+      "builtAt": "2026-10-17T07:31:30.892Z"
+    }
+  },
+  "redirects": {
+    "observedAt": "2026-10-17T07:33:27.155Z",
+    "method": "Live HTTPS with certificate validation; manual redirects; query-discard probes",
+    "results": [
+      {
+        "path": "/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/"
+      },
+      {
+        "path": "/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/"
+      },
+      {
+        "path": "/platform/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/platform/"
+      },
+      {
+        "path": "/platform",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/platform/"
+      },
+      {
+        "path": "/platform/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/platform/"
+      },
+      {
+        "path": "/platform.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/platform/"
+      },
+      {
+        "path": "/products/flow/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/workflows/"
+      },
+      {
+        "path": "/products/flow",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/workflows/"
+      },
+      {
+        "path": "/products/flow/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/workflows/"
+      },
+      {
+        "path": "/products/flow.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/workflows/"
+      },
+      {
+        "path": "/products/knowledge/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/knowledge/"
+      },
+      {
+        "path": "/products/knowledge",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/knowledge/"
+      },
+      {
+        "path": "/products/knowledge/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/knowledge/"
+      },
+      {
+        "path": "/products/knowledge.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/knowledge/"
+      },
+      {
+        "path": "/products/signal/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/insights/"
+      },
+      {
+        "path": "/products/signal",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/insights/"
+      },
+      {
+        "path": "/products/signal/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/insights/"
+      },
+      {
+        "path": "/products/signal.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/products/insights/"
+      },
+      {
+        "path": "/technology/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/technology/"
+      },
+      {
+        "path": "/technology",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/technology/"
+      },
+      {
+        "path": "/technology/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/technology/"
+      },
+      {
+        "path": "/technology.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/technology/"
+      },
+      {
+        "path": "/design/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/experience/"
+      },
+      {
+        "path": "/design",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/experience/"
+      },
+      {
+        "path": "/design/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/experience/"
+      },
+      {
+        "path": "/design.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/experience/"
+      },
+      {
+        "path": "/compare/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/compare/"
+      },
+      {
+        "path": "/compare",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/compare/"
+      },
+      {
+        "path": "/compare/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/compare/"
+      },
+      {
+        "path": "/compare.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/compare/"
+      },
+      {
+        "path": "/company/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/about/"
+      },
+      {
+        "path": "/company",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/about/"
+      },
+      {
+        "path": "/company/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/about/"
+      },
+      {
+        "path": "/company.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/about/"
+      },
+      {
+        "path": "/journal/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/journal/"
+      },
+      {
+        "path": "/journal",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/journal/"
+      },
+      {
+        "path": "/journal/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/journal/"
+      },
+      {
+        "path": "/journal.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/journal/"
+      },
+      {
+        "path": "/support/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/guides/"
+      },
+      {
+        "path": "/support",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/guides/"
+      },
+      {
+        "path": "/support/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/guides/"
+      },
+      {
+        "path": "/support.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/guides/"
+      },
+      {
+        "path": "/contact/",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/contact/"
+      },
+      {
+        "path": "/contact",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/contact/"
+      },
+      {
+        "path": "/contact/index.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/contact/"
+      },
+      {
+        "path": "/contact.html",
+        "status": 301,
+        "location": "https://proworks.ismailstudio.my/contact/"
+      }
+    ],
+    "destinationRoutes": 12,
+    "destinationStatus": 200,
+    "missing": 404,
+    "head": 301,
+    "post": 405
+  },
+  "tls": {
+    "observedAt": "2026-10-17T06:57:07.015Z",
+    "hostname": "proworks.ismailstudio.my",
+    "addressFromPublicDNS": "104.21.77.234",
+    "authorized": true,
+    "protocol": "TLSv1.3",
+    "issuer": {
+      "C": "US",
+      "O": "Google Trust Services",
+      "CN": "WE1"
+    },
+    "validFrom": "Oct 17 05:56:05 2026 GMT",
+    "validTo": "Jan 15 06:56:02 2027 GMT",
+    "subjectAltName": "DNS:ismailstudio.my, DNS:proworks.ismailstudio.my, DNS:*.proworks.ismailstudio.my",
+    "fingerprint256": "61:77:59:08:B7:4F:25:7C:D4:9D:E4:10:8B:83:F1:E9:12:04:FC:49:AA:4F:2A:71:5A:E6:3C:E7:A1:AA:99:F3"
+  },
+  "lighthouse": {
+    "version": "13.5.0",
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "medians": [
+      {
+        "route": "/",
+        "runs": 3,
+        "performanceRange": [100, 100],
+        "medianLCP": 1067.788,
+        "medianCLS": 0,
+        "medianTBT": 0
+      },
+      {
+        "route": "/products/insights/",
+        "runs": 3,
+        "performanceRange": [100, 100],
+        "medianLCP": 1219.9389999999999,
+        "medianCLS": 0,
+        "medianTBT": 4
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "runs": 3,
+        "performanceRange": [100, 100],
+        "medianLCP": 1221.804,
+        "medianCLS": 0,
+        "medianTBT": 0
+      }
+    ],
+    "runs": [
+      {
+        "route": "/",
+        "iteration": 1,
+        "fetchTime": "2026-10-17T07:34:05.066Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1067.788,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      },
+      {
+        "route": "/",
+        "iteration": 2,
+        "fetchTime": "2026-10-17T07:34:11.503Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1065.704,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      },
+      {
+        "route": "/",
+        "iteration": 3,
+        "fetchTime": "2026-10-17T07:34:17.828Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1077.262,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      },
+      {
+        "route": "/products/insights/",
+        "iteration": 1,
+        "fetchTime": "2026-10-17T07:34:24.092Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1222.149,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      },
+      {
+        "route": "/products/insights/",
+        "iteration": 2,
+        "fetchTime": "2026-10-17T07:34:30.365Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1217.2849999999999,
+        "CLS": 0,
+        "TBT": 38,
+        "error": null
+      },
+      {
+        "route": "/products/insights/",
+        "iteration": 3,
+        "fetchTime": "2026-10-17T07:34:36.723Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1219.9389999999999,
+        "CLS": 0,
+        "TBT": 4,
+        "error": null
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "iteration": 1,
+        "fetchTime": "2026-10-17T07:34:42.986Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1222.291,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "iteration": 2,
+        "fetchTime": "2026-10-17T07:34:49.227Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1215.254,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      },
+      {
+        "route": "/journal/website-redesign-checklist-for-malaysian-smes/",
+        "iteration": 3,
+        "fetchTime": "2026-10-17T07:34:55.328Z",
+        "lighthouseVersion": "13.5.0",
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "score": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "LCP": 1221.804,
+        "CLS": 0,
+        "TBT": 0,
+        "error": null
+      }
+    ],
+    "fieldCWV": "No field LCP/INP/CLS data available; lab TBT is not INP"
+  },
+  "analytics": {
+    "observedAt": "2026-10-17T07:08:31.032Z",
+    "provider": "PostHog",
+    "existingProject": "Default project (left untouched)",
+    "requestedProject": "PROWORKS",
+    "userAuthorised": true,
+    "createStatus": 403,
+    "reason": "You have reached the maximum limit of allowed projects for your current plan. Upgrade your plan to be able to create and manage more projects.",
+    "purchaseOrUpgrade": false,
+    "created": false,
+    "eventsEmitted": false,
+    "cloudflareAnalytics": {
+      "status": 405,
+      "code": 10405,
+      "reason": "Method not allowed for this authentication scheme"
+    },
+    "effect": "Named analytics remains off; no private demo inputs are transmitted"
+  },
+  "scope": {
+    "observedAt": "2026-10-17T07:08:32.210Z",
+    "checks": [
+      {
+        "id": "kilatmoto",
+        "oldModified": "2026-10-17T01:12:04.327506Z",
+        "currentModified": "2026-10-17T01:12:04.327506Z",
+        "unchanged": true
+      },
+      {
+        "id": "makansedap",
+        "oldModified": "2026-10-17T06:36:16.114989Z",
+        "currentModified": "2026-10-17T06:36:16.114989Z",
+        "unchanged": true
+      }
+    ],
+    "providerWrites": "Only proworks deployments/custom domain and civolyn redirect Worker/custom domain. No direct DNS API write, zone setting, apex/mail/wildcard operation or plan purchase."
+  },
+  "finalRuntimeIdentity": "Read https://proworks.ismailstudio.my/release.json and final delivery receipt; documentation-only finalisation does not change page bytes",
+  "credentialPatternReview": {
+    "time": "2026-10-17T07:38:13.531Z",
+    "filesChecked": 97,
+    "flags": [],
+    "scope": "Targeted proposed-source key/token patterns; not Gitleaks or a comprehensive audit"
+  }
+}

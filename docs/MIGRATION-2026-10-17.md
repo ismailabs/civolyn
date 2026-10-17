@@ -1,6 +1,6 @@
 # PROWORKS authenticated migration — 17 October 2026
 
-Status: **in progress; production not yet verified**.
+Status: **production verified**. This chronological migration record is superseded for current release identity and P0 outcomes by [the release report](RELEASE-REPORT.md) and [committed production evidence](evidence/production-2026-10-17.json).
 
 Windows Wrangler authentication is now accessible in this same local execution environment. `whoami` confirmed account `44214a829e2337ca50cf40e4cd827cba`. The connector still requires reauthentication, but the local CLI/API session works. Tokens remain in the standard Wrangler credential store and are never printed or committed.
 
@@ -14,6 +14,8 @@ Windows Wrangler authentication is now accessible in this same local execution e
 - Cloudflare Web Analytics API rejects this OAuth authentication scheme (405/code 10405). No authorised named analytics provider/property is currently usable. Existing frontend event attributes remain inert.
 
 Raw timestamped provider and routing preflight receipts are kept under ignored `artifacts/migration/`. The final report must record exact build SHA, full Worker version IDs, domain bindings, TLS/HTTP results, production browser checks, all old-path single-hop 301s and rollback instructions. A local build or a GitHub push is not production proof.
+
+The corrected independent hosted audit [39014006356](https://github.com/ismailabs/proworks/actions/runs/39014006356) subsequently passed on clean main source `1c1e7b757d36323f30ad5cded17c2214ffdaf702`: 67 production browser tests, fifteen source/asset/SEO route checks, 46 old URL variants and nine mobile Lighthouse runs. It used normal public DNS and certificate validation on GitHub's Ubuntu runner. Main integration preceded old-host redirect activation only after the new production gate had already passed. The final documentation commit is rebuilt and compared with advertised remote main and the public release receipt before delivery.
 
 ## Defects found during hosted qualification
 

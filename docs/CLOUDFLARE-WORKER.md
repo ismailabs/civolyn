@@ -8,7 +8,7 @@ On the resumed authenticated run, Workers Scripts and Services APIs showed neith
 
 PROWORKS was created and qualified noindex on its exact custom HTTPS domain. After checking fifteen routes, source/asset hashes, headers, true 404, all three demos and twenty-four browser captures, the indexable build was deployed and checked again. Main was fast-forwarded normally only after the new production checks passed. The old hostname was then recreated as a redirect Worker and tested independently. Current final revision/version identities are in the release report, production evidence and public `/release.json`.
 
-Cloudflare Custom Domains provisioned the two exact hostname bindings, DNS and certificates. OAuth did not permit direct DNS-record enumeration (403), and no direct DNS write was performed. No apex, mail, wildcard, nameserver or zone-wide setting was changed. The two unrelated Workers' modification timestamps were unchanged at the post-cutover check.
+Cloudflare Custom Domains provisioned the two exact hostname bindings, DNS and certificates. OAuth did not permit direct DNS-record enumeration (403), and no direct DNS write was performed. No apex, mail, wildcard, nameserver or zone-wide setting operation was requested; the raw DNS record types/diff are not claimed verified. The two unrelated Workers' modification timestamps were unchanged at the post-cutover check.
 
 ## Source and deployment triggers
 
