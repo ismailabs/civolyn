@@ -1,0 +1,71 @@
+---
+// Original vector illustration; no photograph or artboard pixels are extracted.
+const buildings = [
+  [0, 298, 26, 142],
+  [30, 250, 26, 190],
+  [60, 325, 26, 115],
+  [90, 310, 30, 130],
+  [126, 225, 28, 215],
+  [158, 235, 28, 205],
+  [191, 290, 30, 150],
+  [226, 315, 32, 125],
+  [272, 243, 26, 197],
+  [304, 310, 27, 130],
+  [336, 325, 25, 115],
+  [450, 286, 25, 154],
+  [480, 247, 30, 193],
+  [515, 298, 27, 142],
+  [548, 267, 27, 173],
+  [577, 181, 25, 259],
+  [607, 315, 26, 125],
+  [638, 272, 27, 168],
+  [668, 190, 25, 250],
+];
+---
+
+<svg
+  class="pale-skyline"
+  viewBox="0 0 700 480"
+  role="img"
+  aria-label="Original Malaysia-inspired city illustration with stylised twin towers."
+>
+  <defs>
+    <linearGradient id="city-sky" x2="0" y2="1">
+      <stop stop-color="#e4effe" />
+      <stop offset="1" stop-color="#d1ddf2" />
+    </linearGradient>
+    <pattern
+      id="city-windows"
+      width="9"
+      height="13"
+      patternUnits="userSpaceOnUse"
+    >
+      <rect width="3" height="4" x="3" y="4" fill="#ffe2a6" />
+    </pattern>
+  </defs>
+  <path fill="url(#city-sky)" d="M0 0h700v480H0z" />
+  {buildings.map(([x, y, w, h]) => (
+    <g>
+      <rect x={x} y={y} width={w} height={h} fill="#3465a1" />
+      <rect
+        x={x + 5}
+        y={y + 7}
+        width={w - 10}
+        height={h - 12}
+        fill="url(#city-windows)"
+      />
+    </g>
+  ))}
+  {[370, 406].map((x) => (
+    <g>
+      <path d={`M${x} 440V155l6-25v-32h2v32l6 25v285Z`} fill="#a9cef5" />
+      {[
+        170, 185, 200, 215, 230, 245, 260, 275, 290, 305, 320, 335, 350, 365,
+        380, 395, 410, 425,
+      ].map((y) => (
+        <path d={`M${x} ${y}h14`} stroke="#669ed3" stroke-width="1" />
+      ))}
+    </g>
+  ))}
+  <path d="M384 240h22v12h-22z" fill="#b8dafa" />
+</svg>

@@ -3,6 +3,11 @@ import { pages, portfolio } from '../data/site';
 import Workspace from './Workspace.astro';
 const { label } = Astro.props;
 const p = pages.find((p) => p.label === label)!;
+const mobileHead: Record<string, string[]> = {
+  Workflows: ['Keep work', 'moving', 'with a clear', 'next step.'],
+  Experience: ['Technology', 'should', 'feel human.'],
+  Guides: ['Make the', 'complex', 'feel simpler.'],
+};
 const primary: Record<string, string> = {
   Home: '/platform/',
   Platform: '/products/workflows/',
@@ -17,19 +22,19 @@ const primary: Record<string, string> = {
   Guides: '#faqs',
   Contact: portfolio,
 };
-const secondary: Record<string, string> = {
-  Home: '/compare/',
-  Platform: '/compare/',
-  Workflows: '/compare/',
-  Knowledge: '/products/workflows/',
-  Insights: '/compare/',
-  Technology: '/compare/',
-  Experience: '/platform/',
-  Compare: '/platform/',
-  About: '/technology/',
-  Journal: '/compare/',
-  Guides: '/compare/',
-  Contact: '/compare/',
+const notes: Record<string, string> = {
+  Home: 'Three perspectives. One calmer way to work.',
+  Platform: 'Connected in concept, separate browser demos.',
+  Workflows: 'Intake · Prepare · Human review · Hand-off',
+  Knowledge: 'Six local documents. No uploads or live AI.',
+  Insights: 'Weekly 103 · Monthly 181 · Quarterly 558',
+  Technology: 'Astro · TypeScript · Cloudflare Workers',
+  Experience: 'Usable on keyboard, touch and mobile.',
+  Compare: 'Three local demos. No subscription pricing.',
+  About: 'PROWORKS is a portfolio concept, not a live SaaS.',
+  Journal: 'Three original articles. No fabricated research.',
+  Guides: 'Transparent local demos and helpful FAQs.',
+  Contact: 'No PROWORKS signup, pricing or enquiry form.',
 };
 ---
 
@@ -40,9 +45,16 @@ const secondary: Record<string, string> = {
   <div class="hero-copy">
     <p class="eyebrow">{p.eyebrow}</p>
     <h1 id="page-heading">
-      {p.head.map((line) => (
-        <span>{line}</span>
-      ))}
+      <span class="heading-desktop">
+        {p.head.map((line) => (
+          <span>{line}</span>
+        ))}
+      </span>
+      <span class="heading-mobile">
+        {(mobileHead[p.label] || p.head).map((line) => (
+          <span>{line}</span>
+        ))}
+      </span>
     </h1>
     <p class="hero-description">{p.intro}</p>
     <div class="hero-actions">
@@ -55,22 +67,17 @@ const secondary: Record<string, string> = {
         {p.primary}
         {p.label === 'Contact' && <span aria-hidden="true"> ↗</span>}
       </a>
-      <a class="text-link secondary-action" href={secondary[p.label]}>
-        {p.secondary}
+      <a
+        class="button button-outline secondary-action"
+        href={portfolio}
+        data-event="portfolio_cta_click"
+        data-component="hero-secondary"
+      >
+        Talk to ISMAIL
         <span aria-hidden="true"> ↗</span>
       </a>
     </div>
-    <p class="hero-disclosure">
-      Fictional product concept. Real frontend craft by{' '}
-      <a
-        href={portfolio}
-        data-event="portfolio_cta_click"
-        data-component="hero-credit"
-      >
-        ISMAIL ↗
-      </a>
-      .
-    </p>
+    <p class="hero-disclosure">{notes[p.label]}</p>
   </div>
   <Workspace kind={p.hero} />
 </section>

@@ -1,14 +1,13 @@
 ---
 import { articles } from '../data/articles';
+import Icon from './ProductIcon.astro';
 ---
 
 <div class="article-cards">
-  {articles.map((a) => (
+  {articles.map((a, i) => (
     <article class="article-card">
       <div class="article-art" aria-hidden="true">
-        {a.art.map((s) => (
-          <span>{s}</span>
-        ))}
+        <Icon kind={['workflows', 'knowledge', 'insights'][i]} />
       </div>
       <div class="article-card-body">
         <p class="eyebrow">{a.category.toUpperCase()}</p>

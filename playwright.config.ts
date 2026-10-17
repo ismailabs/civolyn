@@ -5,7 +5,18 @@ export default defineConfig({
   fullyParallel: true,
   workers: process.env.CI ? 2 : 1,
   retries: 0,
-  reporter: [['list'], ['html', { open: 'never' }]],
+  reporter: [
+    ['list'],
+    ['html', { open: 'never' }],
+    [
+      'json',
+      {
+        outputFile:
+          process.env.PLAYWRIGHT_JSON_OUTPUT_NAME ||
+          'artifacts/qa/playwright.json',
+      },
+    ],
+  ],
   use: {
     baseURL: process.env.TEST_ORIGIN || 'http://127.0.0.1:4321',
     trace: 'retain-on-failure',

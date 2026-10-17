@@ -1,4 +1,3 @@
-@layer reset,tokens,base,layout,components,demos,responsive;
 @layer reset {
   * {
     box-sizing: border-box;
@@ -38,20 +37,8 @@
 }
 @layer tokens {
   :root {
-    --color-paper: #f6f8fc;
-    --color-white: #fff;
-    --color-ink: #10203a;
-    --color-navy: #101d34;
-    --color-blue: #245cf5;
-    --color-muted: #56657e;
-    --color-border: #dfe5ef;
-    --color-tint: #eaf0ff;
     --color-sage: #daeee7;
-    --surface-1: var(--color-white);
-    --text-primary: var(--color-ink);
-    --focus-ring: #1649d8;
     --status-positive: #206a59;
-    --radius: 18px;
   }
 }
 @layer base {
@@ -60,9 +47,7 @@
     scroll-padding-top: 112px;
   }
   body {
-    background: var(--color-paper);
     color: var(--color-ink);
-    font-family: 'Manrope Variable', Arial, sans-serif;
     font-size: 16px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -168,16 +153,10 @@
     align-items: center;
     justify-content: center;
     gap: 14px;
-    min-height: 54px;
-    padding: 13px 20px;
     border: 1px solid var(--color-blue);
-    border-radius: 16px;
     background: var(--color-blue);
     color: white;
-    font-size: 15px;
-    font-weight: 800;
     text-decoration: none;
-    line-height: 1.5;
     text-align: center;
     transition:
       background 0.15s,
@@ -187,10 +166,6 @@
     background: #174ad6;
     border-color: #174ad6;
     transform: translateY(-1px);
-  }
-  .button-outline {
-    background: white;
-    color: var(--color-blue);
   }
   .text-link,
   .text-button {
@@ -226,13 +201,9 @@
 }
 @layer layout {
   .container {
-    width: min(calc(100% - 12.78vw), 1320px);
     margin-inline: auto;
   }
   .site-header {
-    height: 88px;
-    background: white;
-    position: relative;
     z-index: 10;
   }
   .header-inner {
@@ -240,27 +211,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
   }
   .brand-link {
     text-decoration: none;
   }
   .logo {
     display: inline-flex;
-    gap: 12px;
     align-items: center;
-    font-size: 24px;
-    font-weight: 850;
     letter-spacing: -0.025em;
     color: var(--color-ink);
-  }
-  .logo img {
-    border-radius: 6px;
   }
   .site-header nav {
     display: flex;
     align-items: center;
-    gap: 28px;
   }
   .site-header nav > a:not(.button),
   .nav-group > summary {
@@ -315,90 +278,10 @@
     font-size: 26px;
     color: var(--color-blue);
   }
-  .header-cta {
-    margin-left: clamp(20px, 10vw, 160px);
-    min-height: 48px;
-    padding: 10px 24px;
-  }
   .menu-toggle {
     display: none;
   }
-  .page-hero {
-    display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 40px;
-    align-items: start;
-    padding-block: 58px 32px;
-  }
-  .hero-copy h1 {
-    margin-top: 17px;
-  }
-  .hero-copy h1 span {
-    display: block;
-  }
-  .hero-description {
-    font-size: 20px;
-    line-height: 1.55;
-    max-width: 530px;
-    margin-top: 24px;
-    font-weight: 500;
-  }
-  .hero-actions {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 16px 26px;
-    margin-top: 26px;
-  }
-  .hero-disclosure {
-    font-size: 11px;
-    margin-top: 15px;
-    line-height: 1.6;
-  }
-  .hero-disclosure a {
-    color: var(--color-blue);
-    font-weight: 750;
-  }
-  .feature-section {
-    padding-top: 2px;
-  }
-  .feature-section > h2 {
-    margin-top: 18px;
-  }
-  .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-    margin-top: 32px;
-  }
-  .feature-card {
-    background: white;
-    border: 1px solid var(--color-border);
-    border-radius: 18px;
-    padding: 18px;
-    min-height: 220px;
-  }
-  .feature-card h3 {
-    font-size: 19px;
-    margin-top: 18px;
-    letter-spacing: -0.015em;
-  }
-  .feature-card p {
-    font-size: 13px;
-    line-height: 1.75;
-    margin-top: 12px;
-    max-width: 36ch;
-  }
-  .feature-card a {
-    display: inline-block;
-    color: var(--color-blue);
-    font-size: 13px;
-    font-weight: 750;
-    min-height: 44px;
-    padding-top: 16px;
-  }
   .concept-strip {
-    margin-top: 26px;
     background: var(--color-navy);
     padding: 17px 24px;
     border-radius: 14px;
@@ -428,11 +311,7 @@
   .dark-section :focus-visible {
     --focus-ring: #b9ccff;
   }
-  .section {
-    padding-block: 88px;
-  }
   .section-heading {
-    max-width: 760px;
     margin-bottom: 32px;
   }
   .section-heading h2 {
@@ -485,7 +364,6 @@
   }
   .product-card {
     border: 1px solid var(--color-border);
-    border-radius: 18px;
     background: white;
     padding: 28px;
     display: flex;
@@ -597,7 +475,6 @@
   .site-footer a {
     text-decoration: none;
     color: #d2def1;
-    min-height: 36px;
     padding-block: 6px;
     font-size: 13px;
   }
@@ -710,29 +587,11 @@
   }
   .article-art {
     height: 170px;
-    background: var(--color-tint);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 18px;
     padding: 25px;
-  }
-  .article-art > span {
-    background: white;
-    color: var(--color-blue);
-    border: 1px solid #c8d6fb;
-    min-width: 44px;
-    height: 50px;
-    display: grid;
-    place-items: center;
-    font-weight: 850;
-    border-radius: 10px;
-  }
-  .article-card:nth-child(2) .article-art {
-    background: var(--color-sage);
-  }
-  .article-card:nth-child(3) .article-art {
-    background: #edeaf7;
   }
   .article-card-body {
     padding: 24px;
@@ -823,11 +682,6 @@
     border: 1px solid var(--color-border);
     border-radius: 18px;
   }
-  .principle-gallery label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
   .principle-gallery input {
     width: 22px;
     height: 22px;
@@ -852,212 +706,18 @@
     margin-top: 28px;
   }
 }
-@layer components {
-  .workspace {
-    background: white;
-    border: 1px solid #d5dfef;
-    border-radius: 19px;
-    overflow: hidden;
-    min-width: 0;
-    min-height: 376px;
-  }
-  .workspace-title {
-    background: var(--color-navy);
-    color: white;
-    min-height: 56px;
-    border-radius: 17px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 14px 22px;
-    line-height: 1.4;
-  }
-  .workspace-title b {
-    font-size: 13px;
-    letter-spacing: 0.01em;
-  }
-  .workspace-title > span {
-    font-size: 11px;
-    color: #b3cef5;
-    font-weight: 800;
-    white-space: nowrap;
-  }
-  .workspace-body {
-    padding: 20px;
-  }
-  .mobile-demo-label {
-    display: none;
-  }
-  .preview-metrics {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-  .preview-metrics > div {
-    background: var(--color-paper);
-    padding: 13px 16px;
-    border-radius: 15px;
-  }
-  .preview-metrics span {
-    display: block;
-    font-size: 12px;
-  }
-  .preview-metrics strong {
-    display: block;
-    font-size: 28px;
-    line-height: 1.3;
-    margin-top: 7px;
-  }
-  .preview-chart {
-    padding: 16px;
-    border-radius: 15px;
-    background: var(--color-paper);
-    margin-top: 18px;
-  }
-  .preview-chart p {
-    font-size: 12px;
-  }
-  .preview-bars {
-    height: 126px;
-    display: flex;
-    gap: 24px;
-    align-items: end;
-    margin-top: 14px;
-    padding-inline: 18px;
-  }
-  .preview-bars > div {
-    height: 100%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
-    gap: 5px;
-    min-width: 0;
-  }
-  .preview-bars span {
-    height: var(--bar);
-    max-height: 100px;
-    width: 20px;
-    border-radius: 5px;
-    background: #9fb6ff;
-  }
-  .preview-bars > div:nth-child(3n + 1) span {
-    background: var(--color-blue);
-  }
-  .preview-bars small {
-    font-size: 9px;
-    color: var(--color-muted);
-  }
-  .preview-library {
-    display: grid;
-    gap: 10px;
-  }
-  .preview-search {
-    padding: 12px 15px;
-    border-radius: 10px;
-    background: var(--color-paper);
-    font-size: 12px;
-  }
-  .preview-library > div {
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    padding: 10px 14px;
-  }
-  .preview-library b {
-    font-size: 13px;
-    display: block;
-  }
-  .preview-library small {
-    color: var(--color-muted);
-    font-size: 11px;
-  }
-  .preview-flow {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    gap: 13px;
-  }
-  .preview-flow li {
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    border-radius: 13px;
-    background: var(--color-paper);
-  }
-  .preview-flow li.highlight {
-    background: var(--color-tint);
-  }
-  .preview-flow li > span {
-    display: grid;
-    place-items: center;
-    background: var(--color-sage);
-    color: #206a59;
-    min-width: 36px;
-    height: 36px;
-    border-radius: 9px;
-    font-weight: 800;
-  }
-  .preview-flow .highlight > span {
-    background: var(--color-blue);
-    color: white;
-  }
-  .preview-flow b {
-    font-size: 16px;
-  }
-  .preview-flow small {
-    margin-left: auto;
-    color: var(--color-muted);
-    font-size: 10px;
-  }
-  .preview-paths {
-    display: grid;
-    gap: 12px;
-  }
-  .preview-paths a {
-    padding: 13px 16px;
-    background: var(--color-paper);
-    border-radius: 13px;
-    text-decoration: none;
-  }
-  .preview-paths a:last-child {
-    background: var(--color-tint);
-  }
-  .preview-paths b {
-    display: block;
-    font-size: 17px;
-  }
-  .preview-paths a > span {
-    font-size: 13px;
-    display: block;
-    color: var(--color-muted);
-  }
-  .preview-paths i {
-    float: right;
-    font-style: normal;
-    color: var(--color-blue);
-  }
-}
 @layer demos {
   .demo-section {
     max-width: 1040px;
   }
   .demo-shell {
-    border: 1px solid #cbd7eb;
-    border-radius: 20px;
     background: white;
-    overflow: hidden;
-    box-shadow: 0 10px 35px #10203a05;
   }
   .demo-toolbar {
-    padding: 20px 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    background: var(--color-navy);
     color: white;
   }
   .demo-toolbar b {
@@ -1091,16 +751,10 @@
     padding: 0;
     margin-top: 18px;
     display: grid;
-    gap: 12px;
   }
   .flow-steps li {
-    display: flex;
-    align-items: center;
-    gap: 16px;
     background: var(--color-paper);
-    padding: 18px;
     border-radius: 12px;
-    border: 1px solid transparent;
   }
   .flow-steps .current {
     border-color: var(--color-blue);
@@ -1132,9 +786,7 @@
     margin-top: 4px;
   }
   .step-status {
-    font-size: 12px;
     font-weight: 750;
-    margin-left: auto;
     white-space: nowrap;
   }
   .demo-controls {
@@ -1153,9 +805,7 @@
   }
   .approval-proposal {
     margin-top: 20px;
-    padding: 20px;
     border-radius: 12px;
-    background: #eaf0ff;
   }
   .approval-proposal h3 {
     font-size: 17px;
@@ -1247,10 +897,6 @@
     display: grid;
     gap: 10px;
   }
-  .document-list details {
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-  }
   .document-list summary {
     padding: 16px;
     display: flex;
@@ -1269,10 +915,7 @@
     margin-top: 4px;
   }
   .document-icon {
-    color: var(--color-blue);
-    background: var(--color-tint);
     padding: 8px;
-    border-radius: 8px;
     font-size: 12px;
   }
   .document-open {
@@ -1378,7 +1021,6 @@
     display: block;
     width: min(100%, 42px);
     border-radius: 7px 7px 0 0;
-    background: var(--color-blue);
     height: var(--bar);
   }
   .signal-bars > div:nth-child(even) span {
@@ -1450,55 +1092,15 @@
   }
 }
 @layer responsive {
-  @media (min-width: 1700px) {
-    .header-cta {
-      margin-left: 180px;
-    }
-  }
   @media (max-width: 1199px) and (min-width: 1000px) {
-    .header-cta {
-      margin-left: 12px;
-    }
-    .site-header nav {
-      gap: 20px;
-    }
-    .page-hero {
-      gap: 28px;
-    }
     h1 {
       font-size: 46px;
-    }
-    .hero-description {
-      font-size: 18px;
-    }
-    .hero-actions {
-      gap: 12px;
-    }
-    .workspace-title > span {
-      display: none;
-    }
-    .preview-bars {
-      gap: 16px;
     }
     .footer-grid {
       gap: 26px;
     }
   }
   @media (max-width: 999px) {
-    .container {
-      width: calc(100% - 48px);
-    }
-    .site-header {
-      height: 72px;
-    }
-    .logo {
-      font-size: 19px;
-      gap: 10px;
-    }
-    .logo img {
-      width: 22px;
-      height: 22px;
-    }
     .menu-toggle {
       display: flex;
       flex-direction: column;
@@ -1529,13 +1131,11 @@
       box-shadow: 0 18px 25px #10203a12;
       flex-direction: column;
       align-items: stretch;
-      gap: 4px;
     }
     .site-header nav.is-open {
       display: flex;
     }
     .header-cta {
-      margin-left: 0;
       margin-top: 12px;
       align-self: flex-start;
     }
@@ -1548,49 +1148,6 @@
     .nav-group > summary {
       padding-block: 10px;
     }
-    .page-hero {
-      padding-block: 40px 28px;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-    .hero-copy {
-      max-width: 650px;
-    }
-    .hero-copy h1 {
-      font-size: clamp(35px, 5.8vw, 52px);
-      line-height: 1.28;
-      margin-top: 18px;
-    }
-    .hero-description {
-      font-size: 17px;
-      margin-top: 20px;
-      max-width: 580px;
-    }
-    .hero-actions {
-      margin-top: 26px;
-    }
-    .hero-disclosure {
-      font-size: 11px;
-    }
-    .workspace {
-      min-height: 330px;
-    }
-    .workspace-title {
-      min-height: 56px;
-    }
-    .feature-grid {
-      gap: 16px;
-    }
-    .feature-card {
-      padding: 18px;
-      min-height: 210px;
-    }
-    .feature-card h3 {
-      font-size: 18px;
-    }
-    .feature-section > h2 {
-      font-size: 28px;
-    }
     .concept-strip p {
       font-size: 12px;
     }
@@ -1599,9 +1156,6 @@
     }
     .split-section {
       gap: 32px;
-    }
-    .section {
-      padding-block: 64px;
     }
     .footer-grid {
       grid-template-columns: 1.3fr 1fr;
@@ -1642,150 +1196,6 @@
       font-size: 11px;
       line-height: 1.6;
     }
-    .hero-copy h1 {
-      font-size: 36px;
-      line-height: 1.3;
-      letter-spacing: -0.025em;
-    }
-    .hero-description {
-      font-size: 15px;
-      line-height: 1.6;
-    }
-    .hero-actions .button {
-      min-height: 54px;
-      font-size: 13px;
-      padding-inline: 18px;
-    }
-    .secondary-action {
-      display: none;
-    }
-    .hero-disclosure {
-      font-size: 10px;
-      max-width: 300px;
-    }
-    .workspace-title {
-      padding: 14px 20px;
-    }
-    .workspace-title b {
-      font-size: 12px;
-    }
-    .workspace-title > span {
-      display: none;
-    }
-    .workspace-body {
-      padding: 20px 15px;
-    }
-    .mobile-demo-label {
-      display: block;
-      font-size: 10px;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
-    .preview-metrics {
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .preview-metrics > div:last-child {
-      display: none;
-    }
-    .preview-metrics > div {
-      padding: 12px;
-      border-radius: 12px;
-    }
-    .preview-metrics span {
-      font-size: 11px;
-    }
-    .preview-metrics strong {
-      font-size: 23px;
-    }
-    .preview-chart {
-      margin-top: 14px;
-      padding: 4px 4px 0;
-      background: white;
-    }
-    .preview-chart > p {
-      display: none;
-    }
-    .preview-bars {
-      padding: 0 12px;
-      height: 105px;
-      gap: 17px;
-      margin-top: 12px;
-    }
-    .preview-bars span {
-      width: 20px;
-      max-height: 88px;
-    }
-    .preview-bars small {
-      font-size: 8px;
-    }
-    .preview-flow {
-      gap: 10px;
-    }
-    .preview-flow li {
-      padding: 9px 12px;
-      gap: 13px;
-    }
-    .preview-flow b {
-      font-size: 13px;
-    }
-    .preview-flow li > span {
-      width: 30px;
-      min-width: 30px;
-      height: 30px;
-      font-size: 13px;
-    }
-    .preview-flow small {
-      display: none;
-    }
-    .preview-library {
-      gap: 10px;
-    }
-    .preview-library b {
-      font-size: 12px;
-    }
-    .preview-library small {
-      font-size: 10px;
-    }
-    .preview-library > div {
-      padding: 9px 12px;
-    }
-    .preview-paths b {
-      font-size: 15px;
-    }
-    .preview-paths a > span {
-      font-size: 12px;
-    }
-    .feature-section {
-      padding-top: 0;
-    }
-    .feature-section > h2 {
-      font-size: 24px;
-      margin-top: 12px;
-    }
-    .feature-grid {
-      grid-template-columns: 1fr;
-      margin-top: 24px;
-      gap: 12px;
-    }
-    .feature-card {
-      min-height: 0;
-      padding: 20px;
-    }
-    .feature-card .number {
-      min-width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      font-size: 12px;
-    }
-    .feature-card h3 {
-      margin-top: 16px;
-      font-size: 18px;
-    }
-    .feature-card p {
-      font-size: 13px;
-      max-width: none;
-    }
     .concept-strip {
       padding: 20px;
       flex-direction: column;
@@ -1806,9 +1216,6 @@
     .article-cards,
     .contact-paths {
       grid-template-columns: 1fr;
-    }
-    .section {
-      padding-block: 52px;
     }
     .section-heading > p:last-child {
       font-size: 15px;
@@ -1858,9 +1265,6 @@
       gap: 0;
       margin-top: 30px;
     }
-    .site-footer a {
-      min-height: 40px;
-    }
     .site-footer b {
       font-size: 12px;
     }
@@ -1889,7 +1293,6 @@
       padding: 22px;
     }
     .demo-toolbar {
-      padding: 18px;
       flex-wrap: wrap;
       gap: 14px;
     }
@@ -1905,22 +1308,12 @@
       padding: 18px;
     }
     .flow-steps li {
-      padding: 13px;
-      gap: 12px;
       flex-wrap: wrap;
     }
     .flow-steps li > div {
       flex: 1;
     }
-    .flow-steps b {
-      font-size: 14px;
-    }
-    .flow-steps small {
-      font-size: 11px;
-    }
     .step-status {
-      font-size: 10px;
-      margin-left: 50px;
       width: 100%;
       margin-top: -8px;
     }
@@ -2027,21 +1420,6 @@
     }
   }
   @media (max-width: 359px) {
-    .container {
-      width: calc(100% - 36px);
-    }
-    .hero-copy h1 {
-      font-size: 31px;
-    }
-    .workspace-title {
-      padding-inline: 14px;
-    }
-    .workspace-title b {
-      font-size: 10px;
-    }
-    .preview-bars {
-      gap: 12px;
-    }
     .filter-chips span {
       padding-inline: 8px;
     }

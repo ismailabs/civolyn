@@ -1,0 +1,35 @@
+---
+const { kind = 'workflows' } = Astro.props;
+---
+
+<span class="product-icon" aria-hidden="true">
+  <svg
+    viewBox="0 0 32 32"
+    width="28"
+    height="28"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    {kind === 'workflows' ? (
+      <>
+        <path d="m8 8 16 0-8 17L8 8Z" />
+        <circle cx="8" cy="8" r="4" fill="currentColor" />
+        <circle cx="24" cy="8" r="4" fill="currentColor" />
+        <circle cx="16" cy="25" r="4" fill="currentColor" />
+      </>
+    ) : kind === 'knowledge' ? (
+      <>
+        <rect x="6" y="3" width="21" height="27" rx="3" />
+        <path d="M11 10h11M11 15h11M11 20h11M11 25h8" />
+      </>
+    ) : (
+      <>
+        <path d="M3 4v25h27M7 23l7-8 6 4 8-14" />
+        <path d="m24 5 4 0 0 4" />
+      </>
+    )}
+  </svg>
+</span>
