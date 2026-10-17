@@ -25,6 +25,9 @@ jobs:
           node scripts/editorial-review.mjs
       - run: npx tsc -p worker/tsconfig.json
       - run: npx wrangler deploy --dry-run --outdir artifacts/worker-dry-run
+      - run: npm run test:performance
+        env:
+          PERF_OUTPUT: artifacts/editorial-v3/lighthouse-ci
       - uses: actions/upload-artifact@v4
         if: always()
         with:

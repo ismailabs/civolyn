@@ -74,6 +74,8 @@ No similarity percentage is asserted. Physical-device tests, a person using a na
 
 From the repository directory, open `artifacts/editorial-v3/index.html` in a browser (double-click in File Explorer, or `Start-Process .\artifacts\editorial-v3\index.html`). It contains 24 reference/browser pairs, full-page expansions and interaction screenshots. Click an image for original resolution. All image paths work offline in the checkout; the references are also committed for CI reproducibility.
 
+For an HTTP view of the gallery, run `node scripts/serve-editorial-review.mjs` and open `http://127.0.0.1:4322/`. That server exposes only review artifacts and retained reference images.
+
 For the actual site: `npm ci`, `npm run build`, then `node scripts/serve.mjs`; open `http://127.0.0.1:4321/`. Default builds are noindex. To regenerate the browser gallery against that running server, run `node scripts/editorial-review.mjs`. The gallery is review evidence, not a production route. The GitHub Actions artifact contains an independently generated copy.
 
 ## Verification results
@@ -87,3 +89,17 @@ Final tested commands, coverage, performance runs, source revision, CI and prote
 - `npx tsc -p worker/tsconfig.json` and `npx wrangler deploy --dry-run --outdir artifacts/editorial-v3/worker-dry-run`: passed; the latter is a local 0.83 KiB bundle and uploads nothing. Wrangler flags were checked against the installed 4.151.1 CLI and current official documentation. No Worker/DNS/domain mutation was performed. The Cloudflare connector requires reauthentication; no current provider build-trigger inspection through that connector is claimed.
 - `node scripts/check-editorial-delivery.mjs`: 12 protected source files unchanged, all 48 committed references hash-verified, no findings in the custom high-confidence credential-pattern check. This is explicitly not a Gitleaks audit. All **93 supplied package checksums** were independently verified.
 - One intermediate verification run overlapped two Playwright commands, causing an output-directory trace collision. That run also exposed two contrast issues. Both were repaired; final engine runs use separate output paths and execute sequentially. Intermediate logs remain locally available under ignored artifacts.
+
+### Local mobile Lighthouse
+
+Lighthouse 13.5.0, three fresh Chromium runs per route, simulated mobile throttling (150ms RTT, 1638.4 Kbps throughput, 4× CPU slowdown). Final runs were separate from browser testing. All nine final runs scored 100 for accessibility, best practices and SEO; every CLS measurement was zero. These are local measurements, not production or physical-device results.
+
+| Route                                                   | Performance scores, all three runs | Median | LCP in ms, all runs | TBT in ms, all runs |
+| ------------------------------------------------------- | ---------------------------------- | ------ | ------------------- | ------------------- |
+| /                                                       | 77 / 100 / 100                     | 100    | 1729 / 1664 / 1666  | 1062 / 0 / 0        |
+| /products/insights/                                     | 100 / 83 / 70                      | 83     | 1739 / 1844 / 1751  | 20 / 667 / 3261     |
+| /journal/website-redesign-checklist-for-malaysian-smes/ | 100 / 97 / 100                     | 100    | 1668 / 1686 / 1669  | 20 / 179 / 0        |
+
+Earlier exploratory Home runs scored 93 / 83 / 100, with TBT 317 / 616 / 0ms while other browser work overlapped. Those outliers are retained in `artifacts/editorial-v3/lighthouse/summary.json`; final measurements are in `lighthouse-final/summary.json`. The final article score of 97 is also retained, not averaged away or omitted.
+
+A focused unchanged-source Insights investigation scored **83 / 77 / 89**, TBT **639 / 920 / 441ms**, LCP **1875 / 2086 / 1823ms**, and CLS 0 in all three runs. This confirms local variability remains; it is not dismissed as an overlapping-run artefact. A retained slow run attributes work to both the document and Lighthouse evaluation, which does not isolate a product-code cause. No performance pass threshold was invented or weakened. This performance limitation remains explicit for owner review; Linux CI performs an additional independent Lighthouse measurement. Full reports remain in `lighthouse-insights-investigation/`.
