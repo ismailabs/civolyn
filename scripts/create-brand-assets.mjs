@@ -9,4 +9,9 @@ await sharp('public/favicon.svg')
   .resize(180, 180)
   .png()
   .toFile('public/apple-touch-icon.png');
-console.log('PROWORKS favicon assets rebuilt from the supplied original SVG.');
+await sharp('public/images/brand/social-preview.svg')
+  .png()
+  .toFile('public/social-preview.png');
+console.log(
+  'PROWORKS favicon and social assets rebuilt from reviewed local editorial SVGs.',
+);

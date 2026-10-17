@@ -1,6 +1,6 @@
 ---
 import Frame from '../components/PageFrame.astro';
-import ArticleCards from '../components/ArticleCards.astro';
+
 const items = [
   {
     title: 'A practical SME operations guide',
@@ -18,7 +18,7 @@ const items = [
 ---
 
 <Frame label="Journal" items={items}>
-  <section class="container section" id="articles">
+  <section class="container section" id="editorial-context">
     <div class="section-heading">
       <p class="eyebrow">ORIGINAL FIELD NOTES</p>
       <h2>Useful ideas. Clear examples.</h2>
@@ -28,7 +28,6 @@ const items = [
         to your own context. No customer outcomes or search-volume claims.
       </p>
     </div>
-    <ArticleCards />
   </section>
   <section class="container section split-section">
     <div>

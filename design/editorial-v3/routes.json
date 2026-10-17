@@ -1,0 +1,134 @@
+[
+  {
+    "slug": "home",
+    "route": "/",
+    "name": "Home",
+    "eyebrow": "OPERATIONS, RECONSIDERED",
+    "headline": "A clearer way to move work forward.",
+    "description": "An original operations-platform concept for teams that value clarity, useful context and deliberate action.",
+    "primary": "Discover the platform",
+    "variant": "platform",
+    "reference_number": "01"
+  },
+  {
+    "slug": "platform",
+    "route": "/platform/",
+    "name": "Platform",
+    "eyebrow": "THE BIG PICTURE",
+    "headline": "The shape of better work.",
+    "description": "Three complementary perspectives: move requests, make knowledge findable, and understand the work.",
+    "primary": "Explore the three perspectives",
+    "variant": "platform",
+    "reference_number": "02"
+  },
+  {
+    "slug": "workflows",
+    "route": "/products/workflows/",
+    "name": "Workflows",
+    "eyebrow": "PRODUCT / 01",
+    "headline": "Make progress visible.",
+    "description": "A local four-stage workflow demonstration with owners, a deliberate human approval gate and a clear activity history.",
+    "primary": "Explore the workflow demo",
+    "variant": "workflow",
+    "reference_number": "03"
+  },
+  {
+    "slug": "knowledge",
+    "route": "/products/knowledge/",
+    "name": "Knowledge",
+    "eyebrow": "PRODUCT / 02",
+    "headline": "Find what matters.",
+    "description": "A focused sample library: six documents, helpful search, inspectable source details and no private-data uploads.",
+    "primary": "Explore the library",
+    "variant": "knowledge",
+    "reference_number": "04"
+  },
+  {
+    "slug": "insights",
+    "route": "/products/insights/",
+    "name": "Insights",
+    "eyebrow": "PRODUCT / 03",
+    "headline": "Make sense of the signals.",
+    "description": "A calm view of sample operations data, with honest definitions and accessible underlying numbers.",
+    "primary": "Explore Insights",
+    "variant": "insights",
+    "reference_number": "05"
+  },
+  {
+    "slug": "technology",
+    "route": "/technology/",
+    "name": "Technology",
+    "eyebrow": "BEHIND THE EXPERIENCE",
+    "headline": "Built with clear boundaries.",
+    "description": "Modern, accessible frontend engineering. Real local interactions, not fictional integrations or deployed AI.",
+    "primary": "Explore the architecture",
+    "variant": "tech",
+    "reference_number": "06"
+  },
+  {
+    "slug": "experience",
+    "route": "/experience/",
+    "name": "Experience",
+    "eyebrow": "DESIGN WITH INTENT",
+    "headline": "Technology should feel human.",
+    "description": "Considered experiences reduce friction. Clear decisions, readable interfaces and purposeful motion matter.",
+    "primary": "Explore the principles",
+    "variant": "experience",
+    "reference_number": "07"
+  },
+  {
+    "slug": "compare",
+    "route": "/compare/",
+    "name": "Compare",
+    "eyebrow": "THREE PERSPECTIVES",
+    "headline": "Start with the real need.",
+    "description": "Moving work, finding context and reading signals serve different needs. Choose where to explore first.",
+    "primary": "Compare the demos",
+    "variant": "compare",
+    "reference_number": "08"
+  },
+  {
+    "slug": "about",
+    "route": "/about/",
+    "name": "About",
+    "eyebrow": "THE STORY BEHIND THE IDEA",
+    "headline": "A more considered way to build.",
+    "description": "PROWORKS is an original, fictional frontend concept by ISMAIL, informed by the everyday constraints of small teams.",
+    "primary": "Meet the creator",
+    "variant": "about",
+    "reference_number": "09"
+  },
+  {
+    "slug": "journal",
+    "route": "/journal/",
+    "name": "Journal",
+    "eyebrow": "NOTES FROM THE WORK",
+    "headline": "Ideas worth putting into practice.",
+    "description": "Original articles about useful operations, honest measurement and websites that serve real people.",
+    "primary": "Browse the journal",
+    "variant": "journal",
+    "reference_number": "10"
+  },
+  {
+    "slug": "guides",
+    "route": "/guides/",
+    "name": "Guides",
+    "eyebrow": "HELPFUL STARTING POINTS",
+    "headline": "Less friction. More clarity.",
+    "description": "Straight answers about the concept, its three demos, keyboard access, local data and privacy boundaries.",
+    "primary": "Browse the guides",
+    "variant": "guides",
+    "reference_number": "11"
+  },
+  {
+    "slug": "contact",
+    "route": "/contact/",
+    "name": "Contact",
+    "eyebrow": "REAL CREATOR / REAL PROJECTS",
+    "headline": "Let\u2019s make something worth using.",
+    "description": "Explore the PROWORKS frontend concept, then connect with ISMAIL for a real website project.",
+    "primary": "Visit ISMAIL studio",
+    "variant": "contact",
+    "reference_number": "12"
+  }
+]

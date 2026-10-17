@@ -1,6 +1,5 @@
 ---
 import Frame from '../../components/PageFrame.astro';
-import KnowledgeDemo from '../../components/KnowledgeDemo.astro';
 const items = [
   {
     title: 'Searchable sample documents',
@@ -18,7 +17,7 @@ const items = [
 ---
 
 <Frame label="Knowledge" items={items}>
-  <section class="container section demo-section" id="demo">
+  <section class="container section demo-section" id="demo-guide">
     <div class="section-heading">
       <p class="eyebrow">TRY IT / SAMPLE LIBRARY</p>
       <h2>Find the guidance. Check the source.</h2>
@@ -29,13 +28,6 @@ const items = [
         answers.
       </p>
     </div>
-    <KnowledgeDemo />
-    <noscript>
-      <p class="callout">
-        Search requires JavaScript. All six documents and their source
-        disclosures remain readable without it.
-      </p>
-    </noscript>
   </section>
   <section class="container section split-section">
     <div>

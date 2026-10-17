@@ -13,8 +13,8 @@ const { label, items, title } = Astro.props;
 
 <Layout>
   <PageHero label={label} />
-  <FeatureGrid items={items} title={title} />
-  <CTA compact />
   <slot />
+  <FeatureGrid items={items} title={title || 'A closer look.'} />
+  <CTA compact />
   <CTA />
 </Layout>

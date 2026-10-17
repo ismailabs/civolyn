@@ -1,6 +1,5 @@
 ---
 import Frame from '../../components/PageFrame.astro';
-import FlowDemo from '../../components/FlowDemo.astro';
 const items = [
   {
     title: 'Stages and ownership',
@@ -18,7 +17,7 @@ const items = [
 ---
 
 <Frame label="Workflows" items={items}>
-  <section class="container section demo-section" id="demo">
+  <section class="container section demo-section" id="demo-guide">
     <div class="section-heading">
       <p class="eyebrow">TRY IT / LOCAL DEMONSTRATION</p>
       <h2>A considered start, from brief to hand-off.</h2>
@@ -28,13 +27,6 @@ const items = [
         before completion. No business action or message is sent.
       </p>
     </div>
-    <FlowDemo />
-    <noscript>
-      <p class="callout">
-        JavaScript is needed to progress the example. The stages, owners and
-        sample proposal remain readable above; nothing runs externally.
-      </p>
-    </noscript>
   </section>
   <section class="container section split-section">
     <div>

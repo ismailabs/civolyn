@@ -1,7 +1,7 @@
 name: Website quality
 on:
   push:
-    branches: [main, codex/proworks-rebrand]
+    branches: [main, codex/proworks-rebrand, codex/proworks-editorial-product-v3]
   pull_request:
 permissions:
   contents: read
@@ -9,6 +9,8 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      CROSS_BROWSER: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -16,8 +18,11 @@ jobs:
           node-version-file: .node-version
           cache: npm
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run verify
+      - run: |
+          node scripts/serve.mjs &
+          node scripts/editorial-review.mjs
       - run: npx tsc -p worker/tsconfig.json
       - run: npx wrangler deploy --dry-run --outdir artifacts/worker-dry-run
       - uses: actions/upload-artifact@v4
@@ -29,4 +34,5 @@ jobs:
             test-results/
             artifacts/screenshots/
             artifacts/qa/
+            artifacts/editorial-v3/
           retention-days: 7

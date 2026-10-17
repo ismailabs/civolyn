@@ -1,0 +1,34 @@
+---
+const { title, note } = Astro.props;
+---
+
+<div class="product-window">
+  <div class="window-bar">
+    <span class="window-symbol" aria-hidden="true">
+      ▨
+    </span>
+    <b>PROWORKS</b>
+    <span>Local demo / fictional product</span>
+  </div>
+  <div class="window-content">
+    <div class="window-rail" aria-hidden="true">
+      <span>⌂</span>
+      <span>▣</span>
+      <span>≡</span>
+      <span>▤</span>
+      <span>◎</span>
+    </div>
+    <div class="window-main">
+      <div class="window-heading">
+        <div>
+          <p>{note}</p>
+          <h2>{title}</h2>
+        </div>
+        <span class="window-avatar" aria-hidden="true">
+          IS
+        </span>
+      </div>
+      <slot />
+    </div>
+  </div>
+</div>
