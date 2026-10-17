@@ -36,7 +36,7 @@ Real screenshots for every core page at 1440 and 390 pixels are generated under 
 
 ## Hosting and privacy
 
-The existing production is a Cloudflare **Worker**, not a confirmed Pages site. The new configuration targets Worker `proworks`, with static Astro assets and a small handler that preserves true 404 responses and sets their noindex header. See [Worker migration and rollback](docs/CLOUDFLARE-WORKER.md). Never redirect the old host until the new HTTPS domain, source revision, all routes, demos and SEO responses have passed hosted checks.
+Production uses Cloudflare **Worker** `proworks` at [proworks.ismailstudio.my](https://proworks.ismailstudio.my/), with static Astro assets and a small handler that preserves true 404 responses and sets their noindex header. The old CIVOLYN hostname uses a separate path-mapped redirect Worker, activated after new production verification. See [Worker migration and rollback](docs/CLOUDFLARE-WORKER.md) and the current [release report](docs/RELEASE-REPORT.md) for actual evidence and revision identities. GitHub Actions verifies and dry-runs; production deployment is an explicit Wrangler operation.
 
 No analytics provider is currently configured and no named events are emitted. Event attributes describe intended integration points only. See [analytics decision](docs/ANALYTICS.md). A click to ISMAIL or WhatsApp is not an enquiry or a sent message.
 

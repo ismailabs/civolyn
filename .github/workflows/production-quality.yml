@@ -1,0 +1,41 @@
+name: Production quality
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-hosted:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SITE_INDEXABLE: 'true'
+      TEST_ORIGIN: https://proworks.ismailstudio.my
+      EXPECTED_SHA: ${{ github.sha }}
+      VERIFY_INDEXABLE: 'true'
+      VERIFY_OLD_REDIRECTS: 'true'
+      SCREENSHOT_DIR: artifacts/production/screenshots
+      PLAYWRIGHT_JSON_OUTPUT_NAME: artifacts/production/playwright.json
+      PLAYWRIGHT_HTML_OUTPUT_DIR: artifacts/production/playwright-report
+      PERF_ORIGIN: https://proworks.ismailstudio.my
+      PERF_OUTPUT: artifacts/production/lighthouse
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - run: node scripts/verify-hosted.mjs
+      - run: node scripts/verify-redirects.mjs
+      - run: npx playwright test --project=chromium --reporter=list,json,html --timeout=90000
+      - run: npm run test:performance
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: proworks-production-evidence
+          path: |
+            artifacts/production/
+            test-results/
+          retention-days: 7

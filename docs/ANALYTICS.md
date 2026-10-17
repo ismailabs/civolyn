@@ -1,6 +1,10 @@
 # Analytics decision and honest measurement
 
-Status: **not configured / no events emitted**. No authorised Plausible or GA4 property, provider dashboard, or Search Console session is exposed in the current tool connections. Cloudflare account access also requires authentication. There is no invented provider ID, nonfunctional network emitter or custom first-party collection endpoint.
+Status: **not configured / no events emitted**. No authorised Plausible or GA4 property or Search Console session is exposed. Local Cloudflare Wrangler is now authenticated, but Web Analytics rejects this OAuth scheme (HTTP 405 / code 10405). PostHog is connected and showed only an unrelated Default project. The user explicitly authorised creation of an isolated PROWORKS project without upgrading; PostHog rejected it with HTTP 403 because the current plan has reached its project limit. No project was created, no upgrade was made, and the Default project remains untouched. This is the precise remaining P1 analytics blocker.
+
+Hosted qualification also found zone-wide automatic Cloudflare beacon injection. The site now sets `Cache-Control: no-transform` on HTML to suppress that injection for PROWORKS alone, as [documented by Cloudflare](https://developers.cloudflare.com/web-analytics/faq/). CSP remains restricted to the site's own resources. Production browser checks verify no console violations or unintended third-party collection. No zone-wide analytics setting was changed.
+
+There is no invented provider ID, nonfunctional network emitter or custom first-party collection endpoint.
 
 The current site loads no analytics script, sets no analytics cookie, and makes no requests with demo input. Browser tests inspect the network while entering a sentinel search value. Normal hosting request processing/logs may include request metadata; this is disclosed in Guides. No blanket PDPA compliance claim is made.
 

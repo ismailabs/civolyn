@@ -2,6 +2,7 @@
 // Resolve only these two authorised hosts through public DNS, preserving HTTPS SNI
 // and normal certificate validation. This does not change system DNS or site code.
 import dns from 'node:dns';
+import { syncBuiltinESMExports } from 'node:module';
 export const publicDnsAnswers = [];
 export const publicDnsArgs = [];
 if (process.env.VERIFY_PUBLIC_DNS === 'true') {
@@ -40,6 +41,17 @@ if (process.env.VERIFY_PUBLIC_DNS === 'true') {
       else callback(null, record.addresses[0], 4);
     });
   };
+  const originalAsync = dns.promises.lookup;
+  dns.promises.lookup = async function (host, options) {
+    const record = publicDnsAnswers.find((a) => a.host === host);
+    if (!record) return originalAsync.call(dns.promises, host, options);
+    const addresses = record.addresses.map((address) => ({
+      address,
+      family: 4,
+    }));
+    return options?.all ? addresses : addresses[0];
+  };
+  syncBuiltinESMExports();
   publicDnsArgs.push(
     '--host-resolver-rules=' +
       publicDnsAnswers
