@@ -1,0 +1,134 @@
+- text: Fictional concept by ISMAIL Local sample data
+- link "Skip to content":
+  - /url: "#main"
+- banner:
+  - link "PROWORKS home":
+    - /url: /
+    - text: PROWORKS
+  - button "Menu"
+- main:
+  - region "A clearer way to move work forward.":
+    - paragraph: OPERATIONS, RECONSIDERED
+    - heading "A clearer way to move work forward." [level=1]
+    - paragraph: An original operations-platform concept for teams that value clarity, useful context and deliberate action.
+    - link "Explore the platform":
+      - /url: /platform/
+    - link "See the working demos":
+      - /url: /products/workflows/#demo
+    - text: Three perspectives / one clearer story Work. Context. Understanding.
+    - figure "Made for the real complexity of work Clarity, by design.":
+      - img "Original abstract folded architectural sculpture"
+      - text: Made for the real complexity of work Clarity, by design.
+  - text: The work / an idea
+  - heading "Good tools should make the next step obvious." [level=2]:
+    - text: Good tools should make
+    - emphasis: the next step obvious.
+  - link "01 Move work forward":
+    - /url: /products/workflows/
+  - link "02 Find context quickly":
+    - /url: /products/knowledge/
+  - link "03 Understand the signals":
+    - /url: /products/insights/
+  - paragraph: THREE PERSPECTIVES ON EVERYDAY WORK
+  - heading "A path. A source. A clearer picture." [level=2]
+  - paragraph: Processes, documentation and reporting make more sense together. Explore one part of the story at a time through three working, browser-only demonstrations.
+  - article:
+    - heading "Workflows" [level=3]
+    - paragraph: Give recurring requests a visible path, a responsible owner and an explicit human approval.
+    - link "Explore Workflows":
+      - /url: /products/workflows/
+  - article:
+    - heading "Knowledge" [level=3]
+    - paragraph: Find a useful document, read its source and understand the context before acting.
+    - link "Explore Knowledge":
+      - /url: /products/knowledge/
+  - article:
+    - heading "Insights" [level=3]
+    - paragraph: Explore clearly defined sample metrics, change the period and check the underlying figures.
+    - link "Explore Insights":
+      - /url: /products/insights/
+  - paragraph: A CONSIDERED WAY TO BUILD
+  - heading "Make the important things visible." [level=2]
+  - paragraph: Start with the question a person needs to answer. Put the next action within reach. Explain its consequence. Then make the details work with a keyboard, on a narrow screen, and without relying on colour alone.
+  - link "Explore the experience principles →":
+    - /url: /experience/
+  - heading "What this concept actually demonstrates" [level=3]
+  - paragraph: Original interface design, static Astro pages, local interactions, transparent sample data and accessible alternatives. No connected AI, automated business actions or fictional customers.
+  - link "See how the site works →":
+    - /url: /technology/
+  - paragraph: BEFORE THE TOOL, THE QUESTION
+  - heading "A smaller starting point can be a better one." [level=2]
+  - paragraph: If a request keeps getting lost, start by mapping its stages. If an answer is hard to find, make the source easier to inspect. If a chart feels convincing, ask whether its numbers support a decision.
+  - paragraph: Our original field notes turn those questions into practical examples you can use beyond this fictional product.
+  - link "Read the journal →":
+    - /url: /journal/
+  - region "A closer look.":
+    - paragraph: CRAFTED FOR CLARITY
+    - heading "A closer look." [level=2]
+    - article:
+      - text: "01"
+      - heading "Three products, one clear system" [level=3]
+      - paragraph: Follow a request, find the guidance behind it, and inspect the resulting picture of work.
+      - link "Explore three products, one clear system":
+        - /url: /platform/
+    - article:
+      - text: "02"
+      - heading "A better way to coordinate work" [level=3]
+      - paragraph: Clear stages and named roles make the next decision easier to understand.
+      - link "Explore a better way to coordinate work":
+        - /url: /products/workflows/
+    - article:
+      - text: "03"
+      - heading "Clarity for Malaysian SMEs" [level=3]
+      - paragraph: "A practical concept for small teams: useful information, considered interfaces and fewer ambiguous actions."
+      - link "Explore clarity for malaysian smes":
+        - /url: /about/
+  - complementary:
+    - paragraph: FICTIONAL PROWORKS PLATFORM AN ISMAIL PORTFOLIO CONCEPT
+    - link "Explore ISMAIL":
+      - /url: https://www.ismailstudio.my/
+  - paragraph: GOOD DESIGN HAS A REAL CREATOR
+  - heading "Interested in a site designed this thoughtfully?" [level=2]
+  - paragraph: The product is fictional. The design and development are real. Explore ISMAIL’s work and discuss a website for your business.
+  - link "Discuss your website with ISMAIL":
+    - /url: https://www.ismailstudio.my/
+- contentinfo:
+  - link "PROWORKS home":
+    - /url: /
+    - text: PROWORKS
+  - paragraph: Make room for work that moves.
+  - paragraph: Fictional concept by ISMAIL. Sample data and browser-only demos. No software subscription or connected AI.
+  - navigation "Product navigation":
+    - text: Explore the concept
+    - link "Platform":
+      - /url: /platform/
+    - link "Workflows":
+      - /url: /products/workflows/
+    - link "Knowledge":
+      - /url: /products/knowledge/
+    - link "Insights":
+      - /url: /products/insights/
+    - link "Compare products":
+      - /url: /compare/
+  - navigation "Learn and understand":
+    - text: A little more context
+    - link "Technology":
+      - /url: /technology/
+    - link "Experience":
+      - /url: /experience/
+    - link "Journal":
+      - /url: /journal/
+    - link "Guides & FAQs":
+      - /url: /guides/
+    - link "About the concept":
+      - /url: /about/
+  - text: The real creator
+  - paragraph: Thoughtful websites for real businesses.
+  - link "Explore ISMAIL":
+    - /url: https://www.ismailstudio.my/
+  - link "Choose your next step →":
+    - /url: /contact/
+  - link "Privacy & demo boundaries":
+    - /url: /guides/#privacy
+  - paragraph: © 2026 PROWORKS · An original ISMAIL portfolio concept.
+  - paragraph: No analytics provider configured. Demo input stays local.
