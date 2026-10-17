@@ -14,6 +14,7 @@ const routes = [
 for (const route of routes) {
   const res = await fetch(origin + route, { redirect: 'manual' });
   assert.equal(res.status, 200, route);
+  assert.match(res.headers.get('cache-control') || '', /no-transform/);
   assert.equal(
     res.headers.get('x-robots-tag'),
     indexable ? 'index, follow' : 'noindex, follow',

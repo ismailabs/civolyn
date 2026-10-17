@@ -47,6 +47,7 @@ report.release = release;
 for (const route of routes) {
   const res = await fetch(origin + route, { redirect: 'manual' });
   assert.equal(res.status, 200, route);
+  assert.match(res.headers.get('cache-control') || '', /no-transform/);
   const html = await res.text();
   assert.ok(html.includes('href="' + origin + route + '"'));
   assert.match(

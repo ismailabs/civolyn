@@ -14,3 +14,11 @@ Windows Wrangler authentication is now accessible in this same local execution e
 - Cloudflare Web Analytics API rejects this OAuth authentication scheme (405/code 10405). No authorised named analytics provider/property is currently usable. Existing frontend event attributes remain inert.
 
 Raw timestamped provider and routing preflight receipts are kept under ignored `artifacts/migration/`. The final report must record exact build SHA, full Worker version IDs, domain bindings, TLS/HTTP results, production browser checks, all old-path single-hop 301s and rollback instructions. A local build or a GitHub push is not production proof.
+
+## Defects found during hosted qualification
+
+The first browser qualification exposed an automatically injected Cloudflare analytics beacon, blocked by the site's deliberate CSP. HTTP-only source checks did not expose that browser-specific transformation. The Worker now adds `Cache-Control: no-transform` to HTML responses, following [Cloudflare's documented control](https://developers.cloudflare.com/web-analytics/faq/). This prevents automatic injection for this site alone, preserves HTML identity, and avoids changing unrelated zone analytics or weakening CSP.
+
+Public Cloudflare DNS resolves the hostname, but the Windows default resolver retained an earlier NXDOMAIN answer. The optional `VERIFY_PUBLIC_DNS=true` verification helper resolves only the two authorised project hostnames via public DNS and supplies their real addresses to Node/Chromium. Hostname/SNI and certificate validation remain enabled; no system DNS, hosts file or certificate trust is changed. Receipts disclose this environment adaptation.
+
+The user authorised a separate PostHog project named PROWORKS without upgrading. The provider rejected project creation with HTTP 403: the account has reached its current plan's project limit. No project was created, no upgrade was made, and the unrelated Default project was left untouched. Named analytics remains a documented P1 blocker.
